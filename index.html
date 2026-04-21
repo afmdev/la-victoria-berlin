@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- ============================================================
+       META & SEO
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>La Victoria Berlin – Peruanisches Street Food | Markthalle Pfefferberg</title>
+  <meta name="description"
+    content="Berlins erstes peruanisches Street Food Restaurant in der Markthalle Pfefferberg, Prenzlauer Berg. Ceviche, Anticuchos, Papa Rellena & mehr. Kostenlose Reservierung für Geburtstage & Gruppen." />
+  <meta name="keywords"
+    content="peruanisches Restaurant Berlin, Ceviche Berlin, Anticuchos Berlin, Peruvian street food Berlin, comida peruana Berlín, Restaurante latinoamericano Berlin, Markthalle Pfefferberg, Prenzlauer Berg, peruvianisches Essen Berlin" />
+  <link rel="canonical" href="https://lavictoriaberlin.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="restaurant" />
+  <meta property="og:site_name"   content="La Victoria Berlin" />
+  <meta property="og:title"       content="La Victoria Berlin – Peruanisches Street Food" />
+  <meta property="og:description" content="Berlins erstes peruanisches Street Food Restaurant. Authentische Gerichte aus Lima: Ceviche, Anticuchos, Papa Rellena & Sanguches." />
+  <meta property="og:url"         content="https://lavictoriaberlin.com/" />
+  <meta property="og:image"       content="https://lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg" />
+  <meta property="og:locale"      content="de_DE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="La Victoria Berlin – Peruanisches Street Food" />
+  <meta name="twitter:description" content="Berlins erstes peruanisches Street Food Restaurant in der Markthalle Pfefferberg, Prenzlauer Berg." />
+  <meta name="twitter:image"       content="https://lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg" />
+
+  <!-- Fonts: Boogaloo (display) + Bebas Neue (headlines) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
+        rel="stylesheet" />
+
+  <!-- ============================================================
+       SCHEMA.ORG – Restaurant (JSON-LD)
+       NOTE: Update openingHoursSpecification with real hours
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "La Victoria Berlin",
+    "alternateName": "La Rica Vicky",
+    "description": "Berlins erstes peruanisches Street Food Restaurant – Ceviche, Anticuchos, Papa Rellena, Sanguches",
+    "url": "https://lavictoriaberlin.com",
+    "image": "https://lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg",
+    "servesCuisine": ["Peruvian", "Latin American", "Street Food"],
+    "priceRange": "€–€€",
+    "currenciesAccepted": "EUR",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Schönhauser Allee 176",
+      "addressLocality": "Berlin",
+      "postalCode": "10119",
+      "addressCountry": "DE",
+      "addressRegion": "Berlin"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.53956,
+      "longitude": 13.41349
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday"], "opens": "17:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"],               "opens": "17:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"],     "opens": "12:00", "closes": "22:00" }
+    ],
+    "sameAs": ["https://www.instagram.com/lavictoriaberlin/"],
+    "hasMap": "https://maps.google.com/?q=Markthalle+Pfefferberg+Sch%C3%B6nhauser+Allee+176+Berlin",
+    "containedInPlace": {
+      "@type": "FoodEstablishment",
+      "name": "Markthalle Pfefferberg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Schönhauser Allee 176",
+        "addressLocality": "Berlin",
+        "postalCode": "10119",
+        "addressCountry": "DE"
+      }
+    }
+  }
+  </script>
+
+  <!-- ============================================================
+       CRITICAL CSS – All styles inline (self-contained file)
+       ============================================================ -->
+  <style>
+    /* -------------------------------------------------------
+       1. CUSTOM PROPERTIES – Brand tokens
+       ------------------------------------------------------- */
+    :root {
+      /* Colours extracted from brand imagery */
+      --green:        #38b04a;
+      --green-dark:   #2d8f3b;
+      --green-light:  #4dc960;
+      --yellow:       #f5c918;
+      --yellow-dark:  #d9ae0a;
+      --orange:       #f07328;
+      --orange-dark:  #d05e18;
+      --black:        #111111;
+      --black-soft:   #1e1e1e;
+      --lavender:     #c4a8d4;
+      --lavender-dark:#a080b8;
+      --white:        #ffffff;
+      --off-white:    #f8f6f0;
+      --gray:         #aaaaaa;
+
+      /* Typography */
+      --font-display:  'Boogaloo', cursive;
+      --font-headline: 'Bebas Neue', cursive;
+      --font-body:     'DM Sans', sans-serif;
+
+      /* Spacing */
+      --section-py: clamp(3.5rem, 8vw, 6rem);
+
+      /* Misc */
+      --radius:     14px;
+      --radius-sm:  8px;
+      --shadow-hard: 6px 6px 0 var(--black);
+      --transition:  0.25s ease;
+    }
+
+    /* -------------------------------------------------------
+       2. RESET
+       ------------------------------------------------------- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body  { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+    img   { max-width: 100%; height: auto; display: block; }
+    a     { color: inherit; text-decoration: none; }
+    ul    { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* -------------------------------------------------------
+       3. UTILITIES
+       ------------------------------------------------------- */
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 5vw, 2rem);
+    }
+
+    /* Label above section titles */
+    .eyebrow {
+      font-family: var(--font-headline);
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Consistent CTA buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      padding: 0.7rem 1.75rem;
+      border-radius: 50px;
+      border: 3px solid var(--black);
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .btn:hover  { transform: translateY(-3px); box-shadow: var(--shadow-hard); }
+    .btn:active { transform: translateY(1px);  box-shadow: 2px 2px 0 var(--black); }
+
+    .btn-yellow  { background: var(--yellow); color: var(--black); }
+    .btn-black   { background: var(--black);  color: var(--yellow); border-color: var(--black); }
+    .btn-green   { background: var(--green);  color: var(--white);  border-color: var(--green-dark); }
+    .btn-outline { background: transparent;   color: var(--black);  border-color: var(--black); }
+    .btn-outline:hover { background: var(--black); color: var(--yellow); }
+
+    /* Scroll-reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+
+    /* -------------------------------------------------------
+       4. NAVIGATION
+       ------------------------------------------------------- */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      background: var(--black);
+      border-bottom: 3px solid var(--yellow);
+      transition: padding var(--transition);
+    }
+    #nav.scrolled { padding-block: 0.25rem; }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.65rem;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      /* Invert the black logo for the dark navbar */
+      filter: invert(1);
+      transition: opacity var(--transition);
+    }
+    .nav-logo:hover { opacity: 0.8; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Language selector */
+    .lang-selector { position: relative; }
+
+    .lang-toggle {
+      background: var(--yellow);
+      border: 2px solid transparent;
+      border-radius: 50px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background var(--transition);
+    }
+    .lang-toggle:hover { background: var(--white); }
+
+    .lang-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--black-soft);
+      border: 2px solid var(--yellow);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      min-width: 155px;
+      z-index: 300;
+      /* subtle shadow */
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .lang-menu.open { display: block; }
+
+    .lang-menu button {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.6rem 1rem;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 0.88rem;
+      text-align: left;
+      transition: background var(--transition), color var(--transition);
+    }
+    .lang-menu button:hover   { background: var(--yellow);    color: var(--black); }
+    .lang-menu button.active  { background: var(--green);     color: var(--white); font-weight: 700; }
+
+    .nav-cta { font-size: 0.95rem; padding: 0.45rem 1.15rem; }
+
+    /* On very small screens show only icon for CTA */
+    @media (max-width: 420px) {
+      .nav-cta-label { display: none; }
+    }
+
+    /* -------------------------------------------------------
+       5. HERO
+       ------------------------------------------------------- */
+    #hero {
+      min-height: 100svh;
+      min-height: 100dvh;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      padding-top: 76px; /* nav height */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Tiled pattern background */
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: url('images-ejemplo/bg.jpg');
+      background-size: 380px;
+      background-repeat: repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    /* Diagonal yellow wave */
+    .hero-wave {
+      position: absolute;
+      bottom: -8%;
+      left: -5%;
+      width: 120%;
+      height: 40%;
+      background: var(--yellow);
+      transform: rotate(-4deg);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      padding-block: clamp(2.5rem, 6vw, 4.5rem);
+    }
+    @media (min-width: 768px) {
+      .hero-content { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--black);
+      color: var(--yellow);
+      font-family: var(--font-headline);
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      padding: 0.35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(4.5rem, 13vw, 8.5rem);
+      line-height: 0.88;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+    .hero-title .highlight { color: var(--white); }
+
+    .hero-tagline {
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 3.5vw, 1.85rem);
+      color: var(--black);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    /* Hero image card */
+    .hero-visual { display: flex; justify-content: center; }
+
+    .hero-img-card {
+      position: relative;
+      max-width: 360px;
+      width: 100%;
+    }
+    .hero-img-card img {
+      width: 100%;
+      border-radius: 18px;
+      border: 4px solid var(--black);
+      box-shadow: 10px 10px 0 var(--black);
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+
+    /* Decorative spinning stars */
+    .star-deco {
+      position: absolute;
+      font-size: 2.5rem;
+      animation: spin 10s linear infinite;
+      user-select: none;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .star-deco.s1 { top: -18px; right: -18px; color: var(--yellow); }
+    .star-deco.s2 { bottom: -16px; left: -16px; font-size: 1.8rem; animation-duration: 7s; color: var(--black); animation-direction: reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* -------------------------------------------------------
+       6. MENU
+       ------------------------------------------------------- */
+    #menu {
+      background: var(--green);
+      padding-block: var(--section-py);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Subtle pattern overlay */
+    #menu::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('images-ejemplo/bg.jpg');
+      background-size: 360px;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+    /* Yellow top divider */
+    #menu::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: var(--yellow);
+    }
+
+    .menu-header {
+      text-align: center;
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
+      position: relative;
+    }
+    .menu-header .eyebrow { color: rgba(17,17,17,0.5); }
+    .menu-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: 0.88;
+      color: var(--black);
+    }
+    .menu-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--yellow);
+      margin-top: 0.4rem;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      position: relative;
+    }
+    @media (min-width: 600px)  { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Individual menu card */
+    .menu-card {
+      background: var(--black);
+      border-radius: var(--radius);
+      border: 3px solid var(--black);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .menu-card:hover {
+      transform: translateY(-5px) rotate(-0.8deg);
+      box-shadow: 10px 10px 0 var(--black);
+    }
+
+    .card-head {
+      padding: 1.4rem 1.5rem 1rem;
+      border-bottom: 1.5px solid rgba(255,255,255,0.07);
+    }
+    .card-tag {
+      font-family: var(--font-headline);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--green-light);
+      margin-bottom: 0.3rem;
+    }
+    .card-name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 0.95;
+      color: var(--yellow);
+    }
+    .card-sub {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--green-light);
+      margin-top: 0.3rem;
+      opacity: 0.85;
+    }
+
+    .card-body { padding: 1rem 1.5rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .card-desc {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: #999;
+      margin-bottom: 1.1rem;
+      font-style: italic;
+    }
+
+    .item-list { margin-top: auto; }
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+    }
+    .item-row:last-child { border-bottom: none; }
+    .item-name  { font-family: var(--font-display); font-size: 1.05rem; color: var(--white); }
+    .item-note  { font-size: 0.68rem; color: #666; display: block; margin-top: 0.1rem; }
+    .item-price { font-family: var(--font-display); font-size: 1.3rem; color: var(--yellow); white-space: nowrap; flex-shrink: 0; }
+
+    /* -------------------------------------------------------
+       7. EVENTS / RESERVATIONS
+       ------------------------------------------------------- */
+    #events {
+      background: var(--yellow);
+      padding-block: var(--section-py);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Big decorative star */
+    #events::after {
+      content: '✦';
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(16rem, 25vw, 28rem);
+      color: rgba(17,17,17,0.05);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    @media (min-width: 768px) { .events-grid { grid-template-columns: 1fr 1fr; } }
+
+    .events-eyebrow { color: rgba(17,17,17,0.45); }
+    .events-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 7vw, 5rem);
+      line-height: 0.95;
+      margin-bottom: 1.4rem;
+      color: var(--black);
+    }
+    .events-body {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(17,17,17,0.72);
+      margin-bottom: 1.75rem;
+    }
+
+    .events-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .perk {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .perk-icon {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--black);
+      color: var(--yellow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+    .perk-icon.green { background: var(--green); color: var(--white); }
+
+    /* Photo collage */
+    .events-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+    .events-photos img {
+      border-radius: var(--radius);
+      border: 3px solid var(--black);
+      box-shadow: 5px 5px 0 var(--black);
+      object-fit: cover;
+      width: 100%;
+    }
+    .events-photos img:first-child { grid-column: 1 / -1; height: 240px; }
+    .events-photos img:not(:first-child) { height: 180px; }
+
+    /* -------------------------------------------------------
+       8. LOCATION & HOURS
+       ------------------------------------------------------- */
+    #location {
+      background: var(--lavender);
+      padding-block: var(--section-py);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 5vw, 3.5rem);
+    }
+    @media (min-width: 768px) { .location-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+    .location-eyebrow { color: rgba(17,17,17,0.4); }
+    .location-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 0.95;
+      margin-bottom: 1.75rem;
+    }
+
+    .info-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+    .info-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+    .info-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .info-text strong { display: block; font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 0.15rem; }
+    .info-text span   { font-size: 0.88rem; line-height: 1.55; color: rgba(17,17,17,0.65); }
+
+    /* Hours table */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.4rem;
+    }
+    .hours-table td {
+      padding: 0.38rem 0;
+      font-size: 0.88rem;
+      border-bottom: 1px solid rgba(17,17,17,0.12);
+    }
+    .hours-table td:last-child { text-align: right; font-weight: 600; }
+    .hours-table .closed-day   { color: rgba(17,17,17,0.38); }
+
+    /* Map embed */
+    .map-frame {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 4px solid var(--black);
+      box-shadow: 8px 8px 0 var(--black);
+      aspect-ratio: 4/3;
+      background: #ddd;
+    }
+    .map-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* -------------------------------------------------------
+       9. ABOUT
+       ------------------------------------------------------- */
+    #about {
+      background: var(--black);
+      color: var(--white);
+      padding-block: var(--section-py);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Diagonal orange shape */
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0; right: -10%;
+      width: 55%;
+      height: 100%;
+      background: var(--orange);
+      clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+    @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1fr; } }
+
+    .about-eyebrow { color: var(--yellow); }
+    .about-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 7vw, 5rem);
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+    }
+    .about-title em { font-style: normal; color: var(--yellow); }
+
+    .about-body {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #bbb;
+      margin-bottom: 1.2rem;
+    }
+    .about-body:last-of-type { margin-bottom: 1.75rem; }
+
+    .about-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      padding: 0.5rem 1.3rem;
+      border-radius: 50px;
+    }
+
+    .about-img img {
+      border-radius: var(--radius);
+      border: 4px solid var(--yellow);
+      box-shadow: 8px 8px 0 var(--yellow);
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      width: 100%;
+    }
+
+    /* -------------------------------------------------------
+       10. GALLERY
+       ------------------------------------------------------- */
+    #gallery {
+      background: var(--black-soft);
+      padding-block: var(--section-py);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: clamp(1.75rem, 4vw, 3rem);
+    }
+    .gallery-eyebrow { color: var(--yellow); }
+    .gallery-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 7vw, 5.5rem);
+      color: var(--white);
+      line-height: 0.95;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+    @media (min-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+      .gallery-grid .g-item:first-child { grid-column: span 2; grid-row: span 2; }
+    }
+
+    .g-item {
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      aspect-ratio: 1;
+      background: #333;
+    }
+    .g-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease, filter 0.45s ease;
+      filter: saturate(0.85);
+    }
+    .g-item:hover img { transform: scale(1.1); filter: saturate(1.3); }
+
+    /* -------------------------------------------------------
+       11. CONTACT / SOCIAL
+       ------------------------------------------------------- */
+    #contact {
+      background: var(--orange);
+      padding-block: var(--section-py);
+      text-align: center;
+    }
+
+    .contact-eyebrow { color: rgba(17,17,17,0.45); }
+    .contact-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 9vw, 6rem);
+      line-height: 0.9;
+      color: var(--black);
+      margin-bottom: 1rem;
+    }
+    .contact-sub {
+      font-size: 1.05rem;
+      color: rgba(17,17,17,0.68);
+      max-width: 520px;
+      margin-inline: auto;
+      margin-bottom: 2.5rem;
+      line-height: 1.65;
+    }
+
+    .social-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      padding: 0.65rem 1.5rem;
+      border-radius: 50px;
+      border: 3px solid var(--black);
+      transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
+    }
+    .social-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .social-btn:hover {
+      background: var(--yellow);
+      color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hard);
+    }
+
+    /* -------------------------------------------------------
+       12. FOOTER
+       ------------------------------------------------------- */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.45);
+      padding-block: 1.75rem;
+      border-top: 3px solid var(--yellow);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+      text-align: center;
+    }
+    .footer-logo { height: 34px; filter: invert(1); opacity: 0.5; }
+    .footer-nav  {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.25rem;
+    }
+    .footer-nav a { font-size: 0.85rem; transition: color var(--transition); }
+    .footer-nav a:hover { color: var(--yellow); }
+    .footer-copy { font-size: 0.78rem; }
+
+    /* -------------------------------------------------------
+       13. RESPONSIVE HELPERS
+       ------------------------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .star-deco { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav id="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+
+      <a href="#hero" aria-label="La Victoria Berlin – Startseite">
+        <img src="logo.png"
+             alt="La Victoria – Peruvian Street Food Berlin"
+             class="nav-logo"
+             width="160" height="40" />
+      </a>
+
+      <div class="nav-right">
+
+        <!-- Language selector -->
+        <div class="lang-selector" role="navigation" aria-label="Sprachauswahl">
+          <button class="lang-toggle"
+                  id="langToggle"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="langMenu">
+            <span id="flagEl">🇩🇪</span>
+            <span id="codeEl">DE</span>
+            <span aria-hidden="true">▾</span>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu">
+            <button onclick="setLang('de')" data-lang="de" class="active" role="menuitem">🇩🇪 Deutsch</button>
+            <button onclick="setLang('en')" data-lang="en"                role="menuitem">🇬🇧 English</button>
+            <button onclick="setLang('es')" data-lang="es"                role="menuitem">🇪🇸 Español</button>
+            <button onclick="setLang('it')" data-lang="it"                role="menuitem">🇮🇹 Italiano</button>
+            <button onclick="setLang('fr')" data-lang="fr"                role="menuitem">🇫🇷 Français</button>
+          </div>
+        </div>
+
+        <a href="#location" class="btn btn-yellow nav-cta">
+          📍 <span class="nav-cta-label" data-i18n="nav_find">Uns finden</span>
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="hero" aria-labelledby="hero-heading">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-wave"    aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+
+          <div class="hero-text">
+            <span class="hero-badge" data-i18n="hero_badge">✦ Berlins erstes Peruvian Street Food</span>
+            <h1 class="hero-title" id="hero-heading">
+              LA<br/><span class="highlight">VIC</span>TORIA
+            </h1>
+            <p class="hero-tagline" data-i18n="hero_tagline">
+              Von Limas Straßen direkt nach Prenzlauer Berg.
+            </p>
+            <div class="hero-actions">
+              <a href="#menu"    class="btn btn-black"   data-i18n="hero_cta_menu">Menü ansehen</a>
+              <a href="#events"  class="btn btn-outline"  data-i18n="hero_cta_reserve">Reservieren</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-img-card">
+              <img src="images-ejemplo/567529306_17849494968577836_6187494094717055025_n.jpg"
+                   alt="La Victoria Berlin – peruanischer Street-Food-Stand mit Sonnenschirm, Markthalle Pfefferberg"
+                   loading="eager"
+                   width="360" height="480" />
+              <span class="star-deco s1" aria-hidden="true">✦</span>
+              <span class="star-deco s2" aria-hidden="true">✦</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MENU
+         ============================================================ -->
+    <section id="menu" aria-labelledby="menu-heading">
+      <div class="container">
+
+        <header class="menu-header reveal">
+          <span class="eyebrow menu-eyebrow" data-i18n="menu_eyebrow">Speisekarte</span>
+          <h2 class="menu-title" id="menu-heading" data-i18n="menu_title">MENÚ</h2>
+          <p class="menu-subtitle" data-i18n="menu_subtitle">Made with Cariño ✦</p>
+        </header>
+
+        <div class="menu-grid">
+
+          <!-- ANTICUCHO -->
+          <article class="menu-card reveal">
+            <div class="card-head">
+              <p class="card-tag" data-i18n="anticucho_tag">✦ Authentic Peruvian Grill</p>
+              <h3 class="card-name">ANTICUCHO</h3>
+              <p class="card-sub" data-i18n="anticucho_sub">Vom Grill — direkt von Limas Straßenecken</p>
+            </div>
+            <div class="card-body">
+              <p class="card-desc" data-i18n="anticucho_desc">
+                Spieße, mariniert mit Gewürzen, Feuer und Liebe. Gegrillt und serviert mit Kartoffeln und Choclo – dem großen peruanischen Mais.
+              </p>
+              <ul class="item-list">
+                <li class="item-row">
+                  <span class="item-name" data-i18n="anticucho_beef">Rinderherz</span>
+                  <span class="item-price">10 €</span>
+                </li>
+                <li class="item-row">
+                  <span class="item-name" data-i18n="anticucho_chicken">Hähnchen</span>
+                  <span class="item-price">9 €</span>
+                </li>
+                <li class="item-row">
+                  <span class="item-name" data-i18n="anticucho_mushroom">Austernpilze</span>
+                  <span class="item-price">8 €</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- CEVICHE -->
+          <article class="menu-card reveal reveal-d1">
+            <div class="card-head">
+              <p class="card-tag" data-i18n="ceviche_tag">✦ Fresh, Fiery &amp; Unapologetically Peruvian</p>
+              <h3 class="card-name">CEVICHE</h3>
+              <p class="card-sub" data-i18n="ceviche_sub">Frisch · Feurig · Unverwechselbar peruanisch</p>
+            </div>
+            <div class="card-body">
+              <p class="card-desc" data-i18n="ceviche_desc">
+                Fisch, gegart in Limettensaft, mit roter Zwiebel und Rocoto-Chili – das Street-Food-Rezept, auf das jeder Peruaner schwört. Serviert kalt und feurig.
+              </p>
+              <ul class="item-list">
+                <li class="item-row">
+                  <span class="item-name" data-i18n="ceviche_fish">Fisch</span>
+                  <span class="item-price">13 €</span>
+                </li>
+                <li class="item-row">
+                  <span>
+                    <span class="item-name" data-i18n="ceviche_mixed">Gemischt</span>
+                    <span class="item-note" data-i18n="ceviche_mixed_note">(Fisch, Oktopus, Garnelen)</span>
+                  </span>
+                  <span class="item-price">13 €</span>
+                </li>
+                <li class="item-row">
+                  <span class="item-name" data-i18n="ceviche_mango">Mango</span>
+                  <span class="item-price">9 €</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- PAPA RELLENA -->
+          <article class="menu-card reveal reveal-d2">
+            <div class="card-head">
+              <p class="card-tag" data-i18n="papa_tag">✦ The Queen of Peruvian Street</p>
+              <h3 class="card-name">PAPA RELLENA</h3>
+              <p class="card-sub" data-i18n="papa_sub">Die Königin des peruanischen Straßenfood</p>
+            </div>
+            <div class="card-body">
+              <p class="card-desc" data-i18n="papa_desc">
+                Knusprige Kartoffelhülle, gefüllt mit würzigem Rindfleisch, karamellisierten Zwiebeln, Oliven und Ei. Mit Salsa Criolla für den perfekten Kick!
+              </p>
+              <ul class="item-list">
+                <li class="item-row">
+                  <span class="item-name" data-i18n="papa_meat">Fleisch</span>
+                  <span class="item-price">9 €</span>
+                </li>
+                <li class="item-row">
+                  <span class="item-name" data-i18n="papa_mushroom">Pilze</span>
+                  <span class="item-price">6,50 €</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- PAN CON CHICHARRÓN -->
+          <article class="menu-card reveal reveal-d3">
+            <div class="card-head">
+              <p class="card-tag" data-i18n="sangu_label">✦ Sanguches — Made with Cariño</p>
+              <h3 class="card-name">PAN CON<br/>CHICHARRÓN</h3>
+              <p class="card-sub" data-i18n="pancon_sub">Pork in a Bun · Die Straßenlegende</p>
+            </div>
+            <div class="card-body">
+              <p class="card-desc" data-i18n="pancon_desc">
+                Zartes Schweinebauch mit Süßkartoffelscheiben, Salsa Criolla und hausgemachten Saucen. Purer Genuss zwischen zwei Hälften Brot.
+              </p>
+              <ul class="item-list">
+                <li class="item-row">
+                  <span class="item-name">Pan con Chicharrón</span>
+                  <span class="item-price">10 €</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- POLLO A LA BRASA -->
+          <article class="menu-card reveal reveal-d4">
+            <div class="card-head">
+              <p class="card-tag" data-i18n="sangu_label2">✦ Sanguches — Made with Cariño</p>
+              <h3 class="card-name">POLLO A<br/>LA BRASA</h3>
+              <p class="card-sub" data-i18n="pollo_sub">National Pride in Sandwich Form</p>
+            </div>
+            <div class="card-body">
+              <p class="card-desc" data-i18n="pollo_desc">
+                Geräuchertes Rotisserie-Hähnchen im weichen Brioche-Brötchen mit Salat, Tomate, gelber Chilisauce und Pommes. Perus liebstes Hähnchen – auf unsere Art.
+              </p>
+              <ul class="item-list">
+                <li class="item-row">
+                  <span class="item-name">Pollo a la Brasa</span>
+                  <span class="item-price">10 €</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- MENU CARD: full menu image link -->
+          <article class="menu-card reveal reveal-d1"
+                   style="background:var(--green); justify-content:center; align-items:center; min-height:220px; cursor:pointer;"
+                   onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+            <div style="text-align:center; padding:2rem;">
+              <p style="font-family:var(--font-display);font-size:2.5rem;color:var(--black);line-height:1;" data-i18n="menu_more_title">¿Más?</p>
+              <p style="font-family:var(--font-body);font-size:0.9rem;color:var(--black);opacity:0.7;margin-top:0.5rem;" data-i18n="menu_more_sub">Folg uns auf Instagram für Specials & saisonale Gerichte</p>
+              <p style="font-size:2rem;margin-top:1rem;">📸</p>
+            </div>
+          </article>
+
+        </div><!-- /menu-grid -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EVENTS / RESERVATIONS
+         ============================================================ -->
+    <section id="events" aria-labelledby="events-heading">
+      <div class="container">
+        <div class="events-grid">
+
+          <div class="reveal">
+            <span class="eyebrow events-eyebrow" data-i18n="events_eyebrow">Feiern &amp; Reservieren</span>
+            <h2 class="events-title" id="events-heading" data-i18n="events_title">Feiert<br/>mit uns!</h2>
+            <p class="events-body" data-i18n="events_body">
+              La Victoria ist der perfekte Ort für euren besonderen Moment in der Markthalle Pfefferberg. Ob Geburtstag, Familientreffen oder ein Abend mit Freunden – wir freuen uns auf euch. Reservierungen sind kostenlos und unkompliziert.
+            </p>
+            <ul class="events-perks">
+              <li class="perk reveal reveal-d1">
+                <span class="perk-icon">🎂</span>
+                <span data-i18n="perk_birthday">Geburtstagsfeiern</span>
+              </li>
+              <li class="perk reveal reveal-d2">
+                <span class="perk-icon">👨‍👩‍👧‍👦</span>
+                <span data-i18n="perk_family">Familientreffen</span>
+              </li>
+              <li class="perk reveal reveal-d3">
+                <span class="perk-icon">🍻</span>
+                <span data-i18n="perk_friends">Freundesabende</span>
+              </li>
+              <li class="perk reveal reveal-d4">
+                <span class="perk-icon green">✅</span>
+                <strong data-i18n="perk_free">Reservierung immer kostenlos</strong>
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-black" data-i18n="events_cta">Jetzt reservieren</a>
+          </div>
+
+          <div class="events-photos reveal reveal-d2">
+            <img src="images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
+                 alt="Gäste bei La Victoria Berlin genießen peruanisches Street Food in der Markthalle Pfefferberg"
+                 loading="lazy" width="540" height="240" />
+            <img src="images-ejemplo/619995436_17861709765577836_5003048309959799805_n.jpg"
+                 alt="Frisches Ceviche bei La Victoria Berlin – Fancy a Ceviche?"
+                 loading="lazy" width="260" height="180" />
+            <img src="images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg"
+                 alt="Ceviche Mixto – Que Pique Rico Carajo, La Victoria Berlin"
+                 loading="lazy" width="260" height="180" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LOCATION & HOURS
+         NOTE: Update opening hours below to match actual schedule
+         ============================================================ -->
+    <section id="location" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="location-grid">
+
+          <div class="reveal">
+            <span class="eyebrow location-eyebrow" data-i18n="location_eyebrow">Wo wir sind</span>
+            <h2 class="location-title" id="location-heading" data-i18n="location_title">Findet uns!</h2>
+
+            <ul class="info-list">
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">📍</span>
+                <div class="info-text">
+                  <strong data-i18n="location_venue">Markthalle Pfefferberg</strong>
+                  <span>
+                    Schönhauser Allee 176, 10119 Berlin<br/>
+                    <span data-i18n="location_near">Direkt neben U-Bahn Senefelderplatz · Prenzlauer Berg</span>
+                  </span>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">🚇</span>
+                <div class="info-text">
+                  <strong data-i18n="location_transit_label">Öffentliche Verkehrsmittel</strong>
+                  <span data-i18n="location_transit_detail">U2 Senefelderplatz – 1 Minute zu Fuß</span>
+                </div>
+              </li>
+              <li class="info-item">
+                <span class="info-icon" aria-hidden="true">🕐</span>
+                <div class="info-text">
+                  <strong data-i18n="location_hours_label">Öffnungszeiten</strong>
+                  <!-- TODO: Update these hours with your confirmed schedule -->
+                  <table class="hours-table" aria-label="Öffnungszeiten La Victoria Berlin">
+                    <tbody>
+                      <tr>
+                        <td data-i18n="h_mon_tue">Mo – Di</td>
+                        <td class="closed-day" data-i18n="h_closed">Geschlossen</td>
+                      </tr>
+                      <tr>
+                        <td data-i18n="h_wed_thu">Mi – Do</td>
+                        <td>17:00 – 22:00</td>
+                      </tr>
+                      <tr>
+                        <td data-i18n="h_fri">Fr</td>
+                        <td>17:00 – 23:00</td>
+                      </tr>
+                      <tr>
+                        <td data-i18n="h_sat_sun">Sa – So</td>
+                        <td>12:00 – 22:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+            </ul>
+
+            <a href="https://maps.google.com/?q=Markthalle+Pfefferberg+Sch%C3%B6nhauser+Allee+176+Berlin"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-black"
+               data-i18n="location_maps_btn">
+              Google Maps öffnen
+            </a>
+          </div>
+
+          <!-- OpenStreetMap embed – no API key required -->
+          <div class="map-frame reveal reveal-d2">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=13.408%2C52.537%2C13.419%2C52.542&layer=mapnik&marker=52.53956%2C13.41349"
+              loading="lazy"
+              title="Karte: La Victoria Berlin – Markthalle Pfefferberg, Schönhauser Allee 176, Prenzlauer Berg"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="reveal">
+            <span class="eyebrow about-eyebrow" data-i18n="about_eyebrow">Über uns</span>
+            <h2 class="about-title" id="about-heading">
+              <span data-i18n="about_title_1">Von den</span><br/>
+              <em data-i18n="about_title_2">Straßen Limas</em><br/>
+              <span data-i18n="about_title_3">nach Berlin</span>
+            </h2>
+            <p class="about-body" data-i18n="about_p1">
+              La Victoria ist Berlins erstes peruanisches Street Food Restaurant – geboren aus der Leidenschaft für Limas lebhafte Märkte und den unverwechselbaren Geschmack der peruanischen Straßenküche. Wir haben uns in der Markthalle Pfefferberg niedergelassen, einem der aufregendsten Food-Hotspots in Prenzlauer Berg.
+            </p>
+            <p class="about-body" data-i18n="about_p2">
+              Jedes Gericht ist ein Stück Heimat: authentische Rezepte, frische Zutaten, zubereitet mit Cariño. Vom feurigen Ceviche über knusprige Anticuchos bis zur goldenen Papa Rellena – willkommen bei <strong>La Rica Vicky</strong>!
+            </p>
+            <span class="about-badge">
+              📍 <span data-i18n="about_location_badge">Markthalle Pfefferberg · Prenzlauer Berg</span>
+            </span>
+          </div>
+
+          <div class="about-img reveal reveal-d2">
+            <img src="images-ejemplo/567954855_17849496012577836_1120411155393272350_n.jpg"
+                 alt="La Victoria Berlin – peruanischer Street-Food-Wagen von oben, Gäste stehen Schlange"
+                 loading="lazy" width="480" height="640" />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY
+         ============================================================ -->
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+
+        <header class="gallery-header reveal">
+          <span class="eyebrow gallery-eyebrow" data-i18n="gallery_eyebrow">✦ La Rica Vicky ✦</span>
+          <h2 class="gallery-title" id="gallery-heading" data-i18n="gallery_title">Galerie</h2>
+        </header>
+
+        <div class="gallery-grid">
+          <div class="g-item reveal">
+            <img src="images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg"
+                 alt="Ceviche Mixto mit Fisch, Oktopus und Garnelen – La Victoria Berlin. Que Pique Rico Carajo!"
+                 loading="lazy" />
+          </div>
+          <div class="g-item reveal reveal-d1">
+            <img src="images-ejemplo/619995436_17861709765577836_5003048309959799805_n.jpg"
+                 alt="Fancy a Ceviche? – Frischer Fisch für das Ceviche bei La Victoria Berlin"
+                 loading="lazy" />
+          </div>
+          <div class="g-item reveal reveal-d2">
+            <img src="images-ejemplo/567529306_17849494968577836_6187494094717055025_n.jpg"
+                 alt="La Victoria Berlin – Peruvian Street Food Stand mit Sonnenschirm, Markthalle Pfefferberg"
+                 loading="lazy" />
+          </div>
+          <div class="g-item reveal reveal-d3">
+            <img src="images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
+                 alt="Gäste bei La Victoria Berlin – Peruvian Street Food in der Markthalle Pfefferberg Prenzlauer Berg"
+                 loading="lazy" />
+          </div>
+          <div class="g-item reveal reveal-d1">
+            <img src="images-ejemplo/567954855_17849496012577836_1120411155393272350_n.jpg"
+                 alt="La Victoria Berlin – Vogelperspektive auf den Street-Food-Stand und die Schlange"
+                 loading="lazy" />
+          </div>
+          <div class="g-item reveal reveal-d2">
+            <img src="images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
+                 alt="La Victoria Berlin – Peruanisches Straßenfood Erlebnis in Berlin"
+                 loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT / SOCIAL
+         NOTE: Replace WhatsApp number and email with real data
+         ============================================================ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+
+        <span class="eyebrow contact-eyebrow" data-i18n="contact_eyebrow">Kontakt &amp; Social</span>
+        <h2 class="contact-title" id="contact-heading">¡La Rica Vicky!</h2>
+        <p class="contact-sub" data-i18n="contact_sub">
+          Folgt uns auf Instagram für tägliche Updates, Sonderangebote und peruanische Vibes direkt aus der Markthalle Pfefferberg.
+        </p>
+
+        <div class="social-row">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/lavictoriaberlin/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="social-btn"
+             aria-label="La Victoria Berlin auf Instagram folgen">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            @lavictoriaberlin
+          </a>
+
+          <!-- WhatsApp – TODO: Replace +491234567890 with real number -->
+          <a href="https://wa.me/491234567890"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="social-btn"
+             aria-label="La Victoria Berlin per WhatsApp kontaktieren">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.940 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span data-i18n="contact_whatsapp">WhatsApp</span>
+          </a>
+
+          <!-- Email – TODO: Replace with real email -->
+          <a href="mailto:hola@lavictoriaberlin.com"
+             class="social-btn"
+             aria-label="La Victoria Berlin per E-Mail kontaktieren">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span data-i18n="contact_email">E-Mail</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <img src="logo.png" alt="La Victoria Berlin" class="footer-logo" width="120" height="30" loading="lazy" />
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#menu"     data-i18n="footer_menu">Menü</a>
+          <a href="#events"   data-i18n="footer_events">Reservierung</a>
+          <a href="#location" data-i18n="footer_location">Standort</a>
+          <a href="#about"    data-i18n="footer_about">Über uns</a>
+          <a href="#contact"  data-i18n="footer_contact">Kontakt</a>
+          <a href="https://www.instagram.com/lavictoriaberlin/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </nav>
+        <p class="footer-copy" data-i18n="footer_copy">
+          © 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlin
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       - i18n translations & language switching
+       - Language auto-detection & localStorage persistence
+       - Scroll-reveal IntersectionObserver
+       - Sticky nav shrink on scroll
+       ============================================================ -->
+  <script>
+    /* ============================================================
+       i18n – All text strings for 5 languages
+       ============================================================ */
+    const i18n = {
+      de: {
+        nav_find:             "Uns finden",
+        hero_badge:           "✦ Berlins erstes Peruvian Street Food",
+        hero_tagline:         "Von Limas Straßen direkt nach Prenzlauer Berg.",
+        hero_cta_menu:        "Menü ansehen",
+        hero_cta_reserve:     "Reservieren",
+        menu_eyebrow:         "Speisekarte",
+        menu_title:           "MENÚ",
+        menu_subtitle:        "Made with Cariño ✦",
+        anticucho_tag:        "✦ Authentic Peruvian Grill",
+        anticucho_sub:        "Vom Grill — direkt von Limas Straßenecken",
+        anticucho_desc:       "Spieße, mariniert mit Gewürzen, Feuer und Liebe. Gegrillt und serviert mit Kartoffeln und Choclo – dem großen peruanischen Mais.",
+        anticucho_beef:       "Rinderherz",
+        anticucho_chicken:    "Hähnchen",
+        anticucho_mushroom:   "Austernpilze",
+        ceviche_tag:          "✦ Fresh, Fiery & Unapologetically Peruvian",
+        ceviche_sub:          "Frisch · Feurig · Unverwechselbar peruanisch",
+        ceviche_desc:         "Fisch, gegart in Limettensaft, mit roter Zwiebel und Rocoto-Chili – das Street-Food-Rezept, auf das jeder Peruaner schwört. Serviert kalt und feurig.",
+        ceviche_fish:         "Fisch",
+        ceviche_mixed:        "Gemischt",
+        ceviche_mixed_note:   "(Fisch, Oktopus, Garnelen)",
+        ceviche_mango:        "Mango",
+        papa_tag:             "✦ The Queen of Peruvian Street",
+        papa_sub:             "Die Königin des peruanischen Straßenfood",
+        papa_desc:            "Knusprige Kartoffelhülle, gefüllt mit würzigem Rindfleisch, karamellisierten Zwiebeln, Oliven und Ei. Mit Salsa Criolla für den perfekten Kick!",
+        papa_meat:            "Fleisch",
+        papa_mushroom:        "Pilze",
+        sangu_label:          "✦ Sanguches — Made with Cariño",
+        pancon_sub:           "Pork in a Bun · Die Straßenlegende",
+        pancon_desc:          "Zartes Schweinebauch mit Süßkartoffelscheiben, Salsa Criolla und hausgemachten Saucen. Purer Genuss zwischen zwei Hälften Brot.",
+        sangu_label2:         "✦ Sanguches — Made with Cariño",
+        pollo_sub:            "National Pride in Sandwich Form",
+        pollo_desc:           "Geräuchertes Rotisserie-Hähnchen im weichen Brioche-Brötchen mit Salat, Tomate, gelber Chilisauce und Pommes. Perus liebstes Hähnchen – auf unsere Art.",
+        menu_more_title:      "¿Más?",
+        menu_more_sub:        "Folg uns auf Instagram für Specials & saisonale Gerichte",
+        events_eyebrow:       "Feiern & Reservieren",
+        events_title:         "Feiert\nmit uns!",
+        events_body:          "La Victoria ist der perfekte Ort für euren besonderen Moment in der Markthalle Pfefferberg. Ob Geburtstag, Familientreffen oder ein Abend mit Freunden – wir freuen uns auf euch. Reservierungen sind kostenlos und unkompliziert.",
+        perk_birthday:        "Geburtstagsfeiern",
+        perk_family:          "Familientreffen",
+        perk_friends:         "Freundesabende",
+        perk_free:            "Reservierung immer kostenlos",
+        events_cta:           "Jetzt reservieren",
+        location_eyebrow:     "Wo wir sind",
+        location_title:       "Findet uns!",
+        location_venue:       "Markthalle Pfefferberg",
+        location_near:        "Direkt neben U-Bahn Senefelderplatz · Prenzlauer Berg",
+        location_transit_label: "Öffentliche Verkehrsmittel",
+        location_transit_detail: "U2 Senefelderplatz – 1 Minute zu Fuß",
+        location_hours_label: "Öffnungszeiten",
+        h_mon_tue:            "Mo – Di",
+        h_closed:             "Geschlossen",
+        h_wed_thu:            "Mi – Do",
+        h_fri:                "Fr",
+        h_sat_sun:            "Sa – So",
+        location_maps_btn:    "Google Maps öffnen",
+        about_eyebrow:        "Über uns",
+        about_title_1:        "Von den",
+        about_title_2:        "Straßen Limas",
+        about_title_3:        "nach Berlin",
+        about_p1:             "La Victoria ist Berlins erstes peruanisches Street Food Restaurant – geboren aus der Leidenschaft für Limas lebhafte Märkte und den unverwechselbaren Geschmack der peruanischen Straßenküche. Wir haben uns in der Markthalle Pfefferberg niedergelassen, einem der aufregendsten Food-Hotspots in Prenzlauer Berg.",
+        about_p2:             "Jedes Gericht ist ein Stück Heimat: authentische Rezepte, frische Zutaten, zubereitet mit Cariño. Vom feurigen Ceviche über knusprige Anticuchos bis zur goldenen Papa Rellena – willkommen bei <strong>La Rica Vicky</strong>!",
+        about_location_badge: "Markthalle Pfefferberg · Prenzlauer Berg",
+        gallery_eyebrow:      "✦ La Rica Vicky ✦",
+        gallery_title:        "Galerie",
+        contact_eyebrow:      "Kontakt & Social",
+        contact_sub:          "Folgt uns auf Instagram für tägliche Updates, Sonderangebote und peruanische Vibes direkt aus der Markthalle Pfefferberg.",
+        contact_whatsapp:     "WhatsApp",
+        contact_email:        "E-Mail",
+        footer_menu:          "Menü",
+        footer_events:        "Reservierung",
+        footer_location:      "Standort",
+        footer_about:         "Über uns",
+        footer_contact:       "Kontakt",
+        footer_copy:          "© 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlin",
+      },
+
+      en: {
+        nav_find:             "Find us",
+        hero_badge:           "✦ Berlin's First Peruvian Street Food",
+        hero_tagline:         "From the streets of Lima straight to Prenzlauer Berg.",
+        hero_cta_menu:        "See the menu",
+        hero_cta_reserve:     "Reserve a table",
+        menu_eyebrow:         "Our menu",
+        menu_title:           "MENU",
+        menu_subtitle:        "Made with Cariño ✦",
+        anticucho_tag:        "✦ Authentic Peruvian Grill",
+        anticucho_sub:        "From the grill — straight from Lima's street corners",
+        anticucho_desc:       "Skewers marinated with spice, fire and love. Grilled to perfection, served with potato and choclo — large Peruvian corn.",
+        anticucho_beef:       "Beef Heart",
+        anticucho_chicken:    "Chicken",
+        anticucho_mushroom:   "Oyster Mushroom",
+        ceviche_tag:          "✦ Fresh, Fiery & Unapologetically Peruvian",
+        ceviche_sub:          "Fresh · Fiery · Unapologetically Peruvian",
+        ceviche_desc:         "Cubes of fish cured in lime, mixed with red onion and rocoto chilli — the street-style recipe every Peruvian swears by. Served cold and punchy.",
+        ceviche_fish:         "Fish",
+        ceviche_mixed:        "Mixed",
+        ceviche_mixed_note:   "(Fish, Octopus, Shrimp)",
+        ceviche_mango:        "Mango",
+        papa_tag:             "✦ The Queen of Peruvian Street",
+        papa_sub:             "The Queen of Peruvian Street Food",
+        papa_desc:            "A crispy potato shell stuffed with seasoned beef, caramelized onion, olives and egg. Served with salsa criolla for that perfect kick!",
+        papa_meat:            "Meat",
+        papa_mushroom:        "Mushrooms",
+        sangu_label:          "✦ Sanguches — Made with Cariño",
+        pancon_sub:           "Pork in a Bun · The Street Legend",
+        pancon_desc:          "Tender pork belly with sweet potato slices, salsa criolla and our signature house sauces. Pure comfort between two halves of bread.",
+        sangu_label2:         "✦ Sanguches — Made with Cariño",
+        pollo_sub:            "National Pride in Sandwich Form",
+        pollo_desc:           "Smoked rotisserie chicken in a soft brioche bun with lettuce, tomato, yellow chili sauce and shoestring fries. Peru's favourite chicken, done our way.",
+        menu_more_title:      "More?",
+        menu_more_sub:        "Follow us on Instagram for specials & seasonal dishes",
+        events_eyebrow:       "Celebrate & Reserve",
+        events_title:         "Celebrate\nwith us!",
+        events_body:          "La Victoria is the perfect spot for your special moment at Markthalle Pfefferberg. Whether it's a birthday, family gathering or a night out with friends — we'd love to have you! Reservations are always free.",
+        perk_birthday:        "Birthday parties",
+        perk_family:          "Family gatherings",
+        perk_friends:         "Friends nights out",
+        perk_free:            "Reservations always free",
+        events_cta:           "Reserve now",
+        location_eyebrow:     "Where we are",
+        location_title:       "Find us!",
+        location_venue:       "Markthalle Pfefferberg",
+        location_near:        "Right next to U-Bahn Senefelderplatz · Prenzlauer Berg",
+        location_transit_label: "Public transport",
+        location_transit_detail: "U2 Senefelderplatz — 1 minute walk",
+        location_hours_label: "Opening hours",
+        h_mon_tue:            "Mon – Tue",
+        h_closed:             "Closed",
+        h_wed_thu:            "Wed – Thu",
+        h_fri:                "Fri",
+        h_sat_sun:            "Sat – Sun",
+        location_maps_btn:    "Open Google Maps",
+        about_eyebrow:        "About us",
+        about_title_1:        "From the",
+        about_title_2:        "Streets of Lima",
+        about_title_3:        "to Berlin",
+        about_p1:             "La Victoria is Berlin's first Peruvian street food restaurant — born from a passion for Lima's vibrant markets and unmistakable flavours. We're based at Markthalle Pfefferberg, one of Prenzlauer Berg's most exciting food destinations.",
+        about_p2:             "Every dish is a piece of home: authentic recipes, fresh ingredients, prepared with Cariño. From fiery Ceviche to grilled Anticuchos and crispy Papa Rellena — welcome to <strong>La Rica Vicky</strong>!",
+        about_location_badge: "Markthalle Pfefferberg · Prenzlauer Berg",
+        gallery_eyebrow:      "✦ La Rica Vicky ✦",
+        gallery_title:        "Gallery",
+        contact_eyebrow:      "Contact & Social",
+        contact_sub:          "Follow us on Instagram for daily updates, specials and Peruvian vibes straight from Markthalle Pfefferberg.",
+        contact_whatsapp:     "WhatsApp",
+        contact_email:        "Email",
+        footer_menu:          "Menu",
+        footer_events:        "Reservations",
+        footer_location:      "Location",
+        footer_about:         "About us",
+        footer_contact:       "Contact",
+        footer_copy:          "© 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlin",
+      },
+
+      es: {
+        nav_find:             "Encuéntranos",
+        hero_badge:           "✦ El primer Street Food peruano en Berlín",
+        hero_tagline:         "De las calles de Lima directo a Prenzlauer Berg.",
+        hero_cta_menu:        "Ver el menú",
+        hero_cta_reserve:     "Reservar mesa",
+        menu_eyebrow:         "Nuestra carta",
+        menu_title:           "MENÚ",
+        menu_subtitle:        "Hecho con Cariño ✦",
+        anticucho_tag:        "✦ Parrilla peruana auténtica",
+        anticucho_sub:        "De la parrilla — directo de las esquinas de Lima",
+        anticucho_desc:       "Pinchos marinados con especias, fuego y amor. Asados a la perfección y servidos con papas y choclo – el maíz grande peruano.",
+        anticucho_beef:       "Corazón de res",
+        anticucho_chicken:    "Pollo",
+        anticucho_mushroom:   "Champiñones ostra",
+        ceviche_tag:          "✦ Fresco, picante y peruano sin disculpas",
+        ceviche_sub:          "Fresco · Picante · Peruano sin disculpas",
+        ceviche_desc:         "Trozos de pescado curados en limón, con cebolla roja y ají rocoto – la receta callejera por la que todo peruano jura. Servido frío y con punch.",
+        ceviche_fish:         "Pescado",
+        ceviche_mixed:        "Mixto",
+        ceviche_mixed_note:   "(Pescado, Pulpo, Langostinos)",
+        ceviche_mango:        "Mango",
+        papa_tag:             "✦ La reina del street food peruano",
+        papa_sub:             "La reina de la calle peruana",
+        papa_desc:            "Cubierta de papa crujiente rellena de carne sazonada, cebolla caramelizada, aceitunas y huevo. Con salsa criolla para el toque perfecto.",
+        papa_meat:            "Carne",
+        papa_mushroom:        "Champiñones",
+        sangu_label:          "✦ Sanguches — Hecho con Cariño",
+        pancon_sub:           "Cerdo en pan · La leyenda callejera",
+        pancon_desc:          "Panceta de cerdo tierna con tajadas de camote, salsa criolla y nuestras salsas de la casa. Puro confort entre dos mitades de pan.",
+        sangu_label2:         "✦ Sanguches — Hecho con Cariño",
+        pollo_sub:            "Orgullo nacional en formato sánguche",
+        pollo_desc:           "Pollo a la brasa en brioche suave con lechuga, tomate, ají amarillo y papas bastón. El pollo favorito del Perú, a nuestra manera.",
+        menu_more_title:      "¿Más?",
+        menu_more_sub:        "Síguenos en Instagram para especiales y platos de temporada",
+        events_eyebrow:       "Celebra y reserva",
+        events_title:         "¡Celebra\ncon nosotros!",
+        events_body:          "La Victoria es el lugar perfecto para tu momento especial en la Markthalle Pfefferberg. Ya sea cumpleaños, reunión familiar o una noche con amigos – ¡te esperamos! Las reservas son siempre gratuitas.",
+        perk_birthday:        "Fiestas de cumpleaños",
+        perk_family:          "Reuniones familiares",
+        perk_friends:         "Salidas con amigos",
+        perk_free:            "Reserva siempre gratuita",
+        events_cta:           "Reservar ahora",
+        location_eyebrow:     "Dónde estamos",
+        location_title:       "¡Encuéntranos!",
+        location_venue:       "Markthalle Pfefferberg",
+        location_near:        "Justo al lado del metro Senefelderplatz · Prenzlauer Berg",
+        location_transit_label: "Transporte público",
+        location_transit_detail: "U2 Senefelderplatz – 1 minuto a pie",
+        location_hours_label: "Horario",
+        h_mon_tue:            "Lun – Mar",
+        h_closed:             "Cerrado",
+        h_wed_thu:            "Mié – Jue",
+        h_fri:                "Vie",
+        h_sat_sun:            "Sáb – Dom",
+        location_maps_btn:    "Abrir Google Maps",
+        about_eyebrow:        "Sobre nosotros",
+        about_title_1:        "De las",
+        about_title_2:        "calles de Lima",
+        about_title_3:        "a Berlín",
+        about_p1:             "La Victoria es el primer restaurante de street food peruano en Berlín – nacido de la pasión por los mercados vibrantes de Lima y su sabor inconfundible. Nos encontramos en la Markthalle Pfefferberg, uno de los destinos gastronómicos más emocionantes de Prenzlauer Berg.",
+        about_p2:             "Cada plato es un trozo de hogar: recetas auténticas, ingredientes frescos, preparados con cariño. Desde el picante ceviche hasta los anticuchos a la brasa y la crujiente papa rellena – ¡bienvenidos a <strong>La Rica Vicky</strong>!",
+        about_location_badge: "Markthalle Pfefferberg · Prenzlauer Berg",
+        gallery_eyebrow:      "✦ La Rica Vicky ✦",
+        gallery_title:        "Galería",
+        contact_eyebrow:      "Contacto y redes",
+        contact_sub:          "Síguenos en Instagram para actualizaciones diarias, especiales y toda la vibra peruana desde la Markthalle Pfefferberg.",
+        contact_whatsapp:     "WhatsApp",
+        contact_email:        "Correo",
+        footer_menu:          "Menú",
+        footer_events:        "Reservas",
+        footer_location:      "Ubicación",
+        footer_about:         "Sobre nosotros",
+        footer_contact:       "Contacto",
+        footer_copy:          "© 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlín",
+      },
+
+      it: {
+        nav_find:             "Trovaci",
+        hero_badge:           "✦ Il primo Street Food peruviano a Berlino",
+        hero_tagline:         "Dalle strade di Lima direttamente a Prenzlauer Berg.",
+        hero_cta_menu:        "Vedi il menu",
+        hero_cta_reserve:     "Prenota",
+        menu_eyebrow:         "Il nostro menu",
+        menu_title:           "MENU",
+        menu_subtitle:        "Fatto con Cariño ✦",
+        anticucho_tag:        "✦ Autentica griglia peruviana",
+        anticucho_sub:        "Dalla griglia — dagli angoli di Lima",
+        anticucho_desc:       "Spiedini marinati con spezie, fuoco e amore. Grigliati alla perfezione e serviti con patate e choclo — il mais grande peruviano.",
+        anticucho_beef:       "Cuore di manzo",
+        anticucho_chicken:    "Pollo",
+        anticucho_mushroom:   "Funghi ostrica",
+        ceviche_tag:          "✦ Fresco, piccante e peruviano senza compromessi",
+        ceviche_sub:          "Fresco · Piccante · Peruviano senza compromessi",
+        ceviche_desc:         "Cubetti di pesce marinati nel lime con cipolla rossa e peperoncino rocoto — la ricetta da strada su cui ogni peruviano giura. Servito freddo e deciso.",
+        ceviche_fish:         "Pesce",
+        ceviche_mixed:        "Misto",
+        ceviche_mixed_note:   "(Pesce, Polpo, Gamberi)",
+        ceviche_mango:        "Mango",
+        papa_tag:             "✦ La regina del cibo di strada peruviano",
+        papa_sub:             "La regina della strada peruviana",
+        papa_desc:            "Guscio croccante di patate ripieno di manzo speziato, cipolla caramellata, olive e uovo. Servito con salsa criolla per il tocco perfetto!",
+        papa_meat:            "Carne",
+        papa_mushroom:        "Funghi",
+        sangu_label:          "✦ Sanguches — Fatto con Cariño",
+        pancon_sub:           "Maiale nel panino · La leggenda di strada",
+        pancon_desc:          "Pancetta di maiale tenera con fette di patata dolce, salsa criolla e le nostre salse della casa. Puro comfort tra due metà di pane.",
+        sangu_label2:         "✦ Sanguches — Fatto con Cariño",
+        pollo_sub:            "Orgoglio nazionale in formato panino",
+        pollo_desc:           "Pollo allo spiedo affumicato in un morbido brioche con lattuga, pomodoro, salsa di peperoncino giallo e patate fritte. Il pollo preferito del Perù, a modo nostro.",
+        menu_more_title:      "Altro?",
+        menu_more_sub:        "Seguici su Instagram per speciali e piatti stagionali",
+        events_eyebrow:       "Festeggia e prenota",
+        events_title:         "Festeggia\ncon noi!",
+        events_body:          "La Victoria è il posto perfetto per il tuo momento speciale alla Markthalle Pfefferberg. Che sia un compleanno, una riunione di famiglia o una serata con amici — ti aspettiamo! Le prenotazioni sono sempre gratuite.",
+        perk_birthday:        "Feste di compleanno",
+        perk_family:          "Riunioni di famiglia",
+        perk_friends:         "Serate con amici",
+        perk_free:            "Prenotazione sempre gratuita",
+        events_cta:           "Prenota ora",
+        location_eyebrow:     "Dove siamo",
+        location_title:       "Trovaci!",
+        location_venue:       "Markthalle Pfefferberg",
+        location_near:        "Proprio accanto alla metro Senefelderplatz · Prenzlauer Berg",
+        location_transit_label: "Trasporti pubblici",
+        location_transit_detail: "U2 Senefelderplatz — 1 minuto a piedi",
+        location_hours_label: "Orari di apertura",
+        h_mon_tue:            "Lun – Mar",
+        h_closed:             "Chiuso",
+        h_wed_thu:            "Mer – Gio",
+        h_fri:                "Ven",
+        h_sat_sun:            "Sab – Dom",
+        location_maps_btn:    "Apri Google Maps",
+        about_eyebrow:        "Chi siamo",
+        about_title_1:        "Dalle",
+        about_title_2:        "strade di Lima",
+        about_title_3:        "a Berlino",
+        about_p1:             "La Victoria è il primo ristorante di street food peruviano a Berlino — nato dalla passione per i mercati animati di Lima e i suoi sapori inimitabili. Siamo alla Markthalle Pfefferberg, una delle destinazioni gastronomiche più emozionanti di Prenzlauer Berg.",
+        about_p2:             "Ogni piatto è un pezzo di casa: ricette autentiche, ingredienti freschi, preparati con Cariño. Dal Ceviche piccante agli Anticuchos grigliati fino alla croccante Papa Rellena — benvenuti da <strong>La Rica Vicky</strong>!",
+        about_location_badge: "Markthalle Pfefferberg · Prenzlauer Berg",
+        gallery_eyebrow:      "✦ La Rica Vicky ✦",
+        gallery_title:        "Galleria",
+        contact_eyebrow:      "Contatti e Social",
+        contact_sub:          "Seguici su Instagram per aggiornamenti quotidiani, speciali e vibes peruviane direttamente dalla Markthalle Pfefferberg.",
+        contact_whatsapp:     "WhatsApp",
+        contact_email:        "Email",
+        footer_menu:          "Menu",
+        footer_events:        "Prenotazioni",
+        footer_location:      "Posizione",
+        footer_about:         "Chi siamo",
+        footer_contact:       "Contatti",
+        footer_copy:          "© 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlino",
+      },
+
+      fr: {
+        nav_find:             "Nous trouver",
+        hero_badge:           "✦ Le premier Street Food péruvien à Berlin",
+        hero_tagline:         "Des rues de Lima directement à Prenzlauer Berg.",
+        hero_cta_menu:        "Voir le menu",
+        hero_cta_reserve:     "Réserver",
+        menu_eyebrow:         "Notre carte",
+        menu_title:           "MENU",
+        menu_subtitle:        "Fait avec Cariño ✦",
+        anticucho_tag:        "✦ Grill péruvien authentique",
+        anticucho_sub:        "Du grill — directement des coins de rue de Lima",
+        anticucho_desc:       "Des brochettes marinées aux épices, au feu et à l'amour. Grillées à la perfection et servies avec pommes de terre et choclo — le grand maïs péruvien.",
+        anticucho_beef:       "Cœur de bœuf",
+        anticucho_chicken:    "Poulet",
+        anticucho_mushroom:   "Champignons huîtres",
+        ceviche_tag:          "✦ Frais, relevé et résolument péruvien",
+        ceviche_sub:          "Frais · Relevé · Résolument péruvien",
+        ceviche_desc:         "Cubes de poisson marinés au citron vert, avec oignon rouge et piment rocoto — la recette de rue sur laquelle tout Péruvien jure. Servi froid et tonique.",
+        ceviche_fish:         "Poisson",
+        ceviche_mixed:        "Mixte",
+        ceviche_mixed_note:   "(Poisson, Poulpe, Crevettes)",
+        ceviche_mango:        "Mangue",
+        papa_tag:             "✦ La reine du street food péruvien",
+        papa_sub:             "La reine de la rue péruvienne",
+        papa_desc:            "Une coque de pomme de terre croustillante farcie de bœuf épicé, oignon caramélisé, olives et œuf. Servie avec salsa criolla pour le coup de fouet parfait !",
+        papa_meat:            "Viande",
+        papa_mushroom:        "Champignons",
+        sangu_label:          "✦ Sanguches — Fait avec Cariño",
+        pancon_sub:           "Porc en sandwich · La légende de la rue",
+        pancon_desc:          "Poitrine de porc tendre avec tranches de patate douce, salsa criolla et nos sauces maison. Pur réconfort entre deux moitiés de pain.",
+        sangu_label2:         "✦ Sanguches — Fait avec Cariño",
+        pollo_sub:            "Fierté nationale en format sandwich",
+        pollo_desc:           "Poulet rôti fumé dans un brioche moelleux avec laitue, tomate, sauce piment jaune et frites allumettes. Le poulet préféré du Pérou, à notre façon.",
+        menu_more_title:      "Encore ?",
+        menu_more_sub:        "Suivez-nous sur Instagram pour les spéciaux et plats de saison",
+        events_eyebrow:       "Fêtez & Réservez",
+        events_title:         "Fêtez\navec nous !",
+        events_body:          "La Victoria est l'endroit idéal pour votre moment spécial à la Markthalle Pfefferberg. Que ce soit un anniversaire, une réunion de famille ou une soirée entre amis — on vous attend ! Les réservations sont toujours gratuites.",
+        perk_birthday:        "Fêtes d'anniversaire",
+        perk_family:          "Réunions de famille",
+        perk_friends:         "Soirées entre amis",
+        perk_free:            "Réservation toujours gratuite",
+        events_cta:           "Réserver maintenant",
+        location_eyebrow:     "Où nous sommes",
+        location_title:       "Trouvez-nous !",
+        location_venue:       "Markthalle Pfefferberg",
+        location_near:        "Juste à côté du métro Senefelderplatz · Prenzlauer Berg",
+        location_transit_label: "Transports en commun",
+        location_transit_detail: "U2 Senefelderplatz — 1 minute à pied",
+        location_hours_label: "Horaires d'ouverture",
+        h_mon_tue:            "Lun – Mar",
+        h_closed:             "Fermé",
+        h_wed_thu:            "Mer – Jeu",
+        h_fri:                "Ven",
+        h_sat_sun:            "Sam – Dim",
+        location_maps_btn:    "Ouvrir Google Maps",
+        about_eyebrow:        "À propos",
+        about_title_1:        "Des rues",
+        about_title_2:        "de Lima",
+        about_title_3:        "à Berlin",
+        about_p1:             "La Victoria est le premier restaurant de street food péruvien à Berlin — né de la passion pour les marchés animés de Lima et ses saveurs inimitables. Nous sommes installés à la Markthalle Pfefferberg, l'une des destinations culinaires les plus excitantes de Prenzlauer Berg.",
+        about_p2:             "Chaque plat est un bout du pays : recettes authentiques, ingrédients frais, préparés avec Cariño. Du Ceviche piquant aux Anticuchos grillés en passant par la croustillante Papa Rellena — bienvenue chez <strong>La Rica Vicky</strong> !",
+        about_location_badge: "Markthalle Pfefferberg · Prenzlauer Berg",
+        gallery_eyebrow:      "✦ La Rica Vicky ✦",
+        gallery_title:        "Galerie",
+        contact_eyebrow:      "Contact & Réseaux",
+        contact_sub:          "Suivez-nous sur Instagram pour les mises à jour quotidiennes, les spéciaux et les vibes péruviennes depuis la Markthalle Pfefferberg.",
+        contact_whatsapp:     "WhatsApp",
+        contact_email:        "E-mail",
+        footer_menu:          "Menu",
+        footer_events:        "Réservations",
+        footer_location:      "Adresse",
+        footer_about:         "À propos",
+        footer_contact:       "Contact",
+        footer_copy:          "© 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlin",
+      }
+    };
+
+    /* Language metadata */
+    const langMeta = {
+      de: { flag: '🇩🇪', code: 'DE', html: 'de' },
+      en: { flag: '🇬🇧', code: 'EN', html: 'en' },
+      es: { flag: '🇪🇸', code: 'ES', html: 'es' },
+      it: { flag: '🇮🇹', code: 'IT', html: 'it' },
+      fr: { flag: '🇫🇷', code: 'FR', html: 'fr' },
+    };
+
+    let activeLang = 'de';
+
+    function setLang(lang) {
+      if (!i18n[lang]) return;
+      activeLang = lang;
+
+      /* Update html[lang] for accessibility & SEO */
+      document.documentElement.lang = langMeta[lang].html;
+
+      /* Replace every data-i18n element */
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[lang][key] !== undefined) {
+          /* Use innerHTML to allow <strong> tags in body copy */
+          el.innerHTML = i18n[lang][key];
+        }
+      });
+
+      /* Update nav indicator */
+      document.getElementById('flagEl').textContent = langMeta[lang].flag;
+      document.getElementById('codeEl').textContent = langMeta[lang].code;
+
+      /* Update active state in dropdown */
+      document.querySelectorAll('#langMenu button').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+
+      /* Close menu */
+      closeLangMenu();
+
+      /* Persist */
+      try { localStorage.setItem('lv_lang', lang); } catch(_) {}
+    }
+
+    function closeLangMenu() {
+      document.getElementById('langMenu').classList.remove('open');
+      document.getElementById('langToggle').setAttribute('aria-expanded', 'false');
+    }
+
+    /* Toggle dropdown */
+    document.getElementById('langToggle').addEventListener('click', function(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('langMenu');
+      const open = menu.classList.toggle('open');
+      this.setAttribute('aria-expanded', String(open));
+    });
+
+    /* Close on outside click */
+    document.addEventListener('click', function() { closeLangMenu(); });
+    document.getElementById('langMenu').addEventListener('click', e => e.stopPropagation());
+
+    /* Keyboard close */
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLangMenu(); });
+
+    /* Init: restore saved lang or auto-detect browser lang */
+    (function initLang() {
+      try {
+        const saved = localStorage.getItem('lv_lang');
+        if (saved && i18n[saved]) { setLang(saved); return; }
+      } catch(_) {}
+      const browser = (navigator.language || 'de').slice(0, 2).toLowerCase();
+      setLang(i18n[browser] ? browser : 'de');
+    })();
+
+    /* ============================================================
+       Scroll reveal – IntersectionObserver
+       ============================================================ */
+    const revealObs = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      }),
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ============================================================
+       Sticky nav – shrink padding on scroll
+       ============================================================ */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
