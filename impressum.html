@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Impressum – La Victoria Berlin</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://lavictoriaberlin.com/impressum.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
+        rel="stylesheet" />
+
+  <style>
+    :root {
+      --green:        #38b04a;
+      --green-dark:   #2d8f3b;
+      --yellow:       #f5c918;
+      --orange:       #f07328;
+      --black:        #111111;
+      --black-soft:   #1e1e1e;
+      --white:        #ffffff;
+      --off-white:    #f8f6f0;
+      --gray:         #aaaaaa;
+      --font-display:  'Boogaloo', cursive;
+      --font-headline: 'Bebas Neue', cursive;
+      --font-body:     'DM Sans', sans-serif;
+      --radius-sm:  8px;
+      --transition: 0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body  { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+    img   { max-width: 100%; height: auto; display: block; }
+    a     { color: inherit; text-decoration: none; }
+    ul    { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 5vw, 2rem);
+    }
+
+    /* Nav */
+    #nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 200;
+      background: var(--black);
+      border-bottom: 3px solid var(--yellow);
+      transition: padding var(--transition);
+    }
+    #nav.scrolled { padding-block: 0.25rem; }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.65rem;
+    }
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      filter: invert(1);
+      transition: opacity var(--transition);
+    }
+    .nav-logo:hover { opacity: 0.8; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Lang selector */
+    .lang-selector { position: relative; }
+    .lang-toggle {
+      background: var(--yellow);
+      border: 2px solid transparent;
+      border-radius: 50px;
+      padding: 0.3rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: background var(--transition);
+    }
+    .lang-toggle:hover { background: var(--white); }
+    .lang-menu {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--black-soft);
+      border: 2px solid var(--yellow);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      min-width: 155px;
+      z-index: 300;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .lang-menu.open { display: block; }
+    .lang-menu button {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      width: 100%;
+      padding: 0.6rem 1rem;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 0.88rem;
+      text-align: left;
+      transition: background var(--transition), color var(--transition);
+    }
+    .lang-menu button:hover { background: var(--yellow); color: var(--black); }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.45);
+      padding-block: 1.75rem;
+      border-top: 3px solid var(--yellow);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+      text-align: center;
+    }
+    .footer-logo { height: 34px; filter: invert(1); opacity: 0.5; }
+    .footer-nav  {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.25rem;
+    }
+    .footer-nav a { font-size: 0.85rem; transition: color var(--transition); }
+    .footer-nav a:hover { color: var(--yellow); }
+    .footer-copy { font-size: 0.78rem; }
+
+    /* Legal content */
+    .legal-page {
+      background: var(--off-white);
+      padding-top: calc(76px + clamp(2.5rem, 6vw, 4rem));
+      padding-bottom: clamp(2.5rem, 6vw, 4rem);
+      min-height: calc(100vh - 76px);
+      border-top: 3px solid var(--black);
+    }
+    .legal-page h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4vw, 2.75rem);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .legal-page h2 {
+      font-family: var(--font-headline);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      margin: 1.6rem 0 0.5rem;
+      text-transform: uppercase;
+    }
+    .legal-page p,
+    .legal-page address,
+    .legal-page li {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: rgba(17,17,17,0.82);
+      font-style: normal;
+    }
+    .legal-page p { margin-bottom: 0.75rem; }
+    .legal-page ul { padding-left: 1.2rem; list-style: disc; margin-bottom: 0.75rem; }
+    .legal-page a { text-decoration: underline; }
+    .legal-page address { margin-bottom: 0.75rem; }
+    .legal-pending {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-family: var(--font-headline);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      padding: 0.1rem 0.5rem;
+      border-radius: 3px;
+      margin-left: 0.3rem;
+      vertical-align: middle;
+    }
+    .legal-intro {
+      font-size: 0.92rem;
+      color: rgba(17,17,17,0.55);
+      margin-bottom: 2rem;
+    }
+    .other-legal {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed rgba(17,17,17,0.2);
+      font-size: 0.85rem;
+    }
+    .other-legal a { text-decoration: underline; color: var(--green-dark, #2d8f3b); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="container nav-inner">
+      <a href="./" aria-label="La Victoria Berlin – Startseite">
+        <img src="logo.png"
+             alt="La Victoria – Peruvian Street Food Berlin"
+             class="nav-logo"
+             width="160" height="40" />
+      </a>
+      <div class="nav-right">
+        <div class="lang-selector" role="navigation" aria-label="Sprachauswahl">
+          <button class="lang-toggle"
+                  id="langToggle"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="langMenu">
+            🇩🇪 <span>DE</span> <span aria-hidden="true">▾</span>
+          </button>
+          <div class="lang-menu" id="langMenu" role="menu">
+            <button onclick="goLang('de')" role="menuitem">🇩🇪 Deutsch</button>
+            <button onclick="goLang('en')" role="menuitem">🇬🇧 English</button>
+            <button onclick="goLang('es')" role="menuitem">🇪🇸 Español</button>
+            <button onclick="goLang('it')" role="menuitem">🇮🇹 Italiano</button>
+            <button onclick="goLang('fr')" role="menuitem">🇫🇷 Français</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="legal-page">
+      <div class="container">
+
+        <h1>Impressum</h1>
+        <p class="legal-intro">Angaben gemäß § 5 TMG</p>
+
+        <h2>Diensteanbieter</h2>
+        <address>
+          <strong>La Victoria Berlin</strong><span class="legal-pending">PENDING</span><br/>
+          Einzelunternehmen · Inhaber: Vorname Nachname<span class="legal-pending">PENDING</span><br/>
+          Schönhauser Allee 176<br/>
+          10119 Berlin<br/>
+          Deutschland
+        </address>
+
+        <h2>Kontakt</h2>
+        <p>
+          Telefon: <a href="tel:+49305550176">+49 30 555 01 76</a><span class="legal-pending">PENDING</span><br/>
+          E-Mail: <a href="mailto:hola@lavictoriaberlin.com">hola@lavictoriaberlin.com</a><span class="legal-pending">PENDING</span>
+        </p>
+
+        <h2>Umsatzsteuer-ID</h2>
+        <p>
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE000000000 <span class="legal-pending">PENDING</span>
+        </p>
+
+        <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+        <address>
+          Vorname Nachname<span class="legal-pending">PENDING</span><br/>
+          Schönhauser Allee 176, 10119 Berlin
+        </address>
+
+        <h2>EU-Streitschlichtung</h2>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+
+        <h2>Haftung für Inhalte &amp; Links</h2>
+        <p>
+          Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Für die Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich.
+        </p>
+
+        <div class="other-legal">
+          → <a href="datenschutz.html">Datenschutzerklärung</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <img src="logo.png" alt="La Victoria Berlin" class="footer-logo" width="120" height="30" loading="lazy" />
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="./">Menü</a>
+          <a href="./">Reservierung</a>
+          <a href="./">Standort</a>
+          <a href="./">Über uns</a>
+          <a href="./">Kontakt</a>
+          <a href="https://www.instagram.com/lavictoriaberlin/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="impressum.html" aria-current="page">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+        <p class="footer-copy">
+          © 2026 La Victoria Berlin · Peruanisches Street Food · Markthalle Pfefferberg, Berlin
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', scrollY > 60);
+    });
+
+    const toggle = document.getElementById('langToggle');
+    const menu   = document.getElementById('langMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.lang-selector')) {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    function goLang(code) {
+      const isProd = /(^|\.)lavictoriaberlin\.com$/i.test(location.hostname);
+      location.href = isProd ? 'https://' + code + '.lavictoriaberlin.com/' : './' + code + '/';
+    }
+  </script>
+
+</body>
+</html>

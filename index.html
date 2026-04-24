@@ -7,17 +7,22 @@
   <title>La Victoria Berlin – Peruanisches Street Food Berlin</title>
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://de.lavictoriaberlin.com/" />
-  <!-- Language detection: redirect to the right subdomain -->
+  <!-- Language detection: redirect to language subdomain in prod, or subfolder in dev/preview -->
   <script>
     (function () {
       var map = { de: 'de', en: 'en', es: 'es', it: 'it', fr: 'fr' };
       var lang = (navigator.language || navigator.userLanguage || 'de').slice(0, 2).toLowerCase();
-      window.location.replace('https://' + (map[lang] || 'de') + '.lavictoriaberlin.com/');
+      var target = map[lang] || 'de';
+      var isProd = /(^|\.)lavictoriaberlin\.com$/i.test(location.hostname);
+      var url = isProd
+        ? 'https://' + target + '.lavictoriaberlin.com/'
+        : target + '/';
+      globalThis.location.replace(url);
     })();
   </script>
-  <meta http-equiv="refresh" content="0;url=https://de.lavictoriaberlin.com/" />
+  <meta http-equiv="refresh" content="0;url=de/" />
 </head>
 <body>
-  <p><a href="https://de.lavictoriaberlin.com/">La Victoria Berlin – Peruanisches Street Food</a></p>
+  <p><a href="de/">La Victoria Berlin – Peruanisches Street Food</a></p>
 </body>
 </html>
