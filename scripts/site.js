@@ -13,6 +13,82 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
+// ── Mobile hamburger menu ────────────────────────────
+(function () {
+  const nav = document.getElementById('navbar');
+  const navLinks = document.querySelector('.nav-links');
+  if (!nav || !navLinks) return;
+
+  const lang = (document.documentElement.lang || 'de').slice(0, 2);
+  const labels = {
+    de: { open: 'Menü öffnen', close: 'Menü schließen', nav: 'Mobile Navigation' },
+    en: { open: 'Open menu',   close: 'Close menu',     nav: 'Mobile navigation' },
+    es: { open: 'Abrir menú',  close: 'Cerrar menú',    nav: 'Navegación móvil' },
+    fr: { open: 'Ouvrir le menu', close: 'Fermer le menu', nav: 'Navigation mobile' },
+    it: { open: 'Apri menu',   close: 'Chiudi menu',    nav: 'Navigazione mobile' },
+  };
+  const t = labels[lang] || labels.de;
+
+  // Use existing button/panel from HTML, or create them if not present
+  let btn = document.getElementById('navHamburger');
+  if (btn && btn.dataset.mobileInit) return; // already wired up by inline script
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.className = 'nav-hamburger';
+    btn.id = 'navHamburger';
+    [0, 1, 2].forEach(() => btn.appendChild(document.createElement('span')));
+    nav.appendChild(btn);
+  }
+  btn.setAttribute('aria-label', t.open);
+  btn.setAttribute('aria-expanded', 'false');
+
+  let panel = document.getElementById('mobileMenu');
+  if (!panel) {
+    panel = document.createElement('nav');
+    panel.className = 'mobile-menu';
+    panel.id = 'mobileMenu';
+    panel.setAttribute('aria-label', t.nav);
+    navLinks.querySelectorAll('a').forEach(a => {
+      const link = document.createElement('a');
+      link.href = a.getAttribute('href');
+      link.className = 'mobile-menu-link';
+      link.textContent = a.textContent.trim();
+      panel.appendChild(link);
+    });
+    nav.after(panel);
+  }
+  panel.setAttribute('aria-hidden', 'true');
+
+  function close() {
+    btn.classList.remove('open');
+    panel.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+    btn.setAttribute('aria-label', t.open);
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = btn.classList.toggle('open');
+    panel.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+    panel.setAttribute('aria-hidden', String(!isOpen));
+    btn.setAttribute('aria-label', isOpen ? t.close : t.open);
+  });
+
+  panel.querySelectorAll('.mobile-menu-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      close();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 10);
+    });
+  });
+
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target) && !panel.contains(e.target)) close();
+  });
+})();
+
 // Photo carousel v2 (all 51 reviews, interleaved photo/no-photo, DOM recycling)
 (function () {
   const track = document.getElementById('c2Track');

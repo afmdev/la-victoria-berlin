@@ -68,18 +68,64 @@
         <a href="#reviews2">BEWERTUNGEN</a>
         <a href="#location">ANFAHRT</a>
       </div>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation" aria-hidden="true">
+      <a href="#menu" class="mobile-menu-link">SPEISEKARTE</a>
+      <a href="#story" class="mobile-menu-link">UNSERE GESCHICHTE</a>
+      <a href="#faq" class="mobile-menu-link">FAQ</a>
+      <a href="#reviews2" class="mobile-menu-link">BEWERTUNGEN</a>
+      <a href="#location" class="mobile-menu-link">ANFAHRT</a>
+    </nav>
+    <script>
+    (function(){
+      var btn = document.getElementById('navHamburger');
+      var panel = document.getElementById('mobileMenu');
+      if (!btn || !panel) return;
+      function close() {
+        btn.classList.remove('open'); panel.classList.remove('open');
+        btn.setAttribute('aria-expanded','false'); panel.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-label','Menü öffnen');
+      }
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOpen = panel.classList.toggle('open');
+        btn.classList.toggle('open', isOpen);
+        btn.setAttribute('aria-expanded', String(isOpen));
+        panel.setAttribute('aria-hidden', String(!isOpen));
+        btn.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+      });
+      panel.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(a.getAttribute('href'));
+          close();
+          if (target) setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+        });
+      });
+      document.addEventListener('click', function(e) {
+        if (!document.getElementById('navbar').contains(e.target) && !panel.contains(e.target)) close();
+      });
+      btn.dataset.mobileInit = '1';
+    })();
+    </script>
 
     <main id="main-content">
 
     <!-- ══ HERO ════════════════════════════════════════ -->
     <section class="hero" aria-label="Willkommen bei La Victoria Berlin">
-      <h1 class="sr-only">La Victoria Berlin – Peruanische Straßenküche in Berlin</h1>
       <img src="../../assets/svg/logos/logo-menu-la-victoria-berlin.svg" alt="La Victoria Berlin" style="width:100%;max-width:100%;padding-top:40px;" />
       <div class="hero-rule"></div>
-      <p class="hero-sub">ECHTE PERUANISCHE STRASSENKÜCHE IN BERLIN</p>
+      <h1 class="hero-sub">DAS BESTE PERUANISCHE STREET FOOD IN BERLIN</h1>
       <div class="hero-rule"></div>
-      <p class="hero-tagline">Direkt aus den rauchigen Straßen Limas — BERLIN</p>
+      <p class="hero-tagline">Willkommen bei La Victoria – dem Zuhause für authentisches peruanisches Street Food in Berlin.</p>
+      <p class="hero-tagline">In der Markthalle Pfefferberg bringen wir die beliebtesten Spezialitäten Perus direkt auf den Teller: frisch zubereitetes Ceviche, gegrillte Anticuchos vom Holzkohlegrill, knusprige Chicharrón-Sandwiches, saftiges Pollo a la Brasa, hausgemachte Papa Rellena und unsere beliebte Salchipapa.</p>
+      <p class="hero-tagline">Originale Aromen, traditionelle Rezepte und echtes peruanisches Essen – mitten in Berlin. Entdecke die Vielfalt der peruanischen Küche und genieße Street Food wie auf den Straßen von Lima.</p>
       <button class="hero-cta" onclick="document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' })">
         SPEISEKARTE ANSEHEN
       </button>
