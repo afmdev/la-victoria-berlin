@@ -38,6 +38,13 @@
     ul    { list-style: none; }
     button { font-family: inherit; cursor: pointer; }
 
+    /* Prevent long words/URLs from breaking layouts in narrow columns */
+    :where(body, h1, h2, h3, h4, h5, h6, p, li, a, span, small, strong, em, address, blockquote, figcaption, td, th, label, button) {
+      overflow-wrap: anywhere;
+      word-break: normal;
+      hyphens: auto;
+    }
+
     .container {
       width: 100%;
       max-width: 1180px;
@@ -291,7 +298,7 @@
 
         <h2>4. OpenStreetMap (Karte)</h2>
         <p>
-          Auf der Seite <a href="./de/#location">Standort</a> binden wir eine Karte von OpenStreetMap (OpenStreetMap Foundation, UK) ein. Beim Laden der Karte wird deine IP-Adresse an die OSM-Server übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Details: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OSMF Privacy Policy</a>.
+          Auf der Seite <a href="./lang/de/#location">Standort</a> binden wir eine Karte von OpenStreetMap (OpenStreetMap Foundation, UK) ein. Beim Laden der Karte wird deine IP-Adresse an die OSM-Server übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO. Details: <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener noreferrer">OSMF Privacy Policy</a>.
         </p>
 
         <h2>5. Social-Media-Links</h2>

@@ -39,6 +39,13 @@
     ul    { list-style: none; }
     button { font-family: inherit; cursor: pointer; }
 
+    /* Prevent long words/URLs from breaking layouts in narrow columns */
+    :where(body, h1, h2, h3, h4, h5, h6, p, li, a, span, small, strong, em, address, blockquote, figcaption, td, th, label, button) {
+      overflow-wrap: anywhere;
+      word-break: normal;
+      hyphens: auto;
+    }
+
     .container {
       width: 100%;
       max-width: 1180px;
