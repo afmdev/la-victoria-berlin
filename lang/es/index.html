@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="es">
 <head>
   <!-- ============================================================
        META & SEO
@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>La Victoria Berlin – Street Food Peruviano | Markthalle Pfefferberg</title>
+  <title>La Victoria Berlin – Comida Peruana de Calle | Markthalle Pfefferberg</title>
   <meta name="description"
-    content="Il primo ristorante di street food peruviano a Berlino alla Markthalle Pfefferberg, Prenzlauer Berg. Ceviche, Anticuchos, Papa Rellena e altro. Prenotazione gratuita per compleanni e gruppi." />
+    content="El primer restaurante de street food peruano de Berlín en la Markthalle Pfefferberg, Prenzlauer Berg. Ceviche, Anticuchos, Papa Rellena y más. Reserva gratuita para cumpleaños y grupos." />
   <meta name="keywords"
     content="peruanisches Restaurant Berlin, Ceviche Berlin, Anticuchos Berlin, Peruvian street food Berlin, comida peruana Berlín, Restaurante latinoamericano Berlin, Markthalle Pfefferberg, Prenzlauer Berg, peruvianisches Essen Berlin" />
-  <link rel="canonical" href="https://it.lavictoriaberlin.com/" />
+  <link rel="canonical" href="https://es.lavictoriaberlin.com/" />
   <link rel="alternate" hreflang="de" href="https://de.lavictoriaberlin.com/" />
   <link rel="alternate" hreflang="en" href="https://en.lavictoriaberlin.com/" />
   <link rel="alternate" hreflang="es" href="https://es.lavictoriaberlin.com/" />
@@ -24,17 +24,17 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="restaurant" />
   <meta property="og:site_name"   content="La Victoria Berlin" />
-  <meta property="og:title"       content="La Victoria Berlin – Street Food Peruviano" />
-  <meta property="og:description" content="Il primo ristorante di street food peruviano a Berlino. Piatti autentici da Lima: Ceviche, Anticuchos, Papa Rellena e Sanguches." />
-  <meta property="og:url"         content="https://it.lavictoriaberlin.com/" />
-  <meta property="og:image"       content="https://it.lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg" />
-  <meta property="og:locale"      content="it_IT" />
+  <meta property="og:title"       content="La Victoria Berlin – Comida Peruana de Calle" />
+  <meta property="og:description" content="El primer restaurante de street food peruano de Berlín. Platos auténticos de Lima: Ceviche, Anticuchos, Papa Rellena y Sanguches." />
+  <meta property="og:url"         content="https://es.lavictoriaberlin.com/" />
+  <meta property="og:image"       content="https://es.lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg" />
+  <meta property="og:locale"      content="es_ES" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="La Victoria Berlin – Street Food Peruviano" />
-  <meta name="twitter:description" content="Il primo ristorante di street food peruviano a Berlino alla Markthalle Pfefferberg, Prenzlauer Berg." />
-  <meta name="twitter:image"       content="https://it.lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg" />
+  <meta name="twitter:title"       content="La Victoria Berlin – Comida Peruana de Calle" />
+  <meta name="twitter:description" content="El primer restaurante de street food peruano de Berlín en la Markthalle Pfefferberg, Prenzlauer Berg." />
+  <meta name="twitter:image"       content="https://es.lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg" />
 
   <!-- Fonts: Boogaloo (display) + Bebas Neue (headlines) + DM Sans (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,8 +53,8 @@
     "name": "La Victoria Berlin",
     "alternateName": "La Rica Vicky",
     "description": "Berlins erstes peruanisches Street Food Restaurant – Ceviche, Anticuchos, Papa Rellena, Sanguches",
-    "url": "https://it.lavictoriaberlin.com",
-    "image": "https://it.lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg",
+    "url": "https://es.lavictoriaberlin.com",
+    "image": "https://es.lavictoriaberlin.com/images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg",
     "servesCuisine": ["Peruvian", "Latin American", "Street Food"],
     "priceRange": "€–€€",
     "currenciesAccepted": "EUR",
@@ -141,6 +141,13 @@
     a     { color: inherit; text-decoration: none; }
     ul    { list-style: none; }
     button { font-family: inherit; cursor: pointer; }
+
+    /* Prevent long words/URLs from breaking layouts in narrow columns */
+    :where(body, h1, h2, h3, h4, h5, h6, p, li, a, span, small, strong, em, address, blockquote, figcaption, td, th, label, button) {
+      overflow-wrap: anywhere;
+      word-break: normal;
+      hyphens: auto;
+    }
 
     /* -------------------------------------------------------
        3. UTILITIES
@@ -883,7 +890,7 @@
     <div class="container nav-inner">
 
       <a href="#hero" aria-label="La Victoria Berlin – Startseite">
-        <img src="../logo.png"
+        <img src="../../logo.png"
              alt="La Victoria – Peruvian Street Food Berlin"
              class="nav-logo"
              width="160" height="40" />
@@ -946,7 +953,7 @@
 
           <div class="hero-visual">
             <div class="hero-img-card">
-              <img src="../images-ejemplo/567529306_17849494968577836_6187494094717055025_n.jpg"
+              <img src="../../images-ejemplo/567529306_17849494968577836_6187494094717055025_n.jpg"
                    alt="La Victoria Berlin – peruanischer Street-Food-Stand mit Sonnenschirm, Markthalle Pfefferberg"
                    loading="eager"
                    width="360" height="480" />
@@ -1146,13 +1153,13 @@
           </div>
 
           <div class="events-photos reveal reveal-d2">
-            <img src="../images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
+            <img src="../../images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
                  alt="Gäste bei La Victoria Berlin genießen peruanisches Street Food in der Markthalle Pfefferberg"
                  loading="lazy" width="540" height="240" />
-            <img src="../images-ejemplo/619995436_17861709765577836_5003048309959799805_n.jpg"
+            <img src="../../images-ejemplo/619995436_17861709765577836_5003048309959799805_n.jpg"
                  alt="Frisches Ceviche bei La Victoria Berlin – Fancy a Ceviche?"
                  loading="lazy" width="260" height="180" />
-            <img src="../images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg"
+            <img src="../../images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg"
                  alt="Ceviche Mixto – Que Pique Rico Carajo, La Victoria Berlin"
                  loading="lazy" width="260" height="180" />
           </div>
@@ -1269,7 +1276,7 @@
           </div>
 
           <div class="about-img reveal reveal-d2">
-            <img src="../images-ejemplo/567954855_17849496012577836_1120411155393272350_n.jpg"
+            <img src="../../images-ejemplo/567954855_17849496012577836_1120411155393272350_n.jpg"
                  alt="La Victoria Berlin – peruanischer Street-Food-Wagen von oben, Gäste stehen Schlange"
                  loading="lazy" width="480" height="640" />
           </div>
@@ -1291,32 +1298,32 @@
 
         <div class="gallery-grid">
           <div class="g-item reveal">
-            <img src="../images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg"
+            <img src="../../images-ejemplo/620987270_17861709306577836_6183514743972699747_n.jpg"
                  alt="Ceviche Mixto mit Fisch, Oktopus und Garnelen – La Victoria Berlin. Que Pique Rico Carajo!"
                  loading="lazy" />
           </div>
           <div class="g-item reveal reveal-d1">
-            <img src="../images-ejemplo/619995436_17861709765577836_5003048309959799805_n.jpg"
+            <img src="../../images-ejemplo/619995436_17861709765577836_5003048309959799805_n.jpg"
                  alt="Fancy a Ceviche? – Frischer Fisch für das Ceviche bei La Victoria Berlin"
                  loading="lazy" />
           </div>
           <div class="g-item reveal reveal-d2">
-            <img src="../images-ejemplo/567529306_17849494968577836_6187494094717055025_n.jpg"
+            <img src="../../images-ejemplo/567529306_17849494968577836_6187494094717055025_n.jpg"
                  alt="La Victoria Berlin – Peruvian Street Food Stand mit Sonnenschirm, Markthalle Pfefferberg"
                  loading="lazy" />
           </div>
           <div class="g-item reveal reveal-d3">
-            <img src="../images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
+            <img src="../../images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
                  alt="Gäste bei La Victoria Berlin – Peruvian Street Food in der Markthalle Pfefferberg Prenzlauer Berg"
                  loading="lazy" />
           </div>
           <div class="g-item reveal reveal-d1">
-            <img src="../images-ejemplo/567954855_17849496012577836_1120411155393272350_n.jpg"
+            <img src="../../images-ejemplo/567954855_17849496012577836_1120411155393272350_n.jpg"
                  alt="La Victoria Berlin – Vogelperspektive auf den Street-Food-Stand und die Schlange"
                  loading="lazy" />
           </div>
           <div class="g-item reveal reveal-d2">
-            <img src="../images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
+            <img src="../../images-ejemplo/568623315_17849497671577836_7973639928609955318_n.jpg"
                  alt="La Victoria Berlin – Peruanisches Straßenfood Erlebnis in Berlin"
                  loading="lazy" />
           </div>
@@ -1387,7 +1394,7 @@
   <footer role="contentinfo">
     <div class="container">
       <div class="footer-inner">
-        <img src="../logo.png" alt="La Victoria Berlin" class="footer-logo" width="120" height="30" loading="lazy" />
+        <img src="../../logo.png" alt="La Victoria Berlin" class="footer-logo" width="120" height="30" loading="lazy" />
         <nav class="footer-nav" aria-label="Footer Navigation">
           <a href="#menu"     data-i18n="footer_menu">Menü</a>
           <a href="#events"   data-i18n="footer_events">Reservierung</a>
@@ -1395,8 +1402,8 @@
           <a href="#about"    data-i18n="footer_about">Über uns</a>
           <a href="#contact"  data-i18n="footer_contact">Kontakt</a>
           <a href="https://www.instagram.com/lavictoriaberlin/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="../impressum.html">Impressum</a>
-          <a href="../datenschutz.html">Datenschutz</a>
+          <a href="../../impressum.html">Impressum</a>
+          <a href="../../datenschutz.html">Datenschutz</a>
         </nav>
         <p class="footer-copy" data-i18n="footer_copy">
           © 2025 La Victoria Berlin · Peruvian Street Food · Markthalle Pfefferberg, Berlin
@@ -1414,7 +1421,7 @@
        - Sticky nav shrink on scroll
        ============================================================ -->
   <script>
-    const PAGE_LANG = 'it';
+    const PAGE_LANG = 'es';
     const SUBDOMAINS = {
       de: 'https://de.lavictoriaberlin.com',
       en: 'https://en.lavictoriaberlin.com',
