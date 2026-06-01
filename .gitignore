@@ -1,3 +1,21 @@
 images-ejemplo/
 CLAUDE.md
 .DS_Store
+
+# OS generated files
+**/.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor temp files
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.*
+!.env.example

@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Victoria Berlin – Peruanische Straßenküche | Ceviche, Anticuchos & Papa Rellena</title>
+    <title>La Victoria – Peruanische Straßenküche | Ceviche, Anticuchos & Papa Rellena</title>
     <meta name="description" content="Authentische peruanische Straßenküche in Berlin: Anticuchos, Ceviche & Papa Rellena in der Markthalle Pfefferberg, Prenzlauer Berg. Mi–So geöffnet." />
     <meta name="keywords" content="peruanisches Restaurant Berlin, Ceviche Berlin, Anticuchos Berlin, peruanisches Streetfood, Markthalle Pfefferberg Essen, Restaurant Prenzlauer Berg, Papa Rellena Berlin, Streetfood Berlin, peruanische Küche Berlin" />
     <link rel="canonical" href="https://de.lavictoriaberlin.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="restaurant" />
-    <meta property="og:title" content="La Victoria Berlin – Peruanische Straßenküche" />
+    <meta property="og:title" content="La Victoria – Peruanische Straßenküche" />
     <meta property="og:description" content="Anticuchos, Ceviche & Papa Rellena – direkt aus Limas Straßenküche. Markthalle Pfefferberg, Prenzlauer Berg." />
     <meta property="og:url" content="https://de.lavictoriaberlin.com/" />
     <meta property="og:locale" content="de_DE" />
@@ -61,6 +61,7 @@
 
     <!-- ══ NAVBAR ══════════════════════════════════════ -->
     <nav class="nav" id="navbar" aria-label="Hauptnavigation">
+      <img class="nav-mobile-logo" id="mobileLogo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" aria-hidden="true">
       <div class="nav-links">
         <a href="#menu">SPEISEKARTE</a>
         <a href="#story">UNSERE GESCHICHTE</a>
@@ -118,17 +119,18 @@
     <main id="main-content">
 
     <!-- ══ HERO ════════════════════════════════════════ -->
-    <section class="hero" aria-label="Willkommen bei La Victoria Berlin">
-      <img src="../../assets/svg/logos/logo-menu-la-victoria-berlin.svg" alt="La Victoria Berlin" style="width:100%;max-width:100%;padding-top:40px;" />
-      <div class="hero-rule"></div>
-      <h1 class="hero-sub">DAS BESTE PERUANISCHE STREET FOOD IN BERLIN</h1>
-      <div class="hero-rule"></div>
-      <p class="hero-tagline">Willkommen bei La Victoria – dem Zuhause für authentisches peruanisches Street Food in Berlin.</p>
-      <p class="hero-tagline">In der Markthalle Pfefferberg bringen wir die beliebtesten Spezialitäten Perus direkt auf den Teller: frisch zubereitetes Ceviche, gegrillte Anticuchos vom Holzkohlegrill, knusprige Chicharrón-Sandwiches, saftiges Pollo a la Brasa, hausgemachte Papa Rellena und unsere beliebte Salchipapa.</p>
-      <p class="hero-tagline">Originale Aromen, traditionelle Rezepte und echtes peruanisches Essen – mitten in Berlin. Entdecke die Vielfalt der peruanischen Küche und genieße Street Food wie auf den Straßen von Lima.</p>
-      <button class="hero-cta" onclick="document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' })">
-        SPEISEKARTE ANSEHEN
-      </button>
+    <section class="hero" aria-label="DAS BESTE PERUANISCHE STREET FOOD IN BERLIN">
+      <div class="hero-wrapper">
+        <img src="../../assets/svg/logos/logo-menu-la-victoria-berlin.svg" alt="La Victoria" class="hero-logo" />
+        <div class="hero-rule"></div>
+        <h1 class="hero-sub">DAS BESTE PERUANISCHE STREET FOOD IN BERLIN</h1>
+        <div class="hero-rule"></div>
+        <p class="hero-tagline">Genieße authentisches peruanisches Street Food in Berlin mit frischem Ceviche, gegrillten Anticuchos, knusprigen Chicharrón- und Pollo a la Brasa Sandwiches, Salchipapa und Papa Rellena – nach traditionellen Rezepten und mit originalen Aromen aus Peru.</p>
+        <p class="hero-tagline">Entdecke die peruanische Küche in Berlin – frisch zubereitet und inspiriert von den Straßen Limas.</p>
+        <button class="hero-cta" onclick="document.querySelector('#menu').scrollIntoView({ behavior: 'smooth' })">
+          SPEISEKARTE ANSEHEN
+        </button>
+      </div>
     </section>
 
     <!-- ══ MENU ════════════════════════════════════════ -->
@@ -216,19 +218,19 @@
         </div><!-- /grid-3 -->
       </div>
 
-      <!-- SANGUCHES header -->
-      <div class="sanguches-header" id="sanguches">
-        <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
-        <h2 class="sanguches-title">SANGUCHES</h2>
-        <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
-      </div>
-
-      <!-- 2-column grid -->
+      <!-- ══ SANGUCHES + THE MOST BELOVED — single 3-column grid ══ -->
       <div class="menu-inner">
-        <div class="grid-2">
+        <div class="grid-bottom">
 
-          <!-- PAN CON CHICHARRÓN -->
-          <div id="pan-con-chicharron" class="dish sanguche">
+          <!-- SANGUCHES header (spans the 2 sanguche columns) -->
+          <div class="sanguches-header bottom-head--sanguches" id="sanguches">
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+            <h2 class="sanguches-title">SANGUCHES</h2>
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+          </div>
+
+          <!-- PAN CON CHICHARRÓN (column 1) -->
+          <div id="pan-con-chicharron" class="dish sanguche bottom-col-1">
             <div class="img-offset img-offset--sanguche">
               <div class="dish-img-wrap dish-img">
                 <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – peruanisches Sandwich mit knusprigem Schweinebauch" />
@@ -249,12 +251,8 @@
             </div>
           </div>
 
-          <div class="grid-divider-col" aria-hidden="true">
-            <div class="grid-divider-line"></div>
-          </div>
-
-          <!-- POLLO A LA BRASA -->
-          <div id="pollo-a-la-brasa" class="dish sanguche">
+          <!-- POLLO A LA BRASA (column 2) -->
+          <div id="pollo-a-la-brasa" class="dish sanguche bottom-col-2">
             <div class="img-offset img-offset--sanguche">
               <div class="dish-img-wrap dish-img">
                 <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – peruanisches Grillhähnchen im Sandwich" />
@@ -275,7 +273,42 @@
             </div>
           </div>
 
-        </div><!-- /grid-2 -->
+          <!-- THE MOST BELOVED header (3rd column) -->
+          <div class="sanguches-header bottom-head--salchipapa" id="salchipapa">
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+            <h2 class="sanguches-title sanguches-title--compact">THE MOST BELOVED</h2>
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+          </div>
+
+          <!-- SALCHIPAPA (column 3) -->
+          <div id="salchipapa-dish" class="dish sanguche bottom-col-3">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – peruanische Pommes mit Wurst, Chilimayo und Chimichurri" />
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" style="width:80px;height:80px;flex-shrink:0" />
+                <h3 class="dish-name">SALCHIPAPA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" style="width:80px;height:80px;flex-shrink:0" />
+              </div>
+              <p class="dish-desc">
+                The most beloved salchipapa with fries, sausage, chilimayo and chimichurri.
+              </p>
+              <p class="allergens" aria-label="Enthält Allergene: 3 Eier">(3)</p>
+            </div>
+          </div>
+
+          <!-- vertical dividers -->
+          <div class="grid-divider-col bottom-divider-inner" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+          <div class="grid-divider-col bottom-divider-group" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+
+        </div><!-- /grid-bottom -->
       </div>
     </section>
 
@@ -313,34 +346,49 @@
         <img id="sep-rose" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" style="height:3rem;width:auto;flex-shrink:0;">
       </div>
       <script>
-        (function() {
-          var star = document.getElementById('sep-star');
-          var rose = document.getElementById('sep-rose');
-          function fillSeparator() {
-            var container = document.getElementById('icon-separator');
-            var sw = star.offsetWidth, rw = rose.offsetWidth, gap = 10;
-            if (sw === 0) return;
-            // pattern: star (rose star)*n  → n+1 stars, n roses
-            // width = (n+1)*sw + n*rw + (2n)*gap
-            // solve for n: n = floor((containerW - sw) / (sw + rw + 2*gap))
-            var n = Math.max(0, Math.floor((container.offsetWidth - sw) / (sw + rw + 2 * gap)));
+        window.makeSeparator = function (containerId, starId, roseId) {
+          var container = document.getElementById(containerId);
+          var starTpl = document.getElementById(starId);
+          var roseTpl = document.getElementById(roseId);
+          if (!container || !starTpl || !roseTpl) return;
+          var GAP = 10;
+          function build() {
+            container.innerHTML = '';
+            var star = starTpl.cloneNode();
+            var rose = roseTpl.cloneNode();
+            container.appendChild(star);
+            container.appendChild(rose);
+            var sw = star.offsetWidth, rw = rose.offsetWidth;
+            if (!sw || !rw) {
+              star.addEventListener('load', build, { once: true });
+              rose.addEventListener('load', build, { once: true });
+              return;
+            }
+            var n = Math.max(0, Math.floor((container.clientWidth - sw) / (sw + rw + 2 * GAP)));
             container.innerHTML = '';
             for (var j = 0; j < n; j++) {
-              container.appendChild(star.cloneNode());
-              container.appendChild(rose.cloneNode());
+              container.appendChild(starTpl.cloneNode());
+              container.appendChild(roseTpl.cloneNode());
             }
-            container.appendChild(star.cloneNode());
+            container.appendChild(starTpl.cloneNode());
           }
-          star.addEventListener('load', fillSeparator);
-          fillSeparator();
-          let _sepTimer;
-          window.addEventListener('resize', function () {
-            clearTimeout(_sepTimer);
-            _sepTimer = setTimeout(fillSeparator, 120);
-          }, { passive: true });
-        })();
+          var lastW = -1;
+          function onResize() {
+            var w = container.clientWidth;
+            if (w === lastW) return;
+            lastW = w;
+            build();
+          }
+          if ('ResizeObserver' in window) {
+            new ResizeObserver(onResize).observe(container);
+          } else {
+            var _t;
+            window.addEventListener('resize', function () { clearTimeout(_t); _t = setTimeout(onResize, 120); }, { passive: true });
+          }
+          build();
+        };
+        makeSeparator('icon-separator', 'sep-star', 'sep-rose');
       </script>
-
     </section>
 
     <!-- ══ STORY ══════════════════════════════════════ -->
@@ -406,8 +454,104 @@
       </div>
     </section>
 
-    <!-- ══ FAQ ═══════════════════════════════════════ -->
-    <section id="faq" class="faq-section">
+     <!-- ══ SEPARADOR NEGRO ABOUT ═══════════════════════ -->
+    <div id="icon-separator-about" style="background: var(--yellow);display:flex;align-items:center;justify-content:center;width:100%;gap:10px;padding:40px 0;" aria-hidden="true">
+      <img id="sep-star-about" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" style="height:3rem;width:auto;flex-shrink:0;filter:brightness(0);">
+      <img id="sep-rose-about" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" style="height:3rem;width:auto;flex-shrink:0;filter:brightness(0);">
+    </div>
+    <script>makeSeparator('icon-separator-about', 'sep-star-about', 'sep-rose-about');</script>
+
+
+    <!-- ══ FAQ ACCORDION ════════════════════════════ -->
+    <section id="faq" class="faq-acc-section">
+      <div class="faq-acc-header">
+        <h2 class="faq-acc-title">HÄUFIGE<br>FRAGEN</h2>
+        <p class="faq-acc-sub">Alles, was du<br>wissen musst</p>
+      </div>
+      <div class="faq-acc-list">
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">01</span>
+            <span class="faq-acc-q">Ist das Anticucho wirklich aus Rinderherz?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Ja. <strong>Rinderherz</strong> ist das Original — kein Ersatz, kein Kompromiss. In Lima ist das seit Jahrhunderten die Standardzubereitung. Das Fleisch wird in <strong>Ají panca, Kreuzkümmel und Knoblauch</strong> mariniert und über Holzkohle gegrillt. Es schmeckt intensiv, zart und hat nichts von dem, was man sich vielleicht vorstellt.</p>
+          </div>
+        </details>
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">02</span>
+            <span class="faq-acc-q">Enthält das Ceviche rohen Fisch?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Technisch gesehen ja — aber der Fisch wird durch die <strong>Leche de tigre</strong> (Limettensaft, Salz, Chilli) denaturiert, was ihn sicher und bekömmlich macht. Das nennt sich Kaltgaren. Wir verwenden täglich frischen Fisch. Allergiker mit Fischunverträglichkeit sollten es jedoch meiden.</p>
+          </div>
+        </details>
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">03</span>
+            <span class="faq-acc-q">Wie scharf sind eure Gerichte?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Die meisten Gerichte sind <strong>mild bis mittelscharf</strong>. Die Anticuchos (Ají panca) sind eher rauchig-würzig als scharf. Das Ceviche hat durch den Rocoto-Chilli eine angenehme Schärfe. Die Saucen reichen wir separat, sodass du selbst dosieren kannst — von Chimichurri (mild) bis Rocoto Carretillero (heiß).</p>
+          </div>
+        </details>
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">04</span>
+            <span class="faq-acc-q">Sind die Saucen hausgemacht?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Ja, alle Saucen werden bei uns gemacht. <strong>Rocoto Carretillero, Ají Pollero, Chimichurri und Tres Ajíes</strong> — keine Fertigprodukte, keine Flaschen aus dem Supermarkt. Peruanische Saucenkultur ist ein eigenes Handwerk, das wir ernst nehmen.</p>
+          </div>
+        </details>
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">05</span>
+            <span class="faq-acc-q">Gibt es vegetarische oder vegane Optionen?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Ja. Die <strong>Anticuchos de Hongos</strong> (Austernpilz-Spieße) sind eine vollständige vegetarische Alternative — mariniert und gegrillt wie das Original. Die <strong>Papa Rellena vegetariana</strong> ist mit Pilzen statt Hackfleisch erhältlich. Ceviche enthält Fisch und ist pescetarisch.</p>
+          </div>
+        </details>
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">06</span>
+            <span class="faq-acc-q">Nehmt ihr Kartenzahlung an?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Ja. Wir akzeptieren <strong>EC-Karte, Kreditkarte und kontaktloses Bezahlen</strong> (Apple Pay, Google Pay). Barzahlung ist natürlich auch möglich.</p>
+          </div>
+        </details>
+
+        <details class="faq-acc-item">
+          <summary class="faq-acc-summary">
+            <span class="faq-acc-num">07</span>
+            <span class="faq-acc-q">Kann ich Gerichte zum Mitnehmen bestellen?</span>
+            <span class="faq-acc-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-acc-body">
+            <p>Ja, alle Gerichte gibt es zum Mitnehmen. Die Markthalle hat außerdem eigene Sitzplätze, falls du direkt vor Ort essen möchtest.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ══ FAQ INGREDIENTES ══════════════════════════ -->
+    <section id="faq-ingredientes" class="faq-section">
       <div class="faq-header">
         <h2 class="faq-header-title">HÄUFIGE FRAGEN</h2>
         <p class="faq-header-sub">Zutaten, Saucen<br>&amp; alles dazwischen</p>
@@ -497,7 +641,7 @@
           <div class="reviews-rating-row" aria-label="Bewertung: 4,8 von 5 Sternen auf Google">
             <span class="reviews-stars" aria-hidden="true">★★★★★</span>
             <span class="reviews-score" aria-hidden="true">4.8</span>
-            <a class="reviews-count" href="https://www.google.com/maps/place/La+Victoria/@52.5319726,13.4068588,544m/data=!3m3!1e3!4b1!5s0x47a851fd56943887:0x172c611ac5888929!4m6!3m5!1s0x47a85185dd24ce8f:0x864b92ad030b917d!8m2!3d52.5319727!4d13.4117297!16s%2Fg%2F11msmy7d8b?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" aria-label="Google Bewertungen von La Victoria Berlin ansehen (öffnet in neuem Tab)">· Google Bewertungen ↗</a>
+            <a class="reviews-count" href="https://www.google.com/maps/place/La+Victoria/@52.5319726,13.4068588,544m/data=!3m3!1e3!4b1!5s0x47a851fd56943887:0x172c611ac5888929!4m6!3m5!1s0x47a85185dd24ce8f:0x864b92ad030b917d!8m2!3d52.5319727!4d13.4117297!16s%2Fg%2F11msmy7d8b?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;" aria-label="Google Bewertungen von La Victoria ansehen (öffnet in neuem Tab)">· Google Bewertungen ↗</a>
           </div>
         </div>
         <p class="c2-subtitle">Echte Gäste.<br>Echte Fotos.</p>
@@ -522,7 +666,7 @@
           <p class="location-label">Wo du uns findest</p>
           <h2 class="location-title">ANFAHRT &amp;<br>ÖFFNUNGSZEITEN</h2>
           <address class="location-address" style="font-style:normal">
-            <strong>La Victoria Berlin</strong><br />
+            <strong>La Victoria</strong><br />
             Markthalle Pfefferberg<br />
             Schönhauser Allee 176<br />
             10119 Berlin – Prenzlauer Berg
@@ -539,13 +683,13 @@
 
         <div class="location-hours-col">
           <h3 class="hours-title">Öffnungszeiten</h3>
-          <table class="hours-table" aria-label="Öffnungszeiten La Victoria Berlin">
+          <table class="hours-table" aria-label="Öffnungszeiten La Victoria">
             <tbody>
               <tr class="closed"><td>Montag</td><td>Geschlossen</td></tr>
-              <tr class="closed"><td>Dienstag</td><td>Geschlossen</td></tr>
-              <tr><td>Mittwoch</td><td>17:00 – 22:00</td></tr>
-              <tr><td>Donnerstag</td><td>17:00 – 22:00</td></tr>
-              <tr><td>Freitag</td><td>17:00 – 23:00</td></tr>
+              <tr><td>Dienstag</td><td>12:00 – 22:00</td></tr>
+              <tr><td>Mittwoch</td><td>12:00 – 22:00</td></tr>
+              <tr><td>Donnerstag</td><td>12:00 – 22:00</td></tr>
+              <tr><td>Freitag</td><td>12:00 – 22:00</td></tr>
               <tr><td>Samstag</td><td>12:00 – 22:00</td></tr>
               <tr><td>Sonntag</td><td>12:00 – 22:00</td></tr>
             </tbody>
@@ -597,7 +741,7 @@
         </a>
         <div class="brand-text">
           <p class="brand-text-main">LA VICTORIA</p>
-          <p class="brand-text-sub">PERUANISCHE STRASSENKUECHE — BERLIN</p>
+          <p class="brand-text-sub">PERUANISCHE STREET FOOD — BERLIN</p>
         </div>
         <p class="copyright">© <span id="year"></span> La Victoria</p>
       </div>
