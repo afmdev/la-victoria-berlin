@@ -434,8 +434,9 @@
       .reviews-section {
         background-color: #fff;
         background-image: url('../assets/images/pattern-rose-extended.png');
-        background-repeat: repeat;
-        background-size: 620px auto;
+        background-repeat: no-repeat;
+        background-size: 120%;
+        background-position: center;
         overflow: hidden;
       }
       .reviews-header {
@@ -676,6 +677,10 @@
         .faq-col:first-child { border-right: none; border-bottom: 1px solid rgba(255,204,0,0.15); padding-right: 0; padding-bottom: 1rem; }
         .faq-col:last-child { padding-left: 0; padding-top: 1rem; }
         .reviews-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+        .reviews-rating-row { flex-wrap: wrap; }
+        .reviews-count { flex-basis: 100%; }
+        .c2-subtitle { text-align: left; }
+        .reviews-rating-row { justify-content: flex-start; }
 
         .location-inner { grid-template-columns: 1fr; }
         .location-text-col { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,204,0,0.15); }
@@ -686,15 +691,19 @@
       .c2-section {
         background-color: #fff;
         background-image: url('../assets/images/pattern-rose-extended.png');
-        background-repeat: repeat;
-        background-size: 620px auto;
+        background-repeat: no-repeat;
+        background-size: 120%;
+        background-position: center;
         overflow: hidden;
       }
       .c2-header {
         padding: 3.5rem 1.5rem 2rem;
         border-bottom: 1px solid rgba(0,0,0,0.1);
-        display: flex; align-items: flex-end; justify-content: space-between;
+        display: flex; flex-direction: column; gap: 1.25rem;
         background: rgba(255,255,255,0.82); backdrop-filter: blur(2px);
+      }
+      .c2-header-bottom {
+        display: flex; align-items: flex-end; justify-content: space-between; width: 100%;
       }
       .c2-title {
         font-family: 'Radius', 'Bebas Neue', sans-serif;
@@ -730,11 +739,11 @@
       }
       .c2-card {
         width: 320px; flex-shrink: 0;
-        background: rgba(255,255,255,0.88); display: flex; flex-direction: column;
-        border: 1px solid rgba(0,0,0,0.08);
+        background: #fff; display: flex; flex-direction: column;
+        border: 1px solid #e0e0e0;
         transition: border-color 0.25s;
       }
-      .c2-card:hover { border-color: rgba(0,0,0,0.2); }
+      .c2-card:hover { border-color: #aaa; }
       .c2-photo {
         position: relative; aspect-ratio: 4/3; overflow: hidden;
         cursor: zoom-in; display: block;
@@ -763,6 +772,7 @@
       .c2-author-row { display: flex; align-items: center; gap: 0.65rem; }
       .c2-avatar {
         width: 40px; height: 40px; flex-shrink: 0;
+        border-radius: 50%; object-fit: cover;
       }
       .c2-author-info { display: flex; flex-direction: column; gap: 0.1rem; min-width: 0; }
       .c2-stars { color: #FBBC04; font-size: 1.3rem; letter-spacing: 0.06em; }
@@ -858,7 +868,18 @@
         .nav-hamburger { display: flex; }
         .nav:not(.scrolled) .nav-hamburger span { background: var(--yellow); }
         .nav-mobile-logo { display: block; }
+        .c2-header-bottom { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0.75rem; }
       }
+
+      @media (min-width: 390px) and (max-width: 768px) {
+        .reviews-count { flex-basis: auto; }
+        .reviews-rating-row { flex-wrap: nowrap; }
+        .c2-subtitle br { display: none; }
+      }
+
+      /* ── Icon separator ────────────────────────────── */
+      .sep-icon { height: 3rem; }
+      @media (max-width: 768px) { .sep-icon { height: 2.1rem; } }
 
       /* ── Skip Link ──────────────────────────────────── */
       .skip-link {

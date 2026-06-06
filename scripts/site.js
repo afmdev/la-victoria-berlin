@@ -123,48 +123,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     return /^https?:\/\//i.test(String(u || '')) ? u : '';
   }
 
-  function photoCard(r) {
-    const img = safeUrl(r.image_links[0]);
+  function buildCard(r, idx) {
     const lvl = r.google_reviewer_level;
     const badge = lvl ? '<span class="c2-author-badge">Lokaler Guide &middot; L' + esc(lvl) + '</span>' : '';
     const text = r.review_text ? '<p class="c2-text">&bdquo;' + esc(r.review_text) + '&ldquo;</p>' : '';
+    const avatar = safeUrl(r.reviewer_image_link)
+      ? '<img class="c2-avatar" src="' + safeUrl(r.reviewer_image_link) + '" alt="" loading="lazy">'
+      : '';
     return '<div class="c2-card">'
-      + '<a class="c2-photo" href="' + esc(img) + '" data-lightbox>'
-      + '<img src="' + esc(img) + '" alt="Gaestefoto - ' + esc(r.author) + '" loading="lazy"/>'
-      + '<span class="c2-photo-hint">&#128269; Vergroessern</span></a>'
       + '<div class="c2-body"><div class="c2-author-row">'
-      + '<img class="c2-avatar" src="' + esc(safeUrl(r.reviewer_image_link)) + '" alt="" loading="lazy"/>'
-      + '<div class="c2-author-info"><span class="c2-author-name">' + esc(r.author) + '</span>' + badge + '</div>'
-      + '</div><div class="c2-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' + text + '</div></div>';
-  }
-
-  function noPhotoCard(r, idx) {
-    const pal = PALETTES[idx % PALETTES.length];
-    const icon = ICON_PATH + ICONS[idx % ICONS.length];
-    const lvl = r.google_reviewer_level;
-    const badge = lvl ? '<span class="c2-author-badge">Lokaler Guide &middot; L' + esc(lvl) + '</span>' : '';
-    const text = r.review_text ? '<p class="c2-text">&bdquo;' + esc(r.review_text) + '&ldquo;</p>' : '';
-    return '<div class="c2-card">'
-      + '<div class="c2-photo c2-photo--ph" style="background:' + pal[0] + '">'
-      + '<img class="c2-ph-icon" src="' + icon + '" alt="" style="filter:' + pal[1] + '">'
-      + '</div>'
-      + '<div class="c2-body"><div class="c2-author-row">'
-      + '<img class="c2-avatar" src="' + esc(safeUrl(r.reviewer_image_link)) + '" alt="" loading="lazy"/>'
+      + avatar
       + '<div class="c2-author-info"><span class="c2-author-name">' + esc(r.author) + '</span>' + badge + '</div>'
       + '</div><div class="c2-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>' + text + '</div></div>';
   }
 
   function buildCards(all) {
-    const withPhoto = all.filter(function (r) { return r.image_links && r.image_links.length; });
-    const noPhoto = all.filter(function (r) { return !r.image_links || !r.image_links.length; });
-    const cards = [];
-    let ni = 0;
-    const len = Math.max(withPhoto.length, noPhoto.length);
-    for (var i = 0; i < len; i++) {
-      if (i < withPhoto.length) cards.push(photoCard(withPhoto[i]));
-      if (i < noPhoto.length) cards.push(noPhotoCard(noPhoto[i], ni++));
-    }
-    return cards.join('');
+    return all.map(function (r, i) { return buildCard(r, i); }).join('');
   }
 
   // Continuous scroll via DOM recycling - each card exists once
