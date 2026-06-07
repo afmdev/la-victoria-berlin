@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Menu La Victoria</title>
+		<style>
+			@font-face {
+				font-family: "Radius";
+				src: url("../assets/fonts/Radius-BoldNarrow.otf") format("opentype");
+				font-display: swap;
+			}
+
+			:root {
+				--menu-width: min(92vw, 900px);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: grid;
+				place-items: center;
+				background: #131313;
+				padding: 24px;
+				color: #fff7e2;
+			}
+
+			.menu-layout {
+				position: relative;
+				width: var(--menu-width);
+			}
+
+			.menu-image {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 16px;
+				box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+			}
+
+			.menu-overlay {
+				position: absolute;
+				inset: 0;
+				font-family: "Radius", serif;
+				display: grid;
+				place-items: center;
+				pointer-events: none;
+			}
+
+			.menu-center-text {
+				margin: 0;
+				text-align: center;
+				color: #ffd447;
+				text-transform: uppercase;
+				letter-spacing: 0.04em;
+				line-height: 0.8;
+				font-size: 4.5rem;
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+			}
+
+			.menu-line {
+				display: block;
+				animation: blink 1.2s steps(2, start) infinite;
+			}
+
+			.line-1 {
+				animation-delay: 0s;
+			}
+
+			.line-2 {
+				animation-delay: 0.25s;
+			}
+
+			.line-3 {
+				animation-delay: 0.5s;
+			}
+
+			@keyframes blink {
+				0%,
+				45% {
+					opacity: 1;
+				}
+
+				50%,
+				100% {
+					opacity: 0.15;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="menu-layout">
+			<img
+				class="menu-image"
+				src="../assets/instagram/menu.jpg"
+				alt="Menu La Victoria"
+			/>
+
+			<section class="menu-overlay" aria-label="Texto sobre el menu">
+				<h1 class="menu-center-text">
+					<span class="menu-line line-1">MENU</span>
+					<span class="menu-line line-2">MENU</span>
+					<span class="menu-line line-3">MENU</span>
+				</h1>
+			</section>
+		</main>
+	</body>
+</html>
