@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speisekarte – La Victoria Berlin</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles/site.css" />
+    <style>
+      .menu-back-bar {
+        position: sticky; top: 0; z-index: 100;
+        background: var(--black); border-bottom: 3px solid var(--yellow);
+        display: flex; align-items: center; gap: 1rem;
+        padding: 0.75rem 1.5rem;
+      }
+      .menu-back-link {
+        font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+        font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase;
+        color: var(--yellow); text-decoration: none;
+        display: flex; align-items: center; gap: 0.4rem;
+        white-space: nowrap;
+      }
+      .menu-back-link:hover { opacity: 0.8; }
+      .menu-back-logo {
+        height: 36px; width: auto; margin-left: auto;
+        filter: brightness(0) saturate(100%) invert(82%) sepia(55%) saturate(1428%) hue-rotate(358deg);
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="menu-back-bar">
+      <a href="index.html" class="menu-back-link">← Zurück</a>
+      <img class="menu-back-logo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" />
+    </div>
+
+    <!-- ══ MENU ════════════════════════════════════════ -->
+    <section id="menu" class="menu-section" aria-label="Speisekarte">
+      <div class="menu-inner">
+        <h2 class="sr-only">Speisekarte</h2>
+        <div class="menu-rule"></div>
+
+        <!-- 3-column grid -->
+        <div class="grid-3">
+
+          <!-- ANTICUCHO -->
+          <div id="anticucho" class="dish" style="align-items:center;text-align:center">
+            <div class="img-offset">
+              <div class="dish-img" style="width:100%">
+                <img src="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png" alt="Anticucho – peruanische Rinderherz-Spieße vom Grill" />
+              </div>
+            </div>
+            <div class="dish-body" style="align-items:center">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">ANTICUCHO</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">AUTHENTISCHER PERUANISCHER GRILL</p>
+              <p class="dish-desc">
+                Direkt aus den rauchigen Straßen Limas: marinierte Spieße voller Gewürze,
+                Feuer und Liebe. Perfekt gegrillt, serviert mit Kartoffel und Choclo.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid-divider-col" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+
+          <!-- CEVICHE -->
+          <div id="ceviche" class="dish" style="align-items:center;text-align:center">
+            <div class="img-offset">
+              <div class="dish-img" style="width:100%">
+                <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche – frischer peruanischer Fisch mit Limette und Rocoto-Chilli" />
+              </div>
+            </div>
+            <div class="dish-body" style="align-items:center">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">CEVICHE</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">FRISCH. FEURIG. UND DURCH UND DURCH PERUANISCH</p>
+              <p class="dish-desc">
+                Fischwürfel in Limettensaft gegart, mit roten Zwiebeln und Rocoto-Chilli —
+                das Straßenrezept, auf das in Peru alle schwören. Kalt serviert, mit richtig Wumms.
+              </p>
+            </div>
+            <p class="allergens" aria-label="Enthält Allergene: 1 Gluten, 4 Fisch, 7 Milch">(1, 4, 7)</p>
+          </div>
+
+          <div class="grid-divider-col" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+
+          <!-- PAPA RELLENA -->
+          <div id="papa-rellena" class="dish" style="align-items:center;text-align:center">
+            <div class="img-offset">
+              <div class="dish-img" style="width:100%">
+                <img src="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png" alt="Papa Rellena – gefüllte Kartoffel mit Hackfleisch und Oliven" />
+              </div>
+            </div>
+            <div class="dish-body" style="align-items:center">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">PAPA RELLENA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">DIE KÖNIGIN DER PERUANISCHEN STRASSE</p>
+              <p class="dish-desc">
+                Knusprige Kartoffelhülle mit gewürztem Rindfleisch, karamellisierten Zwiebeln und Ei.
+                Dazu frische Salsa Criolla für den perfekten Kick.
+              </p>
+              <p class="allergens" aria-label="Enthält Allergene: 1 Gluten, 3 Eier">(1, 3)</p>
+            </div>
+          </div>
+
+        </div><!-- /grid-3 -->
+      </div>
+
+      <!-- ══ SANGUCHES + THE MOST BELOVED ══ -->
+      <div class="menu-inner">
+        <div class="grid-bottom">
+
+          <!-- SANGUCHES header -->
+          <div class="sanguches-header bottom-head--sanguches" id="sanguches">
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+            <h2 class="sanguches-title">SANGUCHES</h2>
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+          </div>
+
+          <!-- PAN CON CHICHARRÓN -->
+          <div id="pan-con-chicharron" class="dish sanguche bottom-col-1">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – peruanisches Sandwich mit knusprigem Schweinebauch" />
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">PAN CON CHICHARRÓN</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">SCHWEINEBAUCH IM BRÖTCHEN. EINE STRASSENLEGENDE</p>
+              <p class="dish-desc">
+                Zarter Schweinebauch mit Süßkartoffelscheiben, Salsa Criolla und
+                unseren Haussaucen. Pures Comfort Food zwischen zwei Brothälften.
+              </p>
+              <p class="allergens" aria-label="Enthält Allergene: 1 Gluten">(1)</p>
+            </div>
+          </div>
+
+          <!-- POLLO A LA BRASA -->
+          <div id="pollo-a-la-brasa" class="dish sanguche bottom-col-2">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – peruanisches Grillhähnchen im Sandwich" />
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">POLLO A LA BRASA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">NATIONALSTOLZ IM SANDWICH-FORMAT</p>
+              <p class="dish-desc">
+                Geräuchertes Rotisserie-Hähnchen im weichen Bun mit Salat, Tomate,
+                gelber Chillisauce und Kartoffelstroh. Perus Lieblingshähnchen, auf unsere Art.
+              </p>
+              <p class="allergens" aria-label="Enthält Allergene: 1 Gluten, 3 Eier, 10 Senf">(1, 3, 10)</p>
+            </div>
+          </div>
+
+          <!-- THE QUEEN header -->
+          <div class="sanguches-header bottom-head--salchipapa" id="salchipapa">
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+            <h2 class="sanguches-title sanguches-title--compact">THE QUEEN</h2>
+            <span class="sanguches-cariño" aria-hidden="true">MIT CARIÑO GEMACHT!</span>
+          </div>
+
+          <!-- SALCHIPAPA -->
+          <div id="salchipapa-dish" class="dish sanguche bottom-col-3">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – peruanische Pommes mit Wurst, Chilimayo und Chimichurri" />
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">SALCHIPAPA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">STREET FOOD KLASSIKER</p>
+              <p class="dish-desc">
+                Knusprige Pommes, belegt mit geschnittener Wurst, beträufelt mit Chilimayo und Chimichurri für den perfekten Mix aus Schärfe, Cremigkeit und frischen Kräutern.
+              </p>
+              <p class="allergens" aria-label="Enthält Allergene: 3 Eier">(3)</p>
+            </div>
+          </div>
+
+          <!-- vertical dividers -->
+          <div class="grid-divider-col bottom-divider-inner" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+          <div class="grid-divider-col bottom-divider-group" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+
+        </div><!-- /grid-bottom -->
+      </div>
+    </section>
+
+    <!-- ══ BEILAGEN & GETRAENKE + ALLERGENE ═════════════ -->
+    <section id="sides" class="sides-bar">
+      <div class="sides-inner">
+
+        <h2 class="sides-title">BEILAGEN<br>&amp; GETRAENKE</h2>
+
+        <div class="sides-list">
+          <div class="sides-item">
+            <span class="sides-item-name">POMMES</span>
+          </div>
+          <div class="sides-item">
+            <span class="sides-item-name">ALFAJOR</span>
+          </div>
+          <div class="sides-item">
+            <span class="sides-item-name">CHICHA MORADA (0,3L)</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="allergy-title">ALLERGEN-INFORMATIONEN</h3>
+          <p class="allergy-text">
+            1-GLUTEN / 2-KRUSTENTIERE / 3-EIER / 4-FISCH / 5-ERDNUESSE / 6-SOJA / 7-MILCH
+            / 8-SCHALENFRUECHTE / 9-SELLERIE / 10-SENF / 11-SESAMSAMEN / 12-SCHWEFELDIOXID
+            UND SULFITE / 13-LUPINEN / 14-WEICHTIERE
+          </p>
+        </div>
+
+      </div>
+
+      <div id="icon-separator" style="display:flex;align-items:center;justify-content:center;width:100%;gap:10px;padding-bottom:40px;" aria-hidden="true">
+        <img id="sep-star" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
+        <img id="sep-rose" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
+      </div>
+      <script>
+        window.makeSeparator = function (containerId, starId, roseId) {
+          var container = document.getElementById(containerId);
+          var starTpl = document.getElementById(starId);
+          var roseTpl = document.getElementById(roseId);
+          if (!container || !starTpl || !roseTpl) return;
+          var GAP = 10;
+          function build() {
+            container.innerHTML = '';
+            var star = starTpl.cloneNode();
+            var rose = roseTpl.cloneNode();
+            container.appendChild(star);
+            container.appendChild(rose);
+            var sw = star.offsetWidth, rw = rose.offsetWidth;
+            if (!sw || !rw) {
+              star.addEventListener('load', build, { once: true });
+              rose.addEventListener('load', build, { once: true });
+              return;
+            }
+            var n = Math.max(0, Math.floor((container.clientWidth - sw) / (sw + rw + 2 * GAP)));
+            container.innerHTML = '';
+            for (var j = 0; j < n; j++) {
+              container.appendChild(starTpl.cloneNode());
+              container.appendChild(roseTpl.cloneNode());
+            }
+            container.appendChild(starTpl.cloneNode());
+          }
+          var lastW = -1;
+          function onResize() {
+            var w = container.clientWidth;
+            if (w === lastW) return;
+            lastW = w;
+            build();
+          }
+          if ('ResizeObserver' in window) {
+            new ResizeObserver(onResize).observe(container);
+          } else {
+            var _t;
+            window.addEventListener('resize', function () { clearTimeout(_t); _t = setTimeout(onResize, 120); }, { passive: true });
+          }
+          build();
+        };
+        makeSeparator('icon-separator', 'sep-star', 'sep-rose');
+      </script>
+    </section>
+
+    <script src="../../scripts/site.js"></script>
+  </body>
+</html>
