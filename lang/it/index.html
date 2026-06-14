@@ -879,6 +879,9 @@
       .reveal, .star-deco { transition: none !important; animation: none !important; }
       .reveal { opacity: 1; transform: none; }
     }
+    @media (max-width: 768px) {
+      #menu { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -1907,6 +1910,11 @@
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
+  </script>
+  <script>
+    if (window.innerWidth <= 768) {
+      document.querySelectorAll('a[href="#menu"]').forEach(function(a) { a.href = 'menu.html'; });
+    }
   </script>
 
 </body>

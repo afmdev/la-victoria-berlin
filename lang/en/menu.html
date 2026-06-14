@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu – La Victoria Berlin</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #38b04a; --green-dark: #2d8f3b; --green-light: #4dc960;
+      --yellow: #f5c918; --black: #111111; --white: #ffffff;
+      --font-display: 'Boogaloo', cursive;
+      --font-headline: 'Bebas Neue', cursive;
+      --font-body: 'DM Sans', sans-serif;
+      --section-py: clamp(3.5rem, 8vw, 6rem);
+      --radius: 14px; --transition: 0.25s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.6; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
+    .eyebrow { font-family: var(--font-headline); letter-spacing: 0.18em; font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 0.75rem; }
+
+    .menu-back-bar { position: sticky; top: 0; z-index: 100; background: var(--black); border-bottom: 3px solid var(--yellow); display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1.5rem; }
+    .menu-back-link { font-family: var(--font-headline); letter-spacing: 0.15em; font-size: 1rem; color: var(--yellow); white-space: nowrap; }
+    .menu-back-link:hover { opacity: 0.8; }
+    .menu-back-logo { height: 32px; width: auto; margin-left: auto; filter: invert(1); opacity: 0.8; }
+
+    #menu { background: var(--green); padding-block: var(--section-py); position: relative; overflow: hidden; }
+    #menu::before { content: ''; position: absolute; inset: 0; background-image: url('../../images-ejemplo/bg.jpg'); background-size: 360px; opacity: 0.06; pointer-events: none; }
+    #menu::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: var(--yellow); }
+    .menu-header { text-align: center; margin-bottom: clamp(2rem, 5vw, 3.5rem); position: relative; }
+    .menu-header .eyebrow { color: rgba(17,17,17,0.5); }
+    .menu-title { font-family: var(--font-display); font-size: clamp(3.5rem, 10vw, 7rem); line-height: 0.88; color: var(--black); }
+    .menu-subtitle { font-family: var(--font-display); font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: var(--yellow); margin-top: 0.4rem; }
+    .menu-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media (min-width: 600px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
+    .menu-card { background: var(--black); border-radius: var(--radius); border: 3px solid var(--black); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition); display: flex; flex-direction: column; }
+    .menu-card:hover { transform: translateY(-5px) rotate(-0.8deg); box-shadow: 10px 10px 0 var(--black); }
+    .card-head { padding: 1.4rem 1.5rem 1rem; border-bottom: 1.5px solid rgba(255,255,255,0.07); }
+    .card-tag { font-family: var(--font-headline); font-size: 0.7rem; letter-spacing: 0.18em; color: var(--green-light); margin-bottom: 0.3rem; }
+    .card-name { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 2.75rem); line-height: 0.95; color: var(--yellow); }
+    .card-sub { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green-light); margin-top: 0.3rem; opacity: 0.85; }
+    .card-body { padding: 1rem 1.5rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
+    .card-desc { font-size: 0.85rem; line-height: 1.65; color: #999; margin-bottom: 1.1rem; font-style: italic; }
+    .item-list { margin-top: auto; }
+    .item-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; padding: 0.45rem 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
+    .item-row:last-child { border-bottom: none; }
+    .item-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--white); }
+    .item-note { font-size: 0.68rem; color: #666; display: block; margin-top: 0.1rem; }
+    .item-price { font-family: var(--font-display); font-size: 1.3rem; color: var(--yellow); white-space: nowrap; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="menu-back-bar">
+    <a href="index.html" class="menu-back-link">← Back</a>
+    <img src="../../logo.png" alt="La Victoria Berlin" class="menu-back-logo" />
+  </div>
+
+  <section id="menu" aria-labelledby="menu-heading">
+    <div class="container">
+
+      <header class="menu-header">
+        <span class="eyebrow">Our menu</span>
+        <h2 class="menu-title" id="menu-heading">MENU</h2>
+        <p class="menu-subtitle">Made with Cariño ✦</p>
+      </header>
+
+      <div class="menu-grid">
+
+        <article class="menu-card">
+          <div class="card-head">
+            <p class="card-tag">✦ Authentic Peruvian Grill</p>
+            <h3 class="card-name">ANTICUCHO</h3>
+            <p class="card-sub">From the grill — straight from Lima's street corners</p>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Skewers marinated with spice, fire and love. Grilled to perfection, served with potato and choclo — large Peruvian corn.</p>
+            <ul class="item-list">
+              <li class="item-row"><span class="item-name">Beef Heart</span><span class="item-price">10 €</span></li>
+              <li class="item-row"><span class="item-name">Chicken</span><span class="item-price">9 €</span></li>
+              <li class="item-row"><span class="item-name">Oyster Mushroom</span><span class="item-price">8 €</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="card-head">
+            <p class="card-tag">✦ Fresh, Fiery &amp; Unapologetically Peruvian</p>
+            <h3 class="card-name">CEVICHE</h3>
+            <p class="card-sub">Fresh · Fiery · Unapologetically Peruvian</p>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Cubes of fish cured in lime, mixed with red onion and rocoto chilli — the street-style recipe every Peruvian swears by. Served cold and punchy.</p>
+            <ul class="item-list">
+              <li class="item-row"><span class="item-name">Fish</span><span class="item-price">13 €</span></li>
+              <li class="item-row"><span><span class="item-name">Mixed</span><span class="item-note">(Fish, Octopus, Shrimp)</span></span><span class="item-price">13 €</span></li>
+              <li class="item-row"><span class="item-name">Mango</span><span class="item-price">9 €</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="card-head">
+            <p class="card-tag">✦ The Queen of Peruvian Street</p>
+            <h3 class="card-name">PAPA RELLENA</h3>
+            <p class="card-sub">The Queen of Peruvian Street Food</p>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">A crispy potato shell stuffed with seasoned beef, caramelized onion, olives and egg. Served with salsa criolla for that perfect kick!</p>
+            <ul class="item-list">
+              <li class="item-row"><span class="item-name">Meat</span><span class="item-price">9 €</span></li>
+              <li class="item-row"><span class="item-name">Mushrooms</span><span class="item-price">6,50 €</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="card-head">
+            <p class="card-tag">✦ Sanguches — Made with Cariño</p>
+            <h3 class="card-name">PAN CON<br/>CHICHARRÓN</h3>
+            <p class="card-sub">Pork in a Bun · The Street Legend</p>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Tender pork belly with sweet potato slices, salsa criolla and our signature house sauces. Pure comfort between two halves of bread.</p>
+            <ul class="item-list">
+              <li class="item-row"><span class="item-name">Pan con Chicharrón</span><span class="item-price">10 €</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="card-head">
+            <p class="card-tag">✦ Sanguches — Made with Cariño</p>
+            <h3 class="card-name">POLLO A<br/>LA BRASA</h3>
+            <p class="card-sub">National Pride in Sandwich Form</p>
+          </div>
+          <div class="card-body">
+            <p class="card-desc">Smoked rotisserie chicken in a soft brioche bun with lettuce, tomato, yellow chili sauce and shoestring fries. Peru's favourite chicken, done our way.</p>
+            <ul class="item-list">
+              <li class="item-row"><span class="item-name">Pollo a la Brasa</span><span class="item-price">10 €</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="menu-card" style="background:var(--green);justify-content:center;align-items:center;min-height:220px;">
+          <div style="text-align:center;padding:2rem;">
+            <p style="font-family:var(--font-display);font-size:2.5rem;color:var(--black);line-height:1;">More?</p>
+            <p style="font-family:var(--font-body);font-size:0.9rem;color:var(--black);opacity:0.7;margin-top:0.5rem;">Follow us on Instagram for specials &amp; seasonal dishes</p>
+            <p style="font-size:2rem;margin-top:1rem;">📸</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

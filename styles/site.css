@@ -573,7 +573,10 @@
         font-size: var(--fs-body-lg); line-height: 1.8;
         color: rgba(255,255,255,0.75); margin-bottom: 2rem;
       }
-      .location-address strong { color: var(--yellow); font-weight: 800; }
+      .address-brand-logo {
+        display: block; height: 26px; width: auto; margin-bottom: 0.2rem;
+        filter: url(#yellow-brand);
+      }
       .location-map-link {
         display: inline-block;
         padding: 0.75rem 2rem;
@@ -631,9 +634,9 @@
       }
       .social-bar a:hover { opacity: 0.6; }
       .brand-text { text-align: center; }
-      .brand-text-main {
-        font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--yellow);
-        letter-spacing: 0.12em; opacity: 0.45; line-height: 1;
+      .footer-brand-logo {
+        height: 28px; width: auto;
+        filter: url(#yellow-brand);
       }
       .brand-text-sub {
         font-family: 'Barlow Condensed', sans-serif; font-size: 0.55rem;
@@ -825,7 +828,7 @@
         display: none;
         position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
         height: 80px; width: auto;
-        filter: brightness(0) saturate(100%) invert(82%) sepia(55%) saturate(1428%) hue-rotate(358deg) brightness(103%) contrast(97%);
+        filter: brightness(0) saturate(100%) invert(82%) sepia(55%) saturate(1428%) hue-rotate(358deg);
       }
       .nav-hamburger {
         display: none;
@@ -904,4 +907,12 @@
       @media (prefers-reduced-motion: reduce) {
         .carousel-track { animation: none; }
         html { scroll-behavior: auto; }
+      }
+
+      /* ── Mobile: menu lives on menu.html ────────────── */
+      .hero-cta-mobile { display: none; }
+      @media (max-width: 768px) {
+        .menu-section, #sides { display: none; }
+        .hero-cta { display: none !important; }
+        .hero-cta-mobile { display: block !important; }
       }
