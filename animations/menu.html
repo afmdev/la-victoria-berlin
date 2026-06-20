@@ -51,62 +51,54 @@
 				pointer-events: none;
 			}
 
-			.menu-center-text {
-				margin: 0;
-				text-align: center;
-				color: #ffd447;
-				text-transform: uppercase;
-				letter-spacing: 0.04em;
-				line-height: 0.8;
-				font-size: 4.5rem;
-				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+			.menu-logos {
+				position: absolute;
+				top: 5%;
+				left: 50%;
+				transform: translateX(-50%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+				pointer-events: none;
 			}
 
-			.menu-line {
-				display: block;
-				animation: blink 1.2s steps(2, start) infinite;
+			.menu-logo {
+				width: min(60%, 330px);
+				height: auto;
 			}
 
-			.line-1 {
-				animation-delay: 0s;
+			.menu-logo-mundial {
+				width: min(52.5%, 270px);
+				height: auto;
 			}
 
-			.line-2 {
-				animation-delay: 0.25s;
-			}
 
-			.line-3 {
-				animation-delay: 0.5s;
-			}
 
-			@keyframes blink {
-				0%,
-				45% {
-					opacity: 1;
-				}
-
-				50%,
-				100% {
-					opacity: 0.15;
-				}
-			}
 		</style>
 	</head>
 	<body>
 		<main class="menu-layout">
 			<img
 				class="menu-image"
-				src="../assets/instagram/menu.jpg"
+				src="../assets/instagram/fondo-mundial.jpg"
 				alt="Menu La Victoria"
 			/>
 
-			<section class="menu-overlay" aria-label="Texto sobre el menu">
-				<h1 class="menu-center-text">
-					<span class="menu-line line-1">MENU</span>
-					<span class="menu-line line-2">MENU</span>
-					<span class="menu-line line-3">MENU</span>
-				</h1>
-			</section>
+			<div class="menu-logos">
+				<img
+					class="menu-logo"
+					src="../assets/instagram/la-victoria.svg"
+					alt="La Victoria Berlin"
+				/>
+				<img
+					class="menu-logo-mundial"
+					src="../assets/instagram/logo-mundial.svg"
+					alt="Mundial"
+				/>
+			</div>
+
+
 		</main>
 	</body>
 </html>
