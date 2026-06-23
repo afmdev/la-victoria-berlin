@@ -96,24 +96,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   if (!track) return;
 
   const GAP = 16;
-  const ICON_PATH = '../../assets/svg/icons/';
-  const ICONS = [
-    'icon-star-la-victoria-berlin.svg',
-    'icon-fork-la-victoria-berlin.svg',
-    'icon-flames-la-victoria-berlin.svg',
-    'icon-umbrella-la-victoria-berlin.svg',
-    'icon-rose-la-victoria-berlin.svg',
-    'icon-chair-la-victoria-berlin.svg',
-    'icon-star-2-la-victoria-berlin.svg',
-  ];
-  // bg color, CSS filter to colorise the icon
-  // filter: brightness(0) = black; invert+sepia+saturate = yellow approx #FFCC00
-  const PALETTES = [
-    ['#FF6600', 'brightness(0) saturate(0)'],
-    ['#FFCC00', 'brightness(0) saturate(0)'],
-    ['#66B04F', 'brightness(0) saturate(0)'],
-    ['#662D91', 'brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(3deg)'],
-  ];
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -123,7 +105,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     return /^https?:\/\//i.test(String(u || '')) ? u : '';
   }
 
-  function buildCard(r, idx) {
+  function buildCard(r) {
     const lvl = r.google_reviewer_level;
     const badge = lvl ? '<span class="c2-author-badge">Lokaler Guide &middot; L' + esc(lvl) + '</span>' : '';
     const text = r.review_text ? '<p class="c2-text">&bdquo;' + esc(r.review_text) + '&ldquo;</p>' : '';
@@ -145,30 +127,53 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   let offset = 0;
   let paused = false;
   let last = performance.now();
-  let pxPerSec = 45;
-  const ref = document.querySelector('.carousel-track');
-  if (ref && ref.scrollWidth) pxPerSec = (ref.scrollWidth / 2) / 90;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pxPerSec = prefersReducedMotion ? 0 : 45;
+  let cachedCardW = 0;
+  let rafId = null;
 
-  function cardW() {
+  // Invalidate cached width when cards resize (e.g. viewport width change)
+  new ResizeObserver(function () { cachedCardW = 0; }).observe(track);
+
+  function measureCardW() {
     const fc = track.firstElementChild;
-    return fc ? fc.getBoundingClientRect().width + GAP : 0;
+    cachedCardW = fc ? fc.getBoundingClientRect().width + GAP : 0;
   }
 
   function frame(now) {
-    const dt = (now - last) / 1000;
+    // Clamp dt so a background-tab returning doesn't cause a huge jump
+    const dt = Math.min((now - last) / 1000, 0.1);
     last = now;
     if (!paused && track.firstElementChild) {
-      offset += pxPerSec * dt;
-      let w = cardW();
-      while (w > 0 && offset >= w && track.children.length > 1) {
-        offset -= w;
-        track.appendChild(track.firstElementChild);
-        w = cardW();
+      if (!cachedCardW) measureCardW();
+      if (cachedCardW > 0) {
+        offset += pxPerSec * dt;
+        while (offset >= cachedCardW && track.children.length > 1) {
+          offset -= cachedCardW;
+          track.appendChild(track.firstElementChild);
+        }
+        track.style.transform = 'translateX(' + (-offset) + 'px)';
       }
-      track.style.transform = 'translateX(' + (-offset) + 'px)';
     }
-    requestAnimationFrame(frame);
+    rafId = requestAnimationFrame(frame);
   }
+
+  function startRaf() {
+    if (!rafId) {
+      last = performance.now();
+      rafId = requestAnimationFrame(frame);
+    }
+  }
+
+  function stopRaf() {
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+  }
+
+  // Stop the loop entirely when the carousel is off-screen
+  new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) startRaf();
+    else stopRaf();
+  }, { threshold: 0 }).observe(track);
 
   function step(dir) {
     const n = 3;
@@ -184,7 +189,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   function init(all) {
     if (!all || !all.length) return;
     track.innerHTML = buildCards(all);
-    requestAnimationFrame(frame);
+    // rAF is managed by the IntersectionObserver above
   }
 
   function fromEmbed() {

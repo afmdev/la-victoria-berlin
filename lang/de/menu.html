@@ -50,7 +50,10 @@
           <div id="anticucho" class="dish" style="align-items:center;text-align:center">
             <div class="img-offset">
               <div class="dish-img" style="width:100%">
-                <img src="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png" alt="Anticucho – peruanische Rinderherz-Spieße vom Grill" />
+                <picture>
+                  <source srcset="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png" alt="Anticucho – peruanische Rinderherz-Spieße vom Grill" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div class="dish-body" style="align-items:center">
@@ -75,7 +78,10 @@
           <div id="ceviche" class="dish" style="align-items:center;text-align:center">
             <div class="img-offset">
               <div class="dish-img" style="width:100%">
-                <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche – frischer peruanischer Fisch mit Limette und Rocoto-Chilli" />
+                <picture>
+                  <source srcset="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche – frischer peruanischer Fisch mit Limette und Rocoto-Chilli" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div class="dish-body" style="align-items:center">
@@ -101,7 +107,10 @@
           <div id="papa-rellena" class="dish" style="align-items:center;text-align:center">
             <div class="img-offset">
               <div class="dish-img" style="width:100%">
-                <img src="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png" alt="Papa Rellena – gefüllte Kartoffel mit Hackfleisch und Oliven" />
+                <picture>
+                  <source srcset="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png" alt="Papa Rellena – gefüllte Kartoffel mit Hackfleisch und Oliven" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div class="dish-body" style="align-items:center">
@@ -137,7 +146,10 @@
           <div id="pan-con-chicharron" class="dish sanguche bottom-col-1">
             <div class="img-offset img-offset--sanguche">
               <div class="dish-img-wrap dish-img">
-                <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – peruanisches Sandwich mit knusprigem Schweinebauch" />
+                <picture>
+                  <source srcset="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.webp" type="image/webp">
+                  <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – peruanisches Sandwich mit knusprigem Schweinebauch" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div class="dish-body dish-body--sanguche">
@@ -159,7 +171,10 @@
           <div id="pollo-a-la-brasa" class="dish sanguche bottom-col-2">
             <div class="img-offset img-offset--sanguche">
               <div class="dish-img-wrap dish-img">
-                <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – peruanisches Grillhähnchen im Sandwich" />
+                <picture>
+                  <source srcset="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – peruanisches Grillhähnchen im Sandwich" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div class="dish-body dish-body--sanguche">
@@ -188,7 +203,10 @@
           <div id="salchipapa-dish" class="dish sanguche bottom-col-3">
             <div class="img-offset img-offset--sanguche">
               <div class="dish-img-wrap dish-img">
-                <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – peruanische Pommes mit Wurst, Chilimayo und Chimichurri" />
+                <picture>
+                  <source srcset="../../assets/images/salchipapa-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – peruanische Pommes mit Wurst, Chilimayo und Chimichurri" loading="lazy" />
+                </picture>
               </div>
             </div>
             <div class="dish-body dish-body--sanguche">
@@ -257,17 +275,24 @@
           var roseTpl = document.getElementById(roseId);
           if (!container || !starTpl || !roseTpl) return;
           var GAP = 10;
+          var sw = 0, rw = 0; // icon sizes measured once and cached
+
           function build() {
-            container.innerHTML = '';
-            var star = starTpl.cloneNode();
-            var rose = roseTpl.cloneNode();
-            container.appendChild(star);
-            container.appendChild(rose);
-            var sw = star.offsetWidth, rw = rose.offsetWidth;
             if (!sw || !rw) {
-              star.addEventListener('load', build, { once: true });
-              rose.addEventListener('load', build, { once: true });
-              return;
+              // Measure icon sizes once — requires a DOM insertion to read offsetWidth
+              container.innerHTML = '';
+              var star = starTpl.cloneNode();
+              var rose = roseTpl.cloneNode();
+              container.appendChild(star);
+              container.appendChild(rose);
+              sw = star.offsetWidth;
+              rw = rose.offsetWidth;
+              if (!sw || !rw) {
+                star.addEventListener('load', build, { once: true });
+                rose.addEventListener('load', build, { once: true });
+                return;
+              }
+              container.innerHTML = '';
             }
             var n = Math.max(0, Math.floor((container.clientWidth - sw) / (sw + rw + 2 * GAP)));
             container.innerHTML = '';
@@ -277,18 +302,24 @@
             }
             container.appendChild(starTpl.cloneNode());
           }
+
+          var _t;
           var lastW = -1;
           function onResize() {
-            var w = container.clientWidth;
-            if (w === lastW) return;
-            lastW = w;
-            build();
+            // Debounce: wait 80ms after the last resize event before rebuilding
+            clearTimeout(_t);
+            _t = setTimeout(function () {
+              var w = container.clientWidth;
+              if (w === lastW) return;
+              lastW = w;
+              build();
+            }, 80);
           }
+
           if ('ResizeObserver' in window) {
             new ResizeObserver(onResize).observe(container);
           } else {
-            var _t;
-            window.addEventListener('resize', function () { clearTimeout(_t); _t = setTimeout(onResize, 120); }, { passive: true });
+            window.addEventListener('resize', onResize, { passive: true });
           }
           build();
         };
