@@ -4,7 +4,9 @@
       "Bash(file *)",
       "Bash(python3 -m http.server 8137)",
       "Bash(echo \"server pid $!\")",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8137/lang/de/index.html)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8137/lang/de/index.html)",
+      "mcp__plugin_context-mode_context-mode__ctx_batch_execute",
+      "Bash(xargs du -sh)"
     ]
   }
 }
