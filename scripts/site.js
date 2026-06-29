@@ -7,8 +7,10 @@ window.addEventListener('scroll', () => {
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', e => {
+    const href = link.getAttribute('href');
+    if (!href || href.charAt(0) !== '#') return; // let page/external links navigate
     e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
+    const target = document.querySelector(href);
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
@@ -31,7 +33,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
   // Use existing button/panel from HTML, or create them if not present
   let btn = document.getElementById('navHamburger');
-  if (btn && btn.dataset.mobileInit) return; // already wired up by inline script
   if (!btn) {
     btn = document.createElement('button');
     btn.className = 'nav-hamburger';
@@ -77,9 +78,11 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 
   panel.querySelectorAll('.mobile-menu-link').forEach(link => {
     link.addEventListener('click', e => {
-      e.preventDefault();
+      const href = link.getAttribute('href');
       close();
-      const target = document.querySelector(link.getAttribute('href'));
+      if (!href || href.charAt(0) !== '#') return; // page links (e.g. menu.html) navigate normally
+      e.preventDefault();
+      const target = document.querySelector(href);
       if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth' }), 10);
     });
   });
