@@ -268,65 +268,7 @@
         <img id="sep-star" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
         <img id="sep-rose" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
       </div>
-      <script>
-        window.makeSeparator = function (containerId, starId, roseId) {
-          var container = document.getElementById(containerId);
-          var starTpl = document.getElementById(starId);
-          var roseTpl = document.getElementById(roseId);
-          if (!container || !starTpl || !roseTpl) return;
-          var GAP = 10;
-          var sw = 0, rw = 0; // icon sizes measured once and cached
+</section>
 
-          function build() {
-            if (!sw || !rw) {
-              // Measure icon sizes once — requires a DOM insertion to read offsetWidth
-              container.innerHTML = '';
-              var star = starTpl.cloneNode();
-              var rose = roseTpl.cloneNode();
-              container.appendChild(star);
-              container.appendChild(rose);
-              sw = star.offsetWidth;
-              rw = rose.offsetWidth;
-              if (!sw || !rw) {
-                star.addEventListener('load', build, { once: true });
-                rose.addEventListener('load', build, { once: true });
-                return;
-              }
-              container.innerHTML = '';
-            }
-            var n = Math.max(0, Math.floor((container.clientWidth - sw) / (sw + rw + 2 * GAP)));
-            container.innerHTML = '';
-            for (var j = 0; j < n; j++) {
-              container.appendChild(starTpl.cloneNode());
-              container.appendChild(roseTpl.cloneNode());
-            }
-            container.appendChild(starTpl.cloneNode());
-          }
-
-          var _t;
-          var lastW = -1;
-          function onResize() {
-            // Debounce: wait 80ms after the last resize event before rebuilding
-            clearTimeout(_t);
-            _t = setTimeout(function () {
-              var w = container.clientWidth;
-              if (w === lastW) return;
-              lastW = w;
-              build();
-            }, 80);
-          }
-
-          if ('ResizeObserver' in window) {
-            new ResizeObserver(onResize).observe(container);
-          } else {
-            window.addEventListener('resize', onResize, { passive: true });
-          }
-          build();
-        };
-        makeSeparator('icon-separator', 'sep-star', 'sep-rose');
-      </script>
-    </section>
-
-    <script src="../../scripts/site.js"></script>
-  </body>
+</body>
 </html>

@@ -16,45 +16,7 @@
     <meta property="og:locale" content="en_US" />
 
     <!-- JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "@id": "https://en.lavictoriaberlin.com/#restaurant",
-      "name": "La Victoria",
-      "description": "Authentic Peruvian street food in Berlin – Anticuchos, Ceviche, Papa Rellena and Sanguches at Markthalle Pfefferberg.",
-      "servesCuisine": ["Peruvian", "Street Food", "Latin American"],
-      "url": "https://en.lavictoriaberlin.com/",
-      "telephone": "",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Schönhauser Allee 176",
-        "addressLocality": "Berlin",
-        "addressRegion": "Berlin",
-        "postalCode": "10119",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 52.5373,
-        "longitude": 13.4142
-      },
-      "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "12:00", "closes": "22:00" }
-      ],
-      "sameAs": [
-        "https://www.instagram.com/lavictoriaberlin/",
-        "https://www.facebook.com/lavictoriaberlin",
-        "https://www.youtube.com/@lavictoriaberlin",
-        "https://www.threads.net/@lavictoriaberlin",
-        "https://x.com/lavictoriaberlin"
-      ],
-      "menu": "https://en.lavictoriaberlin.com/#menu",
-      "priceRange": "€€"
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles/site.css" />
@@ -336,64 +298,7 @@
         <img id="sep-star" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
         <img id="sep-rose" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
       </div>
-      <script>
-        window.makeSeparator = function (containerId, starId, roseId) {
-          var container = document.getElementById(containerId);
-          var starTpl = document.getElementById(starId);
-          var roseTpl = document.getElementById(roseId);
-          if (!container || !starTpl || !roseTpl) return;
-          var GAP = 10;
-          var sw = 0, rw = 0; // icon sizes measured once and cached
-
-          function build() {
-            if (!sw || !rw) {
-              // Measure icon sizes once — requires a DOM insertion to read offsetWidth
-              container.innerHTML = '';
-              var star = starTpl.cloneNode();
-              var rose = roseTpl.cloneNode();
-              container.appendChild(star);
-              container.appendChild(rose);
-              sw = star.offsetWidth;
-              rw = rose.offsetWidth;
-              if (!sw || !rw) {
-                star.addEventListener('load', build, { once: true });
-                rose.addEventListener('load', build, { once: true });
-                return;
-              }
-              container.innerHTML = '';
-            }
-            var n = Math.max(0, Math.floor((container.clientWidth - sw) / (sw + rw + 2 * GAP)));
-            container.innerHTML = '';
-            for (var j = 0; j < n; j++) {
-              container.appendChild(starTpl.cloneNode());
-              container.appendChild(roseTpl.cloneNode());
-            }
-            container.appendChild(starTpl.cloneNode());
-          }
-
-          var _t;
-          var lastW = -1;
-          function onResize() {
-            // Debounce: wait 80ms after the last resize event before rebuilding
-            clearTimeout(_t);
-            _t = setTimeout(function () {
-              var w = container.clientWidth;
-              if (w === lastW) return;
-              lastW = w;
-              build();
-            }, 80);
-          }
-
-          if ('ResizeObserver' in window) {
-            new ResizeObserver(onResize).observe(container);
-          } else {
-            window.addEventListener('resize', onResize, { passive: true });
-          }
-          build();
-        };
-        makeSeparator('icon-separator', 'sep-star', 'sep-rose');
-      </script>
-    </section>
+</section>
 
     <!-- ══ STORY ══════════════════════════════════════ -->
     <section id="story" class="story-section">
@@ -415,26 +320,7 @@
           <video muted loop playsinline preload="none" width="600" height="750" poster="../../assets/videos/story-ambient-poster.jpg" title="Peruvian Street Food – smoke, passion and tradition" aria-label="Background video: Peruvian street food from the streets of Lima">
             <source data-src="../../assets/videos/story-ambient.mp4" type="video/mp4" />
           </video>
-          <script>
-          (function () {
-            var v = document.currentScript.previousElementSibling;
-            if (!v || v.tagName !== 'VIDEO') return;
-            var load = function () {
-              var s = v.querySelector('source[data-src]');
-              if (s) { s.src = s.dataset.src; s.removeAttribute('data-src'); v.load(); }
-              v.play().catch(function () {});
-            };
-            if ('IntersectionObserver' in window) {
-              var io = new IntersectionObserver(function (entries) {
-                entries.forEach(function (e) {
-                  if (e.isIntersecting) { load(); io.disconnect(); }
-                });
-              }, { rootMargin: '200px' });
-              io.observe(v);
-            } else { load(); }
-          })();
-          </script>
-          <div class="story-video-overlay"></div>
+<div class="story-video-overlay"></div>
         </div>
       </div>
     </section>
@@ -459,8 +345,7 @@
         <button class="c2-btn c2-btn-next" aria-label="Next">&#8594;</button>
         <div class="c2-viewport" id="c2Viewport">
           <div class="c2-track" id="c2Track"></div><!-- /c2-track -->
-          <script id="c2ReviewsData" type="application/json">[{"author":"maria garcia","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocKCoi_vqR-6rxDpnf_3t1qoDX2_BBE5HwKBcTFyV403Q03fUw=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/116287722873880911007/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT21scU4yd3dNMTlmYTJwbGNUTlZiVEZ3UjI4dE1XYxAB","review_original_link":"https://www.google.com/maps/contrib/116287722873880911007/reviews?hl=es","review_text":"Auténtica \"street food\" peruana hecha con amor.\nYo probé los anticuchos, los pinchos de pollo y el ceviche.\nVolveré para probar el resto.","rating":5,"review_date":"Hace 4 meses","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn0ODwQCwcXR1_lS6Li31sSGTXwmSK5LBq3C9CuvoI539Q2h3dxtYN9z6EKBOlHWkC2uAOa8zd8OIkPEq2R-yBy-2ALt7Kh7VmwBtZwLmqmTk73-4f3sDXe6lR1t4Wz2EHTMbpLH2SZ0T0nb=w1200-h900-p-k-no"]},{"author":"Alexander","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocKVLyB9OdNz6XOAKNXnA35GHrq6-aFo-2BrGy7SHMhhR43P9g=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/110945415410650298883/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT21oT1pFWTJRVGhhTkRKdU5HaGpTazVNYVZrM2FWRRAB","review_original_link":"https://www.google.com/maps/contrib/110945415410650298883/reviews?hl=es","review_text":"top ceviche and chicharron sandwich\ngreat salsas","rating":5,"review_date":"Hace 4 meses","image_links":[]},{"author":"Sagi Ben-Porath","google_reviewer_level":"Local Guide Level 4","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjWmV44BhngWhWt-D-sB5kgw9Fw_ueH9Ldc8kpQIVwLye0G2gmwSpA=w72-h72-p-rp-mo-ba4-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/108797238171048338187/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT21OZmFqTkpSSGR6WTJoR1l6SnFVVGx0ZFRWR1JXYxAB","review_original_link":"https://www.google.com/maps/contrib/108797238171048338187/reviews?hl=es","review_text":"The beef heart is simply amazing and grilled to perfection! The staff, especially Michael, are so nice. I'd definitely be back again and again.","rating":5,"review_date":"Hace 5 meses","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn0QMmFY87HBr_NUDSW2YDH776gInaHal0kQMRCoIDfa4qU1tro5dn7Y6QoKmce3qAHyfpMrEMWPcrR7RG2mmOEUN9pItzzrMIbzdi7qJTYVpuHqJw33F_WuO4_QuWX5-xdX8wVMLNMgejmg=w1200-h900-p-k-no"]},{"author":"paul scheenstra","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocIS4IrUEZMpCCbfd2Qxu2a4-xYVxDe6CpQJRjm4xDjtiwnw9g=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/112223078311356089160/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2taVFV6VnlSbkUxYjBoUWNtOUJNWFpyVm5wVGVuYxAB","review_original_link":"https://www.google.com/maps/contrib/112223078311356089160/reviews?hl=es","review_text":"Order the Ceviche and Polla à la brasa and be amazed! And super nice service to. Fresh sauces to the side. The real deal!!","rating":5,"review_date":"Hace 4 meses","image_links":[]},{"author":"Daniel Watts","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocL3oB73-byYHCtZHxxmyZSq97ebpvFxI8UpYJ9mk-8E7NjrAQ=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/110384249878954954982/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2t4Sk9UaG9VR2huTVVsQmREaFBaVVowWjNsWFJtYxAB","review_original_link":"https://www.google.com/maps/contrib/110384249878954954982/reviews?hl=es","review_text":"The Pan de Chicharron was one of the best sandwiches I’ve had","rating":5,"review_date":"Hace 3 meses","image_links":[]},{"author":"Diego Rengifo","google_reviewer_level":"Local Guide Level 2","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjVBt60pVjl96WFkY2NwVvC2_-wG9ABjGrSzqDj-b54ogtXkLIHknw=w72-h72-p-rp-mo-ba2-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/103003235794671059078/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT21SMFMwbFZOVUUzTVcxTFNuWnhNR0YxWlRSWWVHYxAB","review_original_link":"https://www.google.com/maps/contrib/103003235794671059078/reviews?hl=es","review_text":"Excellent food and atmosphere.","rating":5,"review_date":"Hace 5 meses","image_links":[]},{"author":"Kristina","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjWnM6Y2UA57a89-ZvPN6cHv9n88n-6sqMYqZ7JmtmmzUi3oOz8=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/116533390621277284438/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT21wVWEwdG9kVmhKUW1WcFpISkJOMHM1Y1V0NlEyYxAB","review_original_link":"https://www.google.com/maps/contrib/116533390621277284438/reviews?hl=es","review_text":"The food is amazing!","rating":5,"review_date":"Hace 4 meses","image_links":[]},{"author":"Robert Duric","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjXfJevu7Udq8lEzZlz3Oozr_XeZjAtV3xCcXxDCgH76Eu3dEJPr_w=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/111448987232333795437/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT25FM1pWTjNjMDFvYmtsME1YbFhTWFI2UzNsMGRtYxAB","review_original_link":"https://www.google.com/maps/contrib/111448987232333795437/reviews?hl=es","review_text":"A must try!","rating":5,"review_date":"Hace 2 meses","image_links":[]},{"author":"M Ryan","google_reviewer_level":"Local Guide Level 2","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjVD57f7WYXvW39h60xk9dJL_x8tYq_uM0k-q38XMzkRLLaVSqvvwQ=w72-h72-p-rp-mo-ba2-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/109972737049842034763/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2xCQ1VHTmhPRkpmZGpGTGVrNUdOVTFIYjE4emQyYxAB","review_original_link":"https://www.google.com/maps/contrib/109972737049842034763/reviews?hl=es","review_text":"Absolutely delicious chicken skewers. The sauces were excellent, everything cooked to perfect. Definitely coming back - highly recommend.","rating":5,"review_date":"hace 6&nbsp;días","image_links":[]},{"author":"özgür kaloğlu","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjX4lGr35MXRrvhILC0Cn7nFtZ_y03uDajrJlr1zI_wEcRJFz_EQ=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/102934473311158700998/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2xGaE4wVlZNamhNY1dWcVZGcGxURzlXVjE5WWFsRRAB","review_original_link":"https://www.google.com/maps/contrib/102934473311158700998/reviews?hl=es","review_text":"Delicious food, great team 👌","rating":5,"review_date":"Hace una semana","image_links":[]},{"author":"Eva G","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjXWJ6oMNu_piYIFgD90SL4bL7o8iOkksqUqhvRdx1E7atJNCCzT=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/107730364474919353769/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2tKeGVXTlNXa3BEYTJkbU1qUkNjRFUxVEVOM1RIYxAB","review_original_link":"https://www.google.com/maps/contrib/107730364474919353769/reviews?hl=es","review_text":"Delicious Peruvian street food with a wide selection of sauces (best part!)\nCorn was quite bland but everything else was great.","rating":5,"review_date":"Hace una semana","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn0XCCN6OiulN3u3Md3qwNrZIeztQnhdMpgKTuBLSWkQV8uAKeouiiw9s3HXXaM1Mls3NE4Y7EL3Vwf76u35edvMYeboRSL7Xhg187PsrZ_K3hUZerG_aYM1hgrsmSfpa6gH2VqfpZJYYcv5=w600-h900-p-k-no","https://lh3.googleusercontent.com/grass-cs/ANxoTn22VMcd2RsA0l3njMjSjt6q-w1S0ACNmeP3hk4gWlL9x1EQIzKpv1fecQoy2hh8XJJn0s77kMbFnn6CXQZ_YDjJabdBgqpE8OxgraUU4pzgL3caphb4mL8e437rnwfQ2KajdK-hnGYfgacM=w600-h900-p-k-no"]},{"author":"Natalia 365 (Natalia)","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocInUZu9xKXZ3JqycLWZDeIM1Ou8ZfPeXFepEMeGxIRmShF0ZA=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/105022365024393969022/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2swNFVIVlBUMlpuUm1ZemVGUkhkekl5VmpGMFJYYxAB","review_original_link":"https://www.google.com/maps/contrib/105022365024393969022/reviews?hl=es","review_text":"Beef Anticucho was great!","rating":5,"review_date":"Hace 2 semanas","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn1VV_i6T9I-JDTJG4ODS7k9OF3yc1B3fm1Ye1A3270hO8fDDiPNODwz-3FAYoXDL5KW_H5s1IQlIS2YgtUYshv2WuA8teRU6R9t33WIPUl0HgMYNg2HBwULXbwMEVab9uSPGRLy-V52CP7h=w1200-h900-p-k-no"]},{"author":"Gustavo Agreda","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocLpAskix7jVpnaUBX48fJGlRu0TDCkQnt0gDwhFKLL64ruwAA=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/104007117928410127566/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT25aR1VUbEtRbXREZURWZmF6SkRSRmxrTFZoR1oxRRAB","review_original_link":"https://www.google.com/maps/contrib/104007117928410127566/reviews?hl=es","review_text":"Authentic Peruvian food, one of the best pan con chicharrón and ceviche I’ve had in Europe","rating":5,"review_date":"Hace 2 semanas","image_links":[]},{"author":"Benjamin Ludborzs","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjVhdHn4PNEwzTsma9FNZ-UwKg4w6V_D5s_tJgA8rIsJoD3whOyktA=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/113352290457572271763/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2w4MVVtOVhNbmhQV0RKeFN6aElUM3BtWDFoSVpGRRAB","review_original_link":"https://www.google.com/maps/contrib/113352290457572271763/reviews?hl=es","review_text":"Amazing peruvian food, tasted like in Peru, especially the anticuchos!","rating":5,"review_date":"Hace 3 semanas","image_links":[]},{"author":"Florian Fellbaum","google_reviewer_level":"Local Guide Level 5","reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocIy01Z9GFiJb8635CgROtRs9duTue6teEgWHF67PrAd700WsQ=w72-h72-p-rp-mo-ba5-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/106262693192643026649/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT21GeGNUVnFjV3RQWlVkbE5tYzBOazFpUkhwa1YxRRAB","review_original_link":"https://www.google.com/maps/contrib/106262693192643026649/reviews?hl=es","review_text":"Ort ist im Pfefferberg Food Court.\nHammerlecker. Wie ein Kurzurlaub.","rating":5,"review_date":"Hace un mes","image_links":[]},{"author":"Mauricio A.","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjUqsFhrJKrLJFp85V5DgOTPugO-5HR9Tym-p4eWVVHHN9GG8w_b=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/108487640357481263608/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2xGWk4xWnJjREZmZGpacFptRnZXbWRSVWpaTVpuYxAB","review_original_link":"https://www.google.com/maps/contrib/108487640357481263608/reviews?hl=es","review_text":"Really nice quick Peruvian bites, tried the anticuchos and those were super tasty and tender and also the papa rellena was good! The chimichurri was also superb.","rating":5,"review_date":"Hace un mes","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn1cDyXZxoBsHlUiV4LVGmMj8CTsvgSpRb9ljRXx3USWE_5lhbUFFedQHmfMHANStNVyRuMmFXhZVdiBwBaJZgV15ZazrjdPn_fwRuGDxMsf9YjxOTzxutb3TbreAimdnabTm4pqZzLPt9KH=w1200-h900-p-k-no"]},{"author":"Nancy Vidal Rodriguez","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjWHNW_Vhl2cjUsCHVLOZKZtAjCa9a5iTn9Y7pdXv48dgBbbzOI=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/105450344063503742373/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2pKc1QyTlpha3d5WjJzeU5IWXpkbWRaYTNWSFRuYxAB","review_original_link":"https://www.google.com/maps/contrib/105450344063503742373/reviews?hl=es","review_text":"As a Peruvian, I have to say that this chicharrón is made just like if you where in my country. Only Peruvians would understand this but the onion sauce is so crunchy and juicy….just perfect with the sweet potato and the meat…omg. I think I am addicted to this.","rating":5,"review_date":"Hace un mes","image_links":[]},{"author":"Andrea Samaniego","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjU2KwheYlv4f-ZiMG-RwT9UxmyxYmNsku_m9po7peDI-hqgfMw-=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/104008117532301813505/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2tKUmRtdFhZMFkwYkZCRlZucFJlVzlHUlZGSFRrRRAB","review_original_link":"https://www.google.com/maps/contrib/104008117532301813505/reviews?hl=es","review_text":"Great spot with amazing flavours! Visited with other peruvians and tied everything from their menu.\nThe beef anticuchos are a 10/10 and the Papa Rellena was the best i tried so far in Germany (properly filled!!!).\nThe sauces were really good (proper latin spicy 🌶️ 🥵)\nThe only downside is since they are on the Foodhalle - they can’t serve their own drinks so the classic Chicha Morada is missing.","rating":5,"review_date":"Hace un mes","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn2cF4tEW1iW3byiAs7p2gsm9zPprQ5JAJ2lQ27hWz29ME2Pp4RhkoCjZhz3LyER6UFy6qkrC8jTfOBjcqFHcBJmkJ6WgHlj8phfAoq0Be2ATkm4Q54syOICOc9BZFxqEe6jR51LH8gPCs0=w600-h900-p-k-no","https://lh3.googleusercontent.com/grass-cs/ANxoTn2pWMm4khAbHxhdHXuiFuvy-CFOonLo3u5P8ffo72wiNTwB06l8SgVppF2B6a8qenRfezLmZA_g3doM7mQHEn47W-SUIBz7JGermH3lsw9RVryxI97VBeBL0iM5RBoP9kmr250G4Q_tuaf-=w600-h900-p-k-no"]},{"author":"Vasko Popchevaliev","google_reviewer_level":"Local Guide Level 2","reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocIawNLpufsdbsLUIjNrZORET-OEHOXzKyks8TOg80BkzFknag=w72-h72-p-rp-mo-ba2-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/112316246573666140554/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT20weWNFZGFXSGw0VTFZNGFtWnZka1F6Tkc1Q1IwRRAB","review_original_link":"https://www.google.com/maps/contrib/112316246573666140554/reviews?hl=es","review_text":"Absolutely gorgeous beef heart. Super tender, delicious and full of flavor!\nThe service was awesome, Sebastian is top-notch!\n10/10 would recommend and come back for a nice snack","rating":5,"review_date":"Hace un mes","image_links":[]},{"author":"Yi Zhang","google_reviewer_level":null,"reviewer_image_link":"https://lh3.googleusercontent.com/a/ACg8ocLTNxuAAuEGmg1gesDf2T1iMbsa07ETNGVgwY8_PNQn50B-aA=w72-h72-p-rp-mo-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/100581340141452728591/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT25nM1RVTlNVMUEzY1ROaGR6aFNWMEZ2YW5OSVlXYxAB","review_original_link":"https://www.google.com/maps/contrib/100581340141452728591/reviews?hl=es","review_text":"Tried the grilled beef heart as recommended by the nice staff, its charred and tender! Will comeback for it again","rating":5,"review_date":"Hace un mes","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn1X71xgfnIvb47saZSbESS9YAzaGcs0nsBauZ5EEmjBiqDUJpuqDCyDtHJBbnU2xm_5sdkEbTH5UiNe85YxgLF98D9OwPwg8p6OXdzBHryW0O8HRDVe1s3WQGcpOGWL6ONHy0X-BRffkZ_2=w1200-h900-p-k-no"]},{"author":"Issa Rocha","google_reviewer_level":"Local Guide Level 3","reviewer_image_link":"https://lh3.googleusercontent.com/a-/ALV-UjUzIqA0rPZL7ZRz_aAtYuNmAlcQ1kxfd0X814wdVHa0RwByYrwk=w72-h72-p-rp-mo-ba3-br100","reviewer_profile_link":"https://www.google.com/maps/contrib/103955572124416997998/reviews?hl=es","review_id":"Ci9DQUlRQUNvZENodHljRjlvT2kxcWJXeHFhRFkxVFhjMFlsQlFkMmRSVlMxVGVWRRAB","review_original_link":"https://www.google.com/maps/contrib/103955572124416997998/reviews?hl=es","review_text":"We went to try this new Peruvian place on Sunday and were pleased to find out that they respect the authentic Peruvian flavors. We had pan con chicharrón, anticucho and papa Rellena and as a Peruvian person myself I can say that the food was delicious. Can highly recommend for someone wanting to try Peruvian food!","rating":5,"review_date":"Hace 2 meses","image_links":["https://lh3.googleusercontent.com/grass-cs/ANxoTn1kVtRP4HTJYVEyOX1LzCu8EvumtDaKIaCgj6LFCqOAvhnhwU6xUgLtUhQ-vrM2RCcbOlc4Ki1VgZELHjXGgCBeoNXUZzkR5zp0Z5m8BZ12-BG6sL6AC4LpsdkscLLxCvDIigYA_k3qu8bf=w1200-h900-p-k-no"]}]</script>
-        </div><!-- /c2-viewport -->
+</div><!-- /c2-viewport -->
       </div><!-- /c2-outer -->
     </section>
 
@@ -529,10 +414,7 @@
       <img id="sep-star-footer" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
       <img id="sep-rose-footer" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
     </div>
-    <script>makeSeparator('icon-separator-footer', 'sep-star-footer', 'sep-rose-footer');</script>
-
-
-    <!-- ══ FOOTER ══════════════════════════════════════ -->
+<!-- ══ FOOTER ══════════════════════════════════════ -->
     <footer class="site-footer" role="contentinfo">
 
       <!-- Social -->
@@ -585,12 +467,5 @@
       </defs>
     </svg>
 
-    <script src="../../scripts/site.js"></script>
-    <script>
-      if (window.innerWidth <= 768) {
-        document.querySelectorAll('a[href="#menu"]').forEach(function(a) { a.href = 'menu.html'; });
-      }
-    </script>
-
-  </body>
+</body>
 </html>
