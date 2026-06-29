@@ -10,32 +10,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles/site.css" />
     <style>
-      .menu-back-bar {
-        position: sticky; top: 0; z-index: 100;
-        background: var(--black); border-bottom: 3px solid var(--yellow);
-        display: flex; align-items: center; gap: 1rem;
-        padding: 0.75rem 1.5rem;
-      }
-      .menu-back-link {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-        font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase;
-        color: var(--yellow); text-decoration: none;
-        display: flex; align-items: center; gap: 0.4rem;
-        white-space: nowrap;
-      }
-      .menu-back-link:hover { opacity: 0.8; }
-      .menu-back-logo {
-        height: 36px; width: auto; margin-left: auto;
-        filter: brightness(0) saturate(100%) invert(82%) sepia(55%) saturate(1428%) hue-rotate(358deg);
+      /* Fixed navbar (like home) – keep content clear of the bar */
+      .menu-section { padding-top: var(--nav-h); }
+      /* site.css hides .menu-section/#sides on mobile (menu lives here) –
+         on this page the menu must stay visible */
+      @media (max-width: 768px) {
+        .menu-section, #sides { display: block; }
       }
     </style>
   </head>
   <body>
 
-    <div class="menu-back-bar">
-      <a href="index.html" class="menu-back-link">← Indietro</a>
-      <img class="menu-back-logo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" />
-    </div>
+        <!-- NAVBAR (same as home, + Home link) -->
+    <div id="navSentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none;"></div>
+    <nav class="nav" id="navbar" aria-label="Navigazione principale">
+      <img class="nav-mobile-logo" id="mobileLogo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" aria-hidden="true">
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="#menu">MENU</a>
+        <a href="index.html#story">LA NOSTRA STORIA</a>
+        <a href="index.html#reviews2">RECENSIONI</a>
+        <a href="index.html#location">COME ARRIVARE</a>
+      </div>
+      <details class="lang-dd">
+        <summary aria-label="Scegli la lingua"><span class="flag">🇮🇹</span><span class="code">IT</span></summary>
+        <ul>
+          <li><a href="../de/menu.html" hreflang="de"><span class="flag">🇩🇪</span> DE</a></li>
+          <li><a href="../en/menu.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a></li>
+          <li><a href="../es/menu.html" hreflang="es"><span class="flag">🇪🇸</span> ES</a></li>
+          <li><a href="../fr/menu.html" hreflang="fr"><span class="flag">🇫🇷</span> FR</a></li>
+        </ul>
+      </details>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navigazione mobile" aria-hidden="true">
+      <a href="index.html" class="mobile-menu-link">HOME</a>
+      <a href="index.html#story" class="mobile-menu-link">LA NOSTRA STORIA</a>
+      <a href="index.html#reviews2" class="mobile-menu-link">RECENSIONI</a>
+      <a href="index.html#location" class="mobile-menu-link">COME ARRIVARE</a>
+      <details class="lang-dd-mobile">
+        <summary aria-label="Scegli la lingua"><span class="flag">🇮🇹</span><span class="code">IT</span></summary>
+        <ul>
+          <li><a href="../de/menu.html" hreflang="de"><span class="flag">🇩🇪</span> DE</a></li>
+          <li><a href="../en/menu.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a></li>
+          <li><a href="../es/menu.html" hreflang="es"><span class="flag">🇪🇸</span> ES</a></li>
+          <li><a href="../fr/menu.html" hreflang="fr"><span class="flag">🇫🇷</span> FR</a></li>
+        </ul>
+      </details>
+    </nav>
 
     <!-- ══ MENU ════════════════════════════════════════ -->
     <section id="menu" class="menu-section" aria-label="Menu">
@@ -270,5 +297,8 @@
       </div>
 </section>
 
+    <div id="site-footer"></div>
+    <script src="nav.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>
