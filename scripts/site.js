@@ -150,7 +150,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     // Clamp dt so a background-tab returning doesn't cause a huge jump
     const dt = Math.min((now - last) / 1000, 0.1);
     last = now;
-    if (!paused && track.firstElementChild) {
+    if (!paused && !scrolling && track.firstElementChild) {
       if (!cachedCardW) measureCardW();
       if (cachedCardW > 0) {
         offset += pxPerSec * dt;
@@ -180,6 +180,15 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     if (entries[0].isIntersecting) startRaf();
     else stopRaf();
   }, { threshold: 0 }).observe(track);
+
+  // Pause the marquee while the page is scrolling, so its per-frame repaint
+  // never competes with the browser's scroll / anchor-jump animation.
+  var scrolling = false, scrollIdle;
+  window.addEventListener('scroll', function () {
+    scrolling = true;
+    clearTimeout(scrollIdle);
+    scrollIdle = setTimeout(function () { scrolling = false; }, 200);
+  }, { passive: true });
 
   function step(dir) {
     const n = 3;
