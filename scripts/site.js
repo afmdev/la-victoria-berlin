@@ -206,15 +206,22 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   var supportedLangs = ['de', 'en', 'es', 'it', 'fr', 'pl', 'nl'];
   if (supportedLangs.indexOf(pageLang) === -1) pageLang = 'de';
 
-  fetch('../../data/reviews/reviews.' + pageLang + '.json')
-    .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-    .then(function (data) { init(Array.isArray(data) ? data : (data.reviews || [])); })
-    .catch(function () {
-      fetch('../../data/reviews/reviews.de.json')
-        .then(function (r) { if (!r.ok) throw 0; return r.json(); })
-        .then(function (data) { init(Array.isArray(data) ? data : (data.reviews || [])); })
-        .catch(function () { init(fromEmbed()); });
-    });
+  function initFromData(data) { init(Array.isArray(data) ? data : (data.reviews || [])); }
+
+  // fetch() is blocked by CORS under file://; use the inlined data instead.
+  if (location.protocol === 'file:') {
+    init(fromEmbed());
+  } else {
+    fetch('../../data/reviews/reviews.' + pageLang + '.json')
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(initFromData)
+      .catch(function () {
+        fetch('../../data/reviews/reviews.de.json')
+          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+          .then(initFromData)
+          .catch(function () { init(fromEmbed()); });
+      });
+  }
 
   if (viewport) {
     viewport.addEventListener('mouseenter', function () { paused = true; });
