@@ -1,9 +1,12 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
 
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', e => {
@@ -228,6 +231,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   const lbPrev = document.getElementById('lightboxPrev');
   const lbNext = document.getElementById('lightboxNext');
   const lbClose = document.getElementById('lightboxClose');
+  if (!lb || !lbImg || !lbPrev || !lbNext || !lbClose) return;
   let lbItems = [];
   let lbIndex = -1;
 
