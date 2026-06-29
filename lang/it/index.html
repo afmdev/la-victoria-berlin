@@ -86,40 +86,6 @@
       <a href="#reviews2" class="mobile-menu-link">RECENSIONI</a>
       <a href="#location" class="mobile-menu-link">COME ARRIVARE</a>
     </nav>
-    <script>
-    (function(){
-      var btn = document.getElementById('navHamburger');
-      var panel = document.getElementById('mobileMenu');
-      if (!btn || !panel) return;
-      function close() {
-        btn.classList.remove('open'); panel.classList.remove('open');
-        btn.setAttribute('aria-expanded','false'); panel.setAttribute('aria-hidden','true');
-        btn.setAttribute('aria-label','Apri menu');
-      }
-      btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var isOpen = panel.classList.toggle('open');
-        btn.classList.toggle('open', isOpen);
-        btn.setAttribute('aria-expanded', String(isOpen));
-        panel.setAttribute('aria-hidden', String(!isOpen));
-        btn.setAttribute('aria-label', isOpen ? 'Chiudi menu' : 'Apri menu');
-      });
-      panel.querySelectorAll('a').forEach(function(a) {
-        a.addEventListener('click', function(e) {
-          var href = a.getAttribute('href');
-          if (!href || href.charAt(0) !== '#') { close(); return; }
-          e.preventDefault();
-          var target = document.querySelector(href);
-          close();
-          if (target) setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
-        });
-      });
-      document.addEventListener('click', function(e) {
-        if (!document.getElementById('navbar').contains(e.target) && !panel.contains(e.target)) close();
-      });
-      btn.dataset.mobileInit = '1';
-    })();
-    </script>
 
     <main id="main-content">
 
