@@ -911,7 +911,18 @@
         content: '▾'; display: inline-block; font-size: 0.85em; transition: transform 0.2s;
       }
       .lang-dd[open] summary::after { transform: rotate(180deg); }
-      .lang-dd .flag { font-size: 1.15em; line-height: 1; }
+      /* SVG-Flaggen (plattformunabhängig, anders als Emoji-Flaggen unter Windows) */
+      .flag {
+        display: inline-block; width: 1.5em; height: 1.04em;
+        background-size: cover; background-position: center;
+        border-radius: 2px; vertical-align: -0.18em;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);
+      }
+      .flag--de { background-image: url('../assets/svg/flags/de.svg'); }
+      .flag--en { background-image: url('../assets/svg/flags/en.svg'); }
+      .flag--es { background-image: url('../assets/svg/flags/es.svg'); }
+      .flag--fr { background-image: url('../assets/svg/flags/fr.svg'); }
+      .flag--it { background-image: url('../assets/svg/flags/it.svg'); }
       .nav:not(.scrolled) .lang-dd summary { color: var(--black); }
       .nav.scrolled .lang-dd summary { color: var(--yellow); }
       .lang-dd ul {
@@ -961,7 +972,7 @@
         .lang-dd-mobile summary::-webkit-details-marker { display: none; }
         .lang-dd-mobile summary::after { content: '▾'; margin-left: auto; transition: transform 0.2s; }
         .lang-dd-mobile[open] summary::after { transform: rotate(180deg); }
-        .lang-dd-mobile .flag { font-size: 1.2em; line-height: 1; }
+        .lang-dd-mobile .flag { width: 1.7em; }
         .lang-dd-mobile ul { list-style: none; margin: 0; padding: 0; background: rgba(0,0,0,0.25); }
         .lang-dd-mobile[open] ul {
           overflow: hidden;
