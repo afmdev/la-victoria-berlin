@@ -44,17 +44,41 @@
     });
   }
 
-  // 3) Sprach-Dropdown: Vorhang-Animation bei JEDEM Öffnen neu starten.
-  //    (Eine CSS-Animation läuft sonst nur beim ersten Anzeigen eines <details>.)
+  // 3) Sprach-Dropdown: Vorhang-Animation beim Öffnen UND beim Schließen.
+  //    <details> animiert das Schließen nicht von selbst → wir spielen die
+  //    Rückwärts-Animation und schließen erst danach.
   var dds = document.querySelectorAll('details.lang-dd, details.lang-dd-mobile');
   for (var i = 0; i < dds.length; i++) {
     (function (dd) {
+      var summary = dd.querySelector('summary');
+      var ul = dd.querySelector('ul');
+      if (!summary || !ul) return;
+      var outAnim = dd.classList.contains('lang-dd-mobile') ? 'lang-curtain-m-out' : 'lang-curtain-d-out';
+      var closing = false;
+
+      summary.addEventListener('click', function (e) {
+        if (closing) { e.preventDefault(); return; }      // Klicks während des Einrollens ignorieren
+        if (dd.open) {
+          // Schließen: erst nach oben einrollen, dann <details> schließen
+          e.preventDefault();
+          closing = true;
+          ul.style.animation = outAnim + ' 0.32s cubic-bezier(0.4, 0, 0.2, 1) both';
+          var done = function () {
+            ul.removeEventListener('animationend', done);
+            dd.open = false;
+            closing = false;
+            ul.style.animation = '';
+          };
+          ul.addEventListener('animationend', done);
+        }
+        // Öffnen: native Umschaltung läuft normal; toggle-Handler startet die Öffnen-Animation
+      });
+
       dd.addEventListener('toggle', function () {
         if (!dd.open) return;
-        var ul = dd.querySelector('ul');
-        if (!ul) return;
+        // Öffnen-Animation bei JEDEM Öffnen neu starten (sonst läuft sie nur beim ersten Mal)
         ul.style.animation = 'none';
-        void ul.offsetWidth; // Reflow erzwingen → Animation startet neu
+        void ul.offsetWidth;
         ul.style.animation = '';
       });
     })(dds[i]);
