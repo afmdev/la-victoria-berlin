@@ -330,29 +330,5 @@
     </div>
   </footer>
 
-  <script>
-    window.addEventListener('scroll', () => {
-      document.getElementById('nav').classList.toggle('scrolled', scrollY > 60);
-    });
-
-    const toggle = document.getElementById('langToggle');
-    const menu   = document.getElementById('langMenu');
-    toggle.addEventListener('click', () => {
-      const open = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.lang-selector')) {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    function goLang(code) {
-      const isProd = /(^|\.)lavictoriaberlin\.com$/i.test(location.hostname);
-      location.href = isProd ? 'https://' + code + '.lavictoriaberlin.com/' : './' + code + '/';
-    }
-  </script>
-
 </body>
 </html>
