@@ -757,12 +757,14 @@
       .c2-btn-prev { left: 1rem; }
       .c2-btn-next { right: 1rem; }
       .c2-viewport { overflow: hidden; }
-      .c2-track {
-        display: flex; gap: 16px;
-        /* No will-change/translateZ: the track is ~17000px wide (51 cards) and a forced
-           compositing layer would exceed the GPU max texture size (~16384px) and fall back
-           to expensive CPU tiling. The browser promotes on-demand while the rAF animates. */
-      }
+      /* Reviews-Marquee: reine CSS-Animation (Compositor/GPU), kein JS-rAF.
+         Inhalt wird per JS verdoppelt → translateX(-50%) ergibt eine nahtlose Endlosschleife.
+         Wenige Karten (≤14) halten die Spurbreite unter dem GPU-Texturlimit (~16384px). */
+      .c2-track { display: flex; gap: 16px; width: max-content; }
+      .c2-track.c2-animate { animation: c2-marquee var(--c2-dur, 60s) linear infinite; }
+      @keyframes c2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      .c2-outer:hover .c2-track.c2-animate { animation-play-state: paused; }
+      .c2-btn { display: none; } /* Marquee braucht keine Prev/Next-Buttons */
       .c2-card {
         width: 320px; flex-shrink: 0;
         background: #fff; display: flex; flex-direction: column;
@@ -1028,6 +1030,7 @@
       /* ── Reduced motion ─────────────────────────────── */
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
+        .c2-track.c2-animate { animation: none; }
       }
 
       /* ── Mobile: menu lives on menu.html ────────────── */

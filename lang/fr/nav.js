@@ -83,4 +83,43 @@
       });
     })(dds[i]);
   }
+
+  // 4) Reviews-Marquee: erst bauen, wenn die Sektion in den Viewport scrollt (lazy),
+  //    danach läuft eine reine CSS-Animation. Daten liegen inline (#c2-data) → kein fetch.
+  var section = document.getElementById('reviews2');
+  var track = document.getElementById('c2Track');
+  var dataEl = document.getElementById('c2-data');
+  if (section && track && dataEl && 'IntersectionObserver' in window) {
+    var esc = function (s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    };
+    var card = function (r) {
+      var rating = Math.max(0, Math.min(5, parseInt(r.rating, 10) || 5));
+      var stars = '★★★★★'.slice(0, rating);
+      var avatar = r.avatar
+        ? '<img class="c2-avatar" src="' + esc(r.avatar) + '" alt="" loading="lazy" decoding="async" width="40" height="40" referrerpolicy="no-referrer">'
+        : '';
+      return '<article class="c2-card"><div class="c2-body">'
+        + '<div class="c2-author-row">' + avatar
+        + '<div class="c2-author-info"><span class="c2-author-name">' + esc(r.author) + '</span>'
+        + '<span class="c2-stars" aria-label="' + rating + '/5">' + stars + '</span></div></div>'
+        + '<p class="c2-text">' + esc(r.text) + '</p></div></article>';
+    };
+    var built = false;
+    var build = function () {
+      if (built) return; built = true;
+      var data;
+      try { data = JSON.parse(dataEl.textContent); } catch (e) { return; }
+      if (!data || !data.length) return;
+      var html = data.map(card).join('');
+      track.innerHTML = html + html; // verdoppeln → nahtlose Schleife bei translateX(-50%)
+      track.style.setProperty('--c2-dur', (data.length * 4.5) + 's');
+      track.classList.add('c2-animate');
+    };
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { build(); io.disconnect(); }
+    }, { rootMargin: '300px' });
+    io.observe(section);
+  }
 })();
