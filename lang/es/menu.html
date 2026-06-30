@@ -1,166 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menú – La Victoria Berlin</title>
-  <meta name="robots" content="noindex, follow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --green: #38b04a; --green-dark: #2d8f3b; --green-light: #4dc960;
-      --yellow: #f5c918; --black: #111111; --white: #ffffff;
-      --font-display: 'Boogaloo', cursive;
-      --font-headline: 'Bebas Neue', cursive;
-      --font-body: 'DM Sans', sans-serif;
-      --section-py: clamp(3.5rem, 8vw, 6rem);
-      --radius: 14px; --transition: 0.25s ease;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; }
-    body { font-family: var(--font-body); background: var(--white); color: var(--black); overflow-x: hidden; line-height: 1.6; }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-    .container { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: clamp(1rem, 5vw, 2rem); }
-    .eyebrow { font-family: var(--font-headline); letter-spacing: 0.18em; font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 0.75rem; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carta – La Victoria Berlin</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../styles/site.css" />
+    <style>
+      /* Fixed navbar (like home) – keep content clear of the bar */
+      .menu-section { padding-top: 0; }
+      /* site.css hides .menu-section/#sides on mobile (menu lives here) –
+         on this page the menu must stay visible */
+      @media (max-width: 768px) {
+        .menu-section, #sides { display: block; }
+      }
+    </style>
+  </head>
+  <body>
 
-    .menu-back-bar { position: sticky; top: 0; z-index: 100; background: var(--black); border-bottom: 3px solid var(--yellow); display: flex; align-items: center; gap: 1rem; padding: 0.75rem 1.5rem; }
-    .menu-back-link { font-family: var(--font-headline); letter-spacing: 0.15em; font-size: 1rem; color: var(--yellow); white-space: nowrap; }
-    .menu-back-link:hover { opacity: 0.8; }
-    .menu-back-logo { height: 32px; width: auto; margin-left: auto; filter: invert(1); opacity: 0.8; }
+        <!-- NAVBAR (same as home, + Home link) -->
+    <div id="navSentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none;"></div>
+    <nav class="nav" id="navbar" aria-label="Navegación principal">
+      <img class="nav-mobile-logo" id="mobileLogo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" aria-hidden="true">
+      <div class="nav-links">
+        <a href="index.html">INICIO</a>
+        <a href="#menu">CARTA</a>
+        <a href="index.html#story">NUESTRA HISTORIA</a>
+        <a href="index.html#reviews2">RESEÑAS</a>
+        <a href="index.html#location">CÓMO LLEGAR</a>
+      </div>
+      <details class="lang-dd">
+        <summary aria-label="Elegir idioma"><span class="flag">🇪🇸</span><span class="code">ES</span></summary>
+        <ul>
+          <li><a href="../de/menu.html" hreflang="de"><span class="flag">🇩🇪</span> DE</a></li>
+          <li><a href="../en/menu.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a></li>
+          <li><a href="../fr/menu.html" hreflang="fr"><span class="flag">🇫🇷</span> FR</a></li>
+          <li><a href="../it/menu.html" hreflang="it"><span class="flag">🇮🇹</span> IT</a></li>
+        </ul>
+      </details>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
 
-    #menu { background: var(--green); padding-block: var(--section-py); position: relative; overflow: hidden; }
-    #menu::before { content: ''; position: absolute; inset: 0; background-image: url('../../images-ejemplo/bg.jpg'); background-size: 360px; opacity: 0.06; pointer-events: none; }
-    #menu::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: var(--yellow); }
-    .menu-header { text-align: center; margin-bottom: clamp(2rem, 5vw, 3.5rem); position: relative; }
-    .menu-header .eyebrow { color: rgba(17,17,17,0.5); }
-    .menu-title { font-family: var(--font-display); font-size: clamp(3.5rem, 10vw, 7rem); line-height: 0.88; color: var(--black); }
-    .menu-subtitle { font-family: var(--font-display); font-size: clamp(1.1rem, 2.5vw, 1.5rem); color: var(--yellow); margin-top: 0.4rem; }
-    .menu-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-    @media (min-width: 600px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
-    .menu-card { background: var(--black); border-radius: var(--radius); border: 3px solid var(--black); overflow: hidden; transition: transform var(--transition), box-shadow var(--transition); display: flex; flex-direction: column; }
-    .menu-card:hover { transform: translateY(-5px) rotate(-0.8deg); box-shadow: 10px 10px 0 var(--black); }
-    .card-head { padding: 1.4rem 1.5rem 1rem; border-bottom: 1.5px solid rgba(255,255,255,0.07); }
-    .card-tag { font-family: var(--font-headline); font-size: 0.7rem; letter-spacing: 0.18em; color: var(--green-light); margin-bottom: 0.3rem; }
-    .card-name { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 2.75rem); line-height: 0.95; color: var(--yellow); }
-    .card-sub { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green-light); margin-top: 0.3rem; opacity: 0.85; }
-    .card-body { padding: 1rem 1.5rem 1.4rem; flex: 1; display: flex; flex-direction: column; }
-    .card-desc { font-size: 0.85rem; line-height: 1.65; color: #999; margin-bottom: 1.1rem; font-style: italic; }
-    .item-list { margin-top: auto; }
-    .item-row { display: flex; justify-content: space-between; align-items: baseline; gap: 0.5rem; padding: 0.45rem 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
-    .item-row:last-child { border-bottom: none; }
-    .item-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--white); }
-    .item-note { font-size: 0.68rem; color: #666; display: block; margin-top: 0.1rem; }
-    .item-price { font-family: var(--font-display); font-size: 1.3rem; color: var(--yellow); white-space: nowrap; flex-shrink: 0; }
-  </style>
-</head>
-<body>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navegación móvil" aria-hidden="true">
+      <a href="index.html" class="mobile-menu-link">INICIO</a>
+      <a href="index.html#story" class="mobile-menu-link">NUESTRA HISTORIA</a>
+      <a href="index.html#reviews2" class="mobile-menu-link">RESEÑAS</a>
+      <a href="index.html#location" class="mobile-menu-link">CÓMO LLEGAR</a>
+      <details class="lang-dd-mobile">
+        <summary aria-label="Elegir idioma"><span class="flag">🇪🇸</span><span class="code">ES</span></summary>
+        <ul>
+          <li><a href="../de/menu.html" hreflang="de"><span class="flag">🇩🇪</span> DE</a></li>
+          <li><a href="../en/menu.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a></li>
+          <li><a href="../fr/menu.html" hreflang="fr"><span class="flag">🇫🇷</span> FR</a></li>
+          <li><a href="../it/menu.html" hreflang="it"><span class="flag">🇮🇹</span> IT</a></li>
+        </ul>
+      </details>
+    </nav>
 
-  <div class="menu-back-bar">
-    <a href="index.html" class="menu-back-link">← Volver</a>
-    <img src="../../logo.png" alt="La Victoria Berlin" class="menu-back-logo" />
-  </div>
+    <!-- ══ MENU ════════════════════════════════════════ -->
+    <section id="menu" class="menu-section" aria-label="Carta">
+      <div class="menu-inner">
+        <h2 class="sr-only">Carta</h2>
+        <div class="menu-rule"></div>
 
-  <section id="menu" aria-labelledby="menu-heading">
-    <div class="container">
+        <!-- 3-column grid -->
+        <div class="grid-3">
 
-      <header class="menu-header">
-        <span class="eyebrow">Nuestra carta</span>
-        <h2 class="menu-title" id="menu-heading">MENÚ</h2>
-        <p class="menu-subtitle">Hecho con Cariño ✦</p>
-      </header>
-
-      <div class="menu-grid">
-
-        <article class="menu-card">
-          <div class="card-head">
-            <p class="card-tag">✦ Parrilla peruana auténtica</p>
-            <h3 class="card-name">ANTICUCHO</h3>
-            <p class="card-sub">De la parrilla — directo de las esquinas de Lima</p>
+          <!-- ANTICUCHO -->
+          <div id="anticucho" class="dish" style="align-items:center;text-align:center">
+            <div class="img-offset">
+              <div class="dish-img" style="width:100%">
+                <picture>
+                  <source srcset="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png" alt="Anticucho – brochetas de corazón de res a la parrilla al estilo peruano" width="1200" height="775" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="dish-body" style="align-items:center">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">ANTICUCHO</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">AUTÉNTICA PARRILLA PERUANA</p>
+              <p class="dish-desc">
+                Directamente de las calles humeantes de Lima: brochetas marinadas llenas de especias,
+                fuego y amor. A la parrilla en su punto, servidas con papa y choclo.
+              </p>
+            </div>
           </div>
-          <div class="card-body">
-            <p class="card-desc">Pinchos marinados con especias, fuego y amor. Asados a la perfección y servidos con papas y choclo – el maíz grande peruano.</p>
-            <ul class="item-list">
-              <li class="item-row"><span class="item-name">Corazón de res</span><span class="item-price">10 €</span></li>
-              <li class="item-row"><span class="item-name">Pollo</span><span class="item-price">9 €</span></li>
-              <li class="item-row"><span class="item-name">Champiñones ostra</span><span class="item-price">8 €</span></li>
-            </ul>
-          </div>
-        </article>
 
-        <article class="menu-card">
-          <div class="card-head">
-            <p class="card-tag">✦ Fresco, picante y peruano sin disculpas</p>
-            <h3 class="card-name">CEVICHE</h3>
-            <p class="card-sub">Fresco · Picante · Peruano sin disculpas</p>
+          <div class="grid-divider-col" aria-hidden="true">
+            <div class="grid-divider-line"></div>
           </div>
-          <div class="card-body">
-            <p class="card-desc">Trozos de pescado curados en limón, con cebolla roja y ají rocoto – la receta callejera por la que todo peruano jura. Servido frío y con punch.</p>
-            <ul class="item-list">
-              <li class="item-row"><span class="item-name">Pescado</span><span class="item-price">13 €</span></li>
-              <li class="item-row"><span><span class="item-name">Mixto</span><span class="item-note">(Pescado, Pulpo, Langostinos)</span></span><span class="item-price">13 €</span></li>
-              <li class="item-row"><span class="item-name">Mango</span><span class="item-price">9 €</span></li>
-            </ul>
-          </div>
-        </article>
 
-        <article class="menu-card">
-          <div class="card-head">
-            <p class="card-tag">✦ La reina del street food peruano</p>
-            <h3 class="card-name">PAPA RELLENA</h3>
-            <p class="card-sub">La reina de la calle peruana</p>
+          <!-- CEVICHE -->
+          <div id="ceviche" class="dish" style="align-items:center;text-align:center">
+            <div class="img-offset">
+              <div class="dish-img" style="width:100%">
+                <picture>
+                  <source srcset="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche – pescado peruano fresco con limón y ají rocoto" width="1200" height="775" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="dish-body" style="align-items:center">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">CEVICHE</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">FRESCO. PICANTE. Y CIEN POR CIENTO PERUANO</p>
+              <p class="dish-desc">
+                Trozos de pescado cocidos en jugo de limón, con cebolla morada y ají rocoto —
+                la receta callejera por la que en Perú todo el mundo jura. Servido frío, con un sabor que golpea fuerte.
+              </p>
+            </div>
+            <p class="allergens" aria-label="Contiene alérgenos: 1 Gluten, 4 Pescado, 7 Lácteos">(1, 4, 7)</p>
           </div>
-          <div class="card-body">
-            <p class="card-desc">Cubierta de papa crujiente rellena de carne sazonada, cebolla caramelizada, aceitunas y huevo. Con salsa criolla para el toque perfecto.</p>
-            <ul class="item-list">
-              <li class="item-row"><span class="item-name">Carne</span><span class="item-price">9 €</span></li>
-              <li class="item-row"><span class="item-name">Champiñones</span><span class="item-price">6,50 €</span></li>
-            </ul>
-          </div>
-        </article>
 
-        <article class="menu-card">
-          <div class="card-head">
-            <p class="card-tag">✦ Sanguches — Hecho con Cariño</p>
-            <h3 class="card-name">PAN CON<br/>CHICHARRÓN</h3>
-            <p class="card-sub">Cerdo en pan · La leyenda callejera</p>
+          <div class="grid-divider-col" aria-hidden="true">
+            <div class="grid-divider-line"></div>
           </div>
-          <div class="card-body">
-            <p class="card-desc">Panceta de cerdo tierna con tajadas de camote, salsa criolla y nuestras salsas de la casa. Puro confort entre dos mitades de pan.</p>
-            <ul class="item-list">
-              <li class="item-row"><span class="item-name">Pan con Chicharrón</span><span class="item-price">10 €</span></li>
-            </ul>
-          </div>
-        </article>
 
-        <article class="menu-card">
-          <div class="card-head">
-            <p class="card-tag">✦ Sanguches — Hecho con Cariño</p>
-            <h3 class="card-name">POLLO A<br/>LA BRASA</h3>
-            <p class="card-sub">Orgullo nacional en formato sánguche</p>
+          <!-- PAPA RELLENA -->
+          <div id="papa-rellena" class="dish" style="align-items:center;text-align:center">
+            <div class="img-offset">
+              <div class="dish-img" style="width:100%">
+                <picture>
+                  <source srcset="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png" alt="Papa Rellena – papa rellena de carne picada y aceitunas" width="1200" height="775" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="dish-body" style="align-items:center">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">PAPA RELLENA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">LA REINA DE LA CALLE PERUANA</p>
+              <p class="dish-desc">
+                Cubierta crujiente de papa con carne de res sazonada, cebolla caramelizada y huevo.
+                Acompañada de Salsa Criolla fresca para el toque perfecto.
+              </p>
+              <p class="allergens" aria-label="Contiene alérgenos: 1 Gluten, 3 Huevos">(1, 3)</p>
+            </div>
           </div>
-          <div class="card-body">
-            <p class="card-desc">Pollo a la brasa en brioche suave con lechuga, tomate, ají amarillo y papas bastón. El pollo favorito del Perú, a nuestra manera.</p>
-            <ul class="item-list">
-              <li class="item-row"><span class="item-name">Pollo a la Brasa</span><span class="item-price">10 €</span></li>
-            </ul>
-          </div>
-        </article>
 
-        <article class="menu-card" style="background:var(--green);justify-content:center;align-items:center;min-height:220px;">
-          <div style="text-align:center;padding:2rem;">
-            <p style="font-family:var(--font-display);font-size:2.5rem;color:var(--black);line-height:1;">¿Más?</p>
-            <p style="font-family:var(--font-body);font-size:0.9rem;color:var(--black);opacity:0.7;margin-top:0.5rem;">Síguenos en Instagram para especiales y platos de temporada</p>
-            <p style="font-size:2rem;margin-top:1rem;">📸</p>
+        </div><!-- /grid-3 -->
+      </div>
+
+      <!-- ══ SANGUCHES + THE MOST BELOVED ══ -->
+      <div class="menu-inner">
+        <div class="grid-bottom">
+
+          <!-- SANGUCHES header -->
+          <div class="sanguches-header bottom-head--sanguches" id="sanguches">
+            <span class="sanguches-cariño" aria-hidden="true">¡HECHO CON CARIÑO!</span>
+            <h2 class="sanguches-title">SANGUCHES</h2>
+            <span class="sanguches-cariño" aria-hidden="true">¡HECHO CON CARIÑO!</span>
           </div>
-        </article>
+
+          <!-- PAN CON CHICHARRÓN -->
+          <div id="pan-con-chicharron" class="dish sanguche bottom-col-1">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <picture>
+                  <source srcset="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.webp" type="image/webp">
+                  <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – sanguche peruano con panceta de cerdo crujiente" width="1200" height="775" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">PAN CON CHICHARRÓN</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">PANCETA EN PAN. UNA LEYENDA CALLEJERA</p>
+              <p class="dish-desc">
+                Tierna panceta de cerdo con rodajas de camote, Salsa Criolla y
+                nuestras salsas de la casa. Puro comfort food entre dos mitades de pan.
+              </p>
+              <p class="allergens" aria-label="Contiene alérgenos: 1 Gluten">(1)</p>
+            </div>
+          </div>
+
+          <!-- POLLO A LA BRASA -->
+          <div id="pollo-a-la-brasa" class="dish sanguche bottom-col-2">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <picture>
+                  <source srcset="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – pollo a la parrilla peruano en sanguche" width="1200" height="775" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">POLLO A LA BRASA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">ORGULLO NACIONAL EN FORMATO SANGUCHE</p>
+              <p class="dish-desc">
+                Pollo a la brasa ahumado en pan suave con lechuga, tomate,
+                salsa amarilla y papas paja. El pollo favorito del Perú, a nuestra manera.
+              </p>
+              <p class="allergens" aria-label="Contiene alérgenos: 1 Gluten, 3 Huevos, 10 Mostaza">(1, 3, 10)</p>
+            </div>
+          </div>
+
+          <!-- THE QUEEN header -->
+          <div class="sanguches-header bottom-head--salchipapa" id="salchipapa">
+            <span class="sanguches-cariño" aria-hidden="true">¡HECHO CON CARIÑO!</span>
+            <h2 class="sanguches-title sanguches-title--compact">THE QUEEN</h2>
+            <span class="sanguches-cariño" aria-hidden="true">¡HECHO CON CARIÑO!</span>
+          </div>
+
+          <!-- SALCHIPAPA -->
+          <div id="salchipapa-dish" class="dish sanguche bottom-col-3">
+            <div class="img-offset img-offset--sanguche">
+              <div class="dish-img-wrap dish-img">
+                <picture>
+                  <source srcset="../../assets/images/salchipapa-la-victoria-berlin.webp" type="image/webp">
+                  <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – papas fritas peruanas con salchicha, chilimayo y chimichurri" width="1200" height="775" loading="lazy" />
+                </picture>
+              </div>
+            </div>
+            <div class="dish-body dish-body--sanguche">
+              <div class="dish-name-row">
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+                <h3 class="dish-name">SALCHIPAPA</h3>
+                <img src="../../assets/svg/icons/icon-big-star-la-victoria-berlin.svg" alt="" class="dish-star" />
+              </div>
+              <p class="dish-subtitle">CLÁSICO DEL STREET FOOD</p>
+              <p class="dish-desc">
+                Papas fritas crujientes con rodajas de salchicha, regadas con chilimayo y chimichurri para la mezcla perfecta de picante, cremosidad y hierbas frescas.
+              </p>
+              <p class="allergens" aria-label="Contiene alérgenos: 3 Huevos">(3)</p>
+            </div>
+          </div>
+
+          <!-- vertical dividers -->
+          <div class="grid-divider-col bottom-divider-inner" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+          <div class="grid-divider-col bottom-divider-group" aria-hidden="true">
+            <div class="grid-divider-line"></div>
+          </div>
+
+        </div><!-- /grid-bottom -->
+      </div>
+    </section>
+
+    <!-- ══ BEILAGEN & GETRAENKE + ALLERGENE ═════════════ -->
+    <section id="sides" class="sides-bar">
+      <div class="sides-inner">
+
+        <h2 class="sides-title">ACOMPAÑANTES<br>&amp; BEBIDAS</h2>
+
+        <div class="sides-list">
+          <div class="sides-item">
+            <span class="sides-item-name">PAPAS FRITAS</span>
+          </div>
+          <div class="sides-item">
+            <span class="sides-item-name">ALFAJOR</span>
+          </div>
+          <div class="sides-item">
+            <span class="sides-item-name">CHICHA MORADA (0,3L)</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="allergy-title">INFORMACIÓN SOBRE ALÉRGENOS</h3>
+          <p class="allergy-text">
+            1-GLUTEN / 2-CRUSTÁCEOS / 3-HUEVOS / 4-PESCADO / 5-CACAHUETES / 6-SOJA / 7-LÁCTEOS
+            / 8-FRUTOS DE CÁSCARA / 9-APIO / 10-MOSTAZA / 11-SÉSAMO / 12-DIÓXIDO DE AZUFRE
+            Y SULFITOS / 13-ALTRAMUCES / 14-MOLUSCOS
+          </p>
+        </div>
 
       </div>
-    </div>
-  </section>
 
+      <div id="icon-separator" style="display:flex;align-items:center;justify-content:center;width:100%;gap:10px;padding-bottom:40px;" aria-hidden="true">
+        <img id="sep-star" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
+        <img id="sep-rose" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
+      </div>
+</section>
+
+    <div id="site-footer"></div>
+    <script src="nav.js"></script>
+    <script src="footer.js"></script>
 </body>
 </html>

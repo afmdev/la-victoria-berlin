@@ -7,35 +7,63 @@
     <meta name="robots" content="noindex, follow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../styles/site.css" />
     <style>
-      .menu-back-bar {
-        position: sticky; top: 0; z-index: 100;
-        background: var(--black); border-bottom: 3px solid var(--yellow);
-        display: flex; align-items: center; gap: 1rem;
-        padding: 0.75rem 1.5rem;
-      }
-      .menu-back-link {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-        font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase;
-        color: var(--yellow); text-decoration: none;
-        display: flex; align-items: center; gap: 0.4rem;
-        white-space: nowrap;
-      }
-      .menu-back-link:hover { opacity: 0.8; }
-      .menu-back-logo {
-        height: 36px; width: auto; margin-left: auto;
-        filter: brightness(0) saturate(100%) invert(82%) sepia(55%) saturate(1428%) hue-rotate(358deg);
+      /* Fixe Navbar (wie auf der Startseite) – Inhalt darunter freihalten */
+      .menu-section { padding-top: 0; }
+      /* site.css blendet .menu-section/#sides auf Mobile aus (Menü lebt hier) –
+         auf dieser Seite muss die Speisekarte aber sichtbar bleiben */
+      @media (max-width: 768px) {
+        .menu-section, #sides { display: block; }
       }
     </style>
   </head>
   <body>
 
-    <div class="menu-back-bar">
-      <a href="index.html" class="menu-back-link">← Zurück</a>
-      <img class="menu-back-logo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" />
-    </div>
+    <!-- ══ NAVBAR (identisch zur Startseite, + Startseite-Link) ══ -->
+    <div id="navSentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none;"></div>
+    <nav class="nav" id="navbar" aria-label="Hauptnavigation">
+      <img class="nav-mobile-logo" id="mobileLogo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" aria-hidden="true">
+      <div class="nav-links">
+        <a href="index.html">STARTSEITE</a>
+        <a href="#menu">SPEISEKARTE</a>
+        <a href="index.html#story">UNSERE GESCHICHTE</a>
+        <a href="index.html#reviews2">BEWERTUNGEN</a>
+        <a href="index.html#location">ANFAHRT</a>
+      </div>
+      <details class="lang-dd">
+        <summary aria-label="Sprache wählen"><span class="flag">🇩🇪</span><span class="code">DE</span></summary>
+        <ul>
+          <li><a href="../en/menu.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a></li>
+          <li><a href="../es/menu.html" hreflang="es"><span class="flag">🇪🇸</span> ES</a></li>
+          <li><a href="../fr/menu.html" hreflang="fr"><span class="flag">🇫🇷</span> FR</a></li>
+          <li><a href="../it/menu.html" hreflang="it"><span class="flag">🇮🇹</span> IT</a></li>
+        </ul>
+      </details>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation" aria-hidden="true">
+      <a href="index.html" class="mobile-menu-link">STARTSEITE</a>
+      <!-- SPEISEKARTE ausgeblendet: wir sind bereits auf dieser Seite -->
+      <a href="index.html#story" class="mobile-menu-link">UNSERE GESCHICHTE</a>
+      <a href="index.html#reviews2" class="mobile-menu-link">BEWERTUNGEN</a>
+      <a href="index.html#location" class="mobile-menu-link">ANFAHRT</a>
+      <details class="lang-dd-mobile">
+        <summary aria-label="Sprache wählen"><span class="flag">🇩🇪</span><span class="code">DE</span></summary>
+        <ul>
+          <li><a href="../en/menu.html" hreflang="en"><span class="flag">🇬🇧</span> EN</a></li>
+          <li><a href="../es/menu.html" hreflang="es"><span class="flag">🇪🇸</span> ES</a></li>
+          <li><a href="../fr/menu.html" hreflang="fr"><span class="flag">🇫🇷</span> FR</a></li>
+          <li><a href="../it/menu.html" hreflang="it"><span class="flag">🇮🇹</span> IT</a></li>
+        </ul>
+      </details>
+    </nav>
 
     <!-- ══ MENU ════════════════════════════════════════ -->
     <section id="menu" class="menu-section" aria-label="Speisekarte">
@@ -52,7 +80,7 @@
               <div class="dish-img" style="width:100%">
                 <picture>
                   <source srcset="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.webp" type="image/webp">
-                  <img src="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png" alt="Anticucho – peruanische Rinderherz-Spieße vom Grill" loading="lazy" />
+                  <img src="../../assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png" alt="Anticucho – peruanische Rinderherz-Spieße vom Grill" width="1200" height="775" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -80,7 +108,7 @@
               <div class="dish-img" style="width:100%">
                 <picture>
                   <source srcset="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.webp" type="image/webp">
-                  <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche – frischer peruanischer Fisch mit Limette und Rocoto-Chilli" loading="lazy" />
+                  <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche – frischer peruanischer Fisch mit Limette und Rocoto-Chilli" width="1200" height="775" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -109,7 +137,7 @@
               <div class="dish-img" style="width:100%">
                 <picture>
                   <source srcset="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.webp" type="image/webp">
-                  <img src="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png" alt="Papa Rellena – gefüllte Kartoffel mit Hackfleisch und Oliven" loading="lazy" />
+                  <img src="../../assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png" alt="Papa Rellena – gefüllte Kartoffel mit Hackfleisch und Oliven" width="1200" height="775" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -148,7 +176,7 @@
               <div class="dish-img-wrap dish-img">
                 <picture>
                   <source srcset="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.webp" type="image/webp">
-                  <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – peruanisches Sandwich mit knusprigem Schweinebauch" loading="lazy" />
+                  <img src="../../assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png" alt="Pan con Chicharrón – peruanisches Sandwich mit knusprigem Schweinebauch" width="1200" height="775" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -173,7 +201,7 @@
               <div class="dish-img-wrap dish-img">
                 <picture>
                   <source srcset="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.webp" type="image/webp">
-                  <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – peruanisches Grillhähnchen im Sandwich" loading="lazy" />
+                  <img src="../../assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" alt="Pollo a la Brasa – peruanisches Grillhähnchen im Sandwich" width="1200" height="775" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -205,7 +233,7 @@
               <div class="dish-img-wrap dish-img">
                 <picture>
                   <source srcset="../../assets/images/salchipapa-la-victoria-berlin.webp" type="image/webp">
-                  <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – peruanische Pommes mit Wurst, Chilimayo und Chimichurri" loading="lazy" />
+                  <img src="../../assets/images/salchipapa-la-victoria-berlin.png" alt="Salchipapa – peruanische Pommes mit Wurst, Chilimayo und Chimichurri" width="1200" height="775" loading="lazy" />
                 </picture>
               </div>
             </div>
@@ -268,65 +296,10 @@
         <img id="sep-star" src="../../assets/svg/icons/icon-star-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
         <img id="sep-rose" src="../../assets/svg/icons/icon-rose-2-la-victoria-berlin.svg" alt="" class="sep-icon" style="width:auto;flex-shrink:0;">
       </div>
-      <script>
-        window.makeSeparator = function (containerId, starId, roseId) {
-          var container = document.getElementById(containerId);
-          var starTpl = document.getElementById(starId);
-          var roseTpl = document.getElementById(roseId);
-          if (!container || !starTpl || !roseTpl) return;
-          var GAP = 10;
-          var sw = 0, rw = 0; // icon sizes measured once and cached
+</section>
 
-          function build() {
-            if (!sw || !rw) {
-              // Measure icon sizes once — requires a DOM insertion to read offsetWidth
-              container.innerHTML = '';
-              var star = starTpl.cloneNode();
-              var rose = roseTpl.cloneNode();
-              container.appendChild(star);
-              container.appendChild(rose);
-              sw = star.offsetWidth;
-              rw = rose.offsetWidth;
-              if (!sw || !rw) {
-                star.addEventListener('load', build, { once: true });
-                rose.addEventListener('load', build, { once: true });
-                return;
-              }
-              container.innerHTML = '';
-            }
-            var n = Math.max(0, Math.floor((container.clientWidth - sw) / (sw + rw + 2 * GAP)));
-            container.innerHTML = '';
-            for (var j = 0; j < n; j++) {
-              container.appendChild(starTpl.cloneNode());
-              container.appendChild(roseTpl.cloneNode());
-            }
-            container.appendChild(starTpl.cloneNode());
-          }
-
-          var _t;
-          var lastW = -1;
-          function onResize() {
-            // Debounce: wait 80ms after the last resize event before rebuilding
-            clearTimeout(_t);
-            _t = setTimeout(function () {
-              var w = container.clientWidth;
-              if (w === lastW) return;
-              lastW = w;
-              build();
-            }, 80);
-          }
-
-          if ('ResizeObserver' in window) {
-            new ResizeObserver(onResize).observe(container);
-          } else {
-            window.addEventListener('resize', onResize, { passive: true });
-          }
-          build();
-        };
-        makeSeparator('icon-separator', 'sep-star', 'sep-rose');
-      </script>
-    </section>
-
-    <script src="../../scripts/site.js"></script>
-  </body>
+    <div id="site-footer"></div>
+    <script src="nav.js"></script>
+    <script src="footer.js"></script>
+</body>
 </html>

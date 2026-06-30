@@ -13,7 +13,7 @@
 
       /* ── Reset & Base ───────────────────────────────── */
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+      html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + var(--frame)); }
       body { background: #1a1a1a; font-family: 'Barlow Condensed', sans-serif; }
       a { text-decoration: none; color: inherit; }
       img { display: block; width: 100%; object-fit: cover; }
@@ -34,6 +34,7 @@
         --green: rgb(102, 176, 79);
         --purple: rgb(102, 45, 145);
         --nav-h: 60px;
+        --frame: clamp(20px, 2.4vw, 36px);
 
         /* Typographic scale */
         --fs-body-sm: clamp(0.92rem, 0.86rem + 0.2vw, 1rem);
@@ -46,14 +47,45 @@
         --fs-display: clamp(2.6rem, 2rem + 3.4vw, 5.8rem);
       }
 
+      /* ── Blumen-Rahmen UM den Inhalt herum (scrollt mit der Seite) ── */
+      body {
+        position: relative;
+        box-sizing: border-box;
+        min-height: 100vh;
+        padding-top: var(--frame);
+        padding-bottom: var(--frame);
+        border-left: var(--frame) solid transparent;
+        border-right: var(--frame) solid transparent;
+        background-image: url('../assets/svg/backgrounds/background-flowers-vertical.svg'),
+                          url('../assets/svg/backgrounds/background-flowers-vertical.svg');
+        background-position: left top, right top;
+        background-repeat: repeat-y, repeat-y;
+        background-size: var(--frame) auto, var(--frame) auto;
+        background-origin: border-box;
+        background-clip: border-box;
+      }
+      /* obere & untere Leiste – volle Blumenstreifen, liegen im Padding und scrollen mit */
+      body::before, body::after {
+        content: ''; position: absolute; left: 0; right: 0; height: var(--frame); z-index: 1;
+        background: url('../assets/svg/backgrounds/background-flowers.svg') 0 0 / auto 100% repeat-x;
+      }
+      body::before { top: 0; }
+      body::after  { bottom: 0; transform: scaleY(-1); }
+
       /* ── Navbar ─────────────────────────────────────── */
+      /* Navbar scrollt zunächst mit der Seite mit (an die Blumen-Leiste „geklebt“)
+         und bleibt erst oben kleben (sticky), sobald sie den oberen Rand erreicht. */
       .nav {
-        position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+        position: sticky; top: 0; z-index: 100;
         height: var(--nav-h); display: flex; align-items: center;
         justify-content: center; padding: 0 2rem;
+        background: var(--yellow);
         transition: background 0.3s, border-color 0.3s;
       }
       .nav.scrolled { background: var(--black); border-bottom: 1px solid var(--yellow); }
+      .nav.scrolled ~ .mobile-menu { top: var(--nav-h); }
+      /* Schwarz wird genau dann ausgelöst, wenn die Navbar oben andockt */
+      #navSentinel { height: var(--frame) !important; }
       .nav-links { display: flex; gap: 2rem; }
       .nav-links a {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
@@ -65,11 +97,11 @@
 
       /* ── Hero ───────────────────────────────────────── */
       .hero {
-        min-height: 100svh; background: var(--yellow);
+        min-height: calc(100svh - var(--nav-h) - var(--frame)); background: var(--yellow);
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
         position: relative; overflow: hidden;
-        padding: calc(var(--nav-h) + clamp(0.5rem, 2vh, 1.5rem)) 1.5rem clamp(1rem, 4vh, 2.5rem);
+        padding: clamp(0.5rem, 2vh, 1.5rem) 1.5rem clamp(1rem, 4vh, 2.5rem);
         box-sizing: border-box;
       }
 
@@ -534,7 +566,7 @@
       }
       .location-title {
         font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: var(--fs-display);
+        font-size: calc(var(--fs-display) * 0.85);
         color: var(--yellow); line-height: 0.9;
         letter-spacing: 0.01em; margin-bottom: 2.5rem;
       }
@@ -839,13 +871,21 @@
       .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
       .mobile-menu {
-        display: none;
-        position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+        position: fixed; top: calc(var(--nav-h) + var(--frame)); left: var(--frame); right: var(--frame); z-index: 99;
         background: var(--black);
-        flex-direction: column;
+        display: flex; flex-direction: column;
         border-bottom: 2px solid var(--yellow);
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        will-change: transform;
+        transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
       }
-      .mobile-menu.open { display: flex; }
+      .mobile-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
       .mobile-menu-link {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
         font-size: 1.1rem; letter-spacing: 0.2em;
@@ -856,12 +896,85 @@
       .mobile-menu-link:last-child { border-bottom: none; }
       .mobile-menu-link:active { background: rgba(255,204,0,0.12); }
 
+      /* ── Language dropdown (flags) ──────────────────── */
+      .lang-dd {
+        position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%);
+      }
+      .lang-dd summary {
+        list-style: none; cursor: pointer;
+        display: flex; align-items: center; gap: 0.35rem;
+        font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+        font-size: 0.8rem; letter-spacing: 0.08em; transition: color 0.3s;
+      }
+      .lang-dd summary::-webkit-details-marker { display: none; }
+      .lang-dd summary::after {
+        content: '▾'; display: inline-block; font-size: 0.85em; transition: transform 0.2s;
+      }
+      .lang-dd[open] summary::after { transform: rotate(180deg); }
+      .lang-dd .flag { font-size: 1.15em; line-height: 1; }
+      .nav:not(.scrolled) .lang-dd summary { color: var(--black); }
+      .nav.scrolled .lang-dd summary { color: var(--yellow); }
+      .lang-dd ul {
+        position: absolute; right: 0; top: calc(100% + 0.6rem);
+        margin: 0; padding: 0.3rem 0; list-style: none; min-width: 84px;
+        background: var(--black); border: 1px solid var(--yellow);
+        border-radius: 5px; box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      }
+      .lang-dd li a {
+        display: flex; align-items: center; gap: 0.5rem;
+        padding: 0.5rem 0.9rem; text-decoration: none; color: var(--yellow);
+        font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+        font-size: 0.85rem; letter-spacing: 0.08em; white-space: nowrap;
+      }
+      .lang-dd li a:hover { background: rgba(255,204,0,0.15); }
+      /* Vorhang-Effekt: Panel wächst beim Öffnen von oben nach unten herab.
+         Ziel-max-height ≈ echte Inhaltshöhe, damit das Wachstum gleichmäßig sichtbar ist. */
+      @keyframes lang-curtain-d {
+        from { max-height: 0;     opacity: 0; transform: translateY(-10px); }
+        to   { max-height: 160px; opacity: 1; transform: translateY(0); }
+      }
+      @keyframes lang-curtain-m {
+        from { max-height: 0;     opacity: 0; transform: translateY(-10px); }
+        to   { max-height: 210px; opacity: 1; transform: translateY(0); }
+      }
+      .lang-dd[open] ul {
+        overflow: hidden;
+        animation: lang-curtain-d 0.42s cubic-bezier(0.33, 0, 0.2, 1) both;
+      }
+      .lang-dd-mobile { display: none; }
+
       @media (max-width: 768px) {
         .nav { background: var(--black); border-bottom: 1px solid rgba(255,204,0,0.25); }
         .nav-hamburger { display: flex; }
         .nav:not(.scrolled) .nav-hamburger span { background: var(--yellow); }
         .nav-mobile-logo { display: block; }
         .c2-header-bottom { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 0.75rem; }
+        .lang-dd { display: none; }
+        .lang-dd-mobile { display: block; border-top: 1px solid rgba(255,204,0,0.18); }
+        .lang-dd-mobile summary {
+          list-style: none; cursor: pointer;
+          display: flex; align-items: center; gap: 0.5rem;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+          font-size: 1.1rem; letter-spacing: 0.2em; text-transform: uppercase;
+          color: var(--yellow); padding: 1.1rem 2rem;
+        }
+        .lang-dd-mobile summary::-webkit-details-marker { display: none; }
+        .lang-dd-mobile summary::after { content: '▾'; margin-left: auto; transition: transform 0.2s; }
+        .lang-dd-mobile[open] summary::after { transform: rotate(180deg); }
+        .lang-dd-mobile .flag { font-size: 1.2em; line-height: 1; }
+        .lang-dd-mobile ul { list-style: none; margin: 0; padding: 0; background: rgba(0,0,0,0.25); }
+        .lang-dd-mobile[open] ul {
+          overflow: hidden;
+          animation: lang-curtain-m 0.42s cubic-bezier(0.33, 0, 0.2, 1) both;
+        }
+        .lang-dd-mobile li a {
+          display: flex; align-items: center; gap: 0.6rem;
+          padding: 0.9rem 2rem 0.9rem 3rem; color: var(--yellow); text-decoration: none;
+          font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+          font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase;
+          border-top: 1px solid rgba(255,204,0,0.08);
+        }
+        .lang-dd-mobile li a:active { background: rgba(255,204,0,0.12); }
       }
 
       @media (min-width: 390px) and (max-width: 768px) {
