@@ -43,4 +43,20 @@
       if (e.key === 'Escape' && menu.classList.contains('open')) setOpen(false);
     });
   }
+
+  // 3) Sprach-Dropdown: Vorhang-Animation bei JEDEM Öffnen neu starten.
+  //    (Eine CSS-Animation läuft sonst nur beim ersten Anzeigen eines <details>.)
+  var dds = document.querySelectorAll('details.lang-dd, details.lang-dd-mobile');
+  for (var i = 0; i < dds.length; i++) {
+    (function (dd) {
+      dd.addEventListener('toggle', function () {
+        if (!dd.open) return;
+        var ul = dd.querySelector('ul');
+        if (!ul) return;
+        ul.style.animation = 'none';
+        void ul.offsetWidth; // Reflow erzwingen → Animation startet neu
+        ul.style.animation = '';
+      });
+    })(dds[i]);
+  }
 })();

@@ -104,9 +104,31 @@
 			}
 
 			.logo-mundial {
-				width: 720px;
+				width: 620px;
 				height: auto;
 				margin-top: 0px;
+			}
+
+			/* ── ¡QUE PIQUE! tagline ── */
+			.que-pique {
+				display: inline-block;
+				margin-top: 24px;
+				background: rgb(244,202,53);
+				border-radius: 6px;
+				padding: 8px 26px 14px;
+			}
+
+			.que-pique span {
+				font-family: "Radius", "Groches", sans-serif;
+				color: #1d1c1a;
+				font-size: 96px;
+				line-height: 1;
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+			}
+
+			.que-pique span + span {
+				margin-left: 18px;
 			}
 
 			/* ── Match section ── */
@@ -331,6 +353,9 @@
 			.logo-mundial {
 				animation: bounce-in-scale .7s cubic-bezier(.34,1.56,.64,1) .7s both;
 			}
+			.que-pique {
+				animation: bounce-in-scale .6s cubic-bezier(.34,1.56,.64,1) .85s both;
+			}
 			.stars-row {
 				animation: bounce-in-up .6s cubic-bezier(.34,1.56,.64,1) 1s both;
 			}
@@ -358,12 +383,12 @@
 		<div class="card-wrapper">
 			<div class="card">
 				<div class="overlay"></div>
-				<img class="corner-frame" src="../assets/instagram/corner.svg" alt="" aria-hidden="true" />
+				<img class="corner-frame" src="../assets/instagram/corner-verde.svg" alt="" aria-hidden="true" />
 
 				<div class="content">
 					<!-- Edge stars -->
-					<img class="star-top"    src="../assets/instagram/estrella.svg" alt="" aria-hidden="true" />
-					<img class="star-bottom" src="../assets/instagram/estrella.svg" alt="" aria-hidden="true" />
+					<img class="star-top"    src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
+					<img class="star-bottom" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
 
 					<!-- La Victoria logo (includes "PERUVIAN STREET FOOD") -->
 					<img
@@ -375,7 +400,7 @@
 					<!-- Single star between La Victoria and MUNDIAL -->
 					<img
 						class="star-between"
-						src="../assets/instagram/estrella.svg"
+						src="../assets/instagram/estrella-verde.svg"
 						alt=""
 						aria-hidden="true"
 					/>
@@ -387,13 +412,19 @@
 						alt="Mundial 2026"
 					/>
 
+					<!-- ¡QUE PIQUE! tagline -->
+					<div class="que-pique" aria-label="¡Que pique!">
+						<span>¡QUE</span>
+						<span>PIQUE!</span>
+					</div>
+
 					<!-- Match section -->
 					<div class="match-section">
 						<!-- Three stars: small | large | small -->
 						<div class="stars-row">
-							<img class="star-sm" src="../assets/instagram/estrella.svg" alt="" aria-hidden="true" />
-							<img class="star-lg" src="../assets/instagram/estrella.svg" alt="" aria-hidden="true" />
-							<img class="star-sm" src="../assets/instagram/estrella.svg" alt="" aria-hidden="true" />
+							<img class="star-sm" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
+							<img class="star-lg" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
+							<img class="star-sm" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
 						</div>
 
 						<!-- Date -->
@@ -428,11 +459,11 @@
 		<script>
 			// ── EDITABLE MATCH DATA ──────────────────────────────────────
 			const MATCH = {
-				date:      '25.06.26',
-				time:      '22:00',
-				teamLeft:  { name: 'ECUADOR',     flag: '../assets/instagram/ecuador.jpg' },
-				teamRight: { name: 'GERMANY', flag: '../assets/instagram/germany.jpg' },
-				group:     'GROUP E',
+				date:      '29.06.26',
+				time:      '22:30',
+				teamLeft:  { name: 'GERMANY',     flag: '../assets/instagram/germany.jpg' },
+				teamRight: { name: 'PARAGUAY', flag: '../assets/instagram/paraguay.jpg' },
+				group:     'ROUND OF 32',
 			};
 			// ────────────────────────────────────────────────────────────
 
