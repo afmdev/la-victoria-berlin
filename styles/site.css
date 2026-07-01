@@ -51,7 +51,7 @@
       body {
         position: relative;
         box-sizing: border-box;
-        min-height: 100vh;
+        min-height: 100svh;
         padding-top: var(--frame);
         padding-bottom: var(--frame);
         border-left: var(--frame) solid transparent;
@@ -101,20 +101,20 @@
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
         position: relative; overflow: hidden;
-        padding: clamp(0.5rem, 2vh, 1.5rem) 1.5rem clamp(1rem, 4vh, 2.5rem);
+        padding: clamp(0.5rem, 2svh, 1.5rem) 1.5rem clamp(1rem, 4svh, 2.5rem);
         box-sizing: border-box;
       }
 
       .hero-wrapper {
         max-width: 1500px; width: 100%;
         display: flex; flex-direction: column; align-items: center;
-        gap: clamp(0.5rem, 1.8vh, 1rem);
+        gap: clamp(0.5rem, 1.8svh, 1rem);
       }
 
       /* Logo scales with available height so it never pushes content off-screen */
       .hero-logo {
         width: auto; max-width: 100%;
-        max-height: clamp(110px, 34vh, 420px);
+        max-height: clamp(110px, 34svh, 420px);
         object-fit: contain;
       }
 
@@ -130,10 +130,10 @@
       }
       .hero-tagline:empty { display: none; }
       .hero-cta {
-        margin-top: clamp(1rem, 2.5vh, 2.5rem); padding: clamp(0.7rem, 1.6vh, 1rem) clamp(1.6rem, 5vw, 2.5rem);
+        margin-top: clamp(1rem, 2.5svh, 2.5rem); padding: clamp(0.7rem, 1.6svh, 1rem) clamp(1.6rem, 5vw, 2.5rem);
         background: var(--black); color: var(--yellow);
         font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: clamp(1rem, 1.2vw + 0.4vh, 1.3rem); letter-spacing: 0.3em; border: none; cursor: pointer;
+        font-size: clamp(1rem, 1.2vw + 0.4svh, 1.3rem); letter-spacing: 0.3em; border: none; cursor: pointer;
         transition: transform 0.15s; flex-shrink: 0;
       }
       .hero-cta:hover { transform: scale(1.04); }
@@ -262,7 +262,7 @@
       }
       .story-inner {
         display: grid; grid-template-columns: 1fr 1fr;
-        min-height: 80vh;
+        min-height: 80svh;
       }
       .story-text-col {
         display: flex; flex-direction: column; justify-content: center;
@@ -552,7 +552,7 @@
       .location-section { background: var(--black); color: var(--yellow); }
       .location-inner {
         display: grid; grid-template-columns: 1fr 1fr;
-        min-height: 60vh;
+        min-height: 60svh;
       }
       .location-text-col {
         padding: 5rem 4rem;
@@ -825,7 +825,7 @@
       }
       .lightbox.open { display: flex; }
       .lightbox img {
-        max-width: 90vw; max-height: 90vh; object-fit: contain;
+        max-width: 90vw; max-height: 90svh; object-fit: contain;
         box-shadow: 0 0 60px rgba(0,0,0,0.8);
       }
       .lightbox-close {
