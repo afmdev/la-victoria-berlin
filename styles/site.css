@@ -20,9 +20,9 @@
 
       /* Prevent long words/URLs from breaking layouts in narrow columns */
       :where(body, h1, h2, h3, h4, h5, h6, p, li, a, span, small, strong, em, address, blockquote, figcaption, td, th, label, button) {
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
         word-break: normal;
-        hyphens: auto;
+        hyphens: manual;
       }
 
       /* ── Variables ──────────────────────────────────── */
@@ -483,15 +483,16 @@
         font-size: var(--fs-display);
         color: var(--black); letter-spacing: 0.02em; line-height: 1;
       }
-      .reviews-rating-row { display: flex; align-items: center; gap: 0.75rem; }
-      .reviews-stars { color: #FBBC04; font-size: 1.3rem; letter-spacing: 0.05em; }
+      .reviews-rating-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+      .reviews-stars { color: #FBBC04; font-size: 1.3rem; letter-spacing: 0.05em; white-space: nowrap; }
       .reviews-score {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: 1.2rem; color: var(--black);
+        font-size: 1.2rem; color: var(--black); white-space: nowrap;
       }
       .reviews-count {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
         font-size: var(--fs-body-lg); color: rgba(0,0,0,0.45); letter-spacing: 0.05em;
+        white-space: nowrap;
       }
       .reviews-header-right {
         font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 700;
@@ -666,6 +667,9 @@
 
       /* ── Responsive ─────────────────────────────────── */
       @media (max-width: 768px) {
+        /* Display-Titel etwas kleiner, damit lange deutsche Wörter (ÖFFNUNGSZEITEN,
+           BEWERTUNGEN) in schmalen Spalten in eine Zeile passen, statt umzubrechen. */
+        :root { --fs-display: clamp(2rem, 1rem + 5.5vw, 3rem); }
         .nav-links { display: none; }
         .grid-3, .sides-inner { grid-template-columns: 1fr; }
         .grid-3 > .dish { padding: 0; }
@@ -1015,8 +1019,6 @@
       }
 
       @media (min-width: 390px) and (max-width: 768px) {
-        .reviews-count { flex-basis: auto; }
-        .reviews-rating-row { flex-wrap: nowrap; }
         .c2-subtitle br { display: none; }
       }
 
