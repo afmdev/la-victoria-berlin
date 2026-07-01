@@ -19,3 +19,7 @@ Desktop.ini
 .env
 .env.*
 !.env.example
+
+# context-mode / tooling state (do not commit)
+data/state_store.db/
+*.db/
