@@ -51,7 +51,7 @@
       body {
         position: relative;
         box-sizing: border-box;
-        min-height: 100svh;
+        min-height: var(--app-h, 100svh);
         padding-top: var(--frame);
         padding-bottom: var(--frame);
         border-left: var(--frame) solid transparent;
@@ -97,7 +97,7 @@
 
       /* ── Hero ───────────────────────────────────────── */
       .hero {
-        min-height: calc(100svh - var(--nav-h) - var(--frame)); background: var(--yellow);
+        min-height: calc(var(--app-h, 100svh) - var(--nav-h) - var(--frame)); background: var(--yellow);
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
         position: relative; overflow: hidden;
@@ -262,7 +262,7 @@
       }
       .story-inner {
         display: grid; grid-template-columns: 1fr 1fr;
-        min-height: 80svh;
+        min-height: calc(var(--app-h, 100svh) * 0.8);
       }
       .story-text-col {
         display: flex; flex-direction: column; justify-content: center;
@@ -552,7 +552,7 @@
       .location-section { background: var(--black); color: var(--yellow); }
       .location-inner {
         display: grid; grid-template-columns: 1fr 1fr;
-        min-height: 60svh;
+        min-height: calc(var(--app-h, 100svh) * 0.6);
       }
       .location-text-col {
         padding: 5rem 4rem;
