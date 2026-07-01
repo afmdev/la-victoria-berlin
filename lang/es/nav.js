@@ -1,6 +1,23 @@
 // Geteiltes Navbar-Verhalten für alle Seiten unter lang/de/ (index.html, menu.html, …).
 // 1) Scroll-Zustand: schwarzer Hintergrund + gelbe Links ab >60px Scroll.
 // 2) Mobiles Hamburger-Menü: gleitet von oben herab / nach oben.
+
+// Viewport-Höhe in --app-h fixieren. Verhindert den Layout-Shift, wenn die mobile
+// Browser-Leiste beim Scrollen ein-/ausblendet (svh/vh sind in manchen Browsern
+// NICHT stabil). Nur bei Breitenänderung (Drehung) neu berechnen – niemals bei einer
+// reinen Höhenänderung durch die ein-/ausfahrende Adressleiste.
+(function () {
+  var lockedW = window.innerWidth;
+  var setAppH = function () {
+    document.documentElement.style.setProperty('--app-h', window.innerHeight + 'px');
+  };
+  setAppH();
+  window.addEventListener('resize', function () {
+    if (window.innerWidth !== lockedW) { lockedW = window.innerWidth; setAppH(); }
+  }, { passive: true });
+  window.addEventListener('orientationchange', setAppH);
+})();
+
 (function () {
   // 0) Aktuelle Sprache merken → bevorzugt bei der automatischen Erkennung auf "/"
   try {
