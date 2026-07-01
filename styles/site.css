@@ -763,7 +763,11 @@
       .c2-track { display: flex; gap: 16px; width: max-content; }
       .c2-track.c2-animate { animation: c2-marquee var(--c2-dur, 60s) linear infinite; }
       @keyframes c2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-      .c2-outer:hover .c2-track.c2-animate { animation-play-state: paused; }
+      /* Pause on hover nur auf echten Zeigergeräten – auf Touch bleibt :hover sonst „kleben“
+         und der Marquee würde nach einem Tap stehenbleiben. */
+      @media (hover: hover) {
+        .c2-outer:hover .c2-track.c2-animate { animation-play-state: paused; }
+      }
       .c2-btn { display: none; } /* Marquee braucht keine Prev/Next-Buttons */
       .c2-card {
         width: 320px; flex-shrink: 0;
@@ -1041,7 +1045,6 @@
       /* ── Reduced motion ─────────────────────────────── */
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        .c2-track.c2-animate { animation: none; }
       }
 
       /* ── Mobile: menu lives on menu.html ────────────── */
