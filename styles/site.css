@@ -712,6 +712,7 @@
         .location-inner { grid-template-columns: 1fr; }
         .location-text-col { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,204,0,0.15); }
         .location-hours-col { padding: 3rem 1.5rem; }
+        .location-map-link { width: 100%; text-align: center; }
       }
 
       /* ── Reviews v2 (Photo Carousel) ───────────────── */
@@ -896,14 +897,15 @@
         background: var(--black);
         display: flex; flex-direction: column;
         border-bottom: 2px solid var(--yellow);
-        transform: translateY(-110%);
+        /* Wächst vom Nav nach unten (Vorhang), statt von oben hereinzugleiten */
+        clip-path: inset(0 0 100% 0);
         opacity: 0;
         pointer-events: none;
-        will-change: transform;
-        transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        will-change: clip-path;
+        transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
       }
       .mobile-menu.open {
-        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
         opacity: 1;
         pointer-events: auto;
       }
