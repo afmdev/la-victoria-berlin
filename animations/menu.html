@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Menu La Victoria</title>
+		<style>
+			@font-face {
+				font-family: "Radius";
+				src: url("../assets/fonts/Radius-BoldNarrow.otf") format("opentype");
+				font-display: swap;
+			}
+
+			:root {
+				--menu-width: min(92vw, 900px);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: grid;
+				place-items: center;
+				background: #131313;
+				padding: 24px;
+				color: #fff7e2;
+			}
+
+			.menu-layout {
+				position: relative;
+				width: var(--menu-width);
+			}
+
+			.menu-image {
+				display: block;
+				width: 100%;
+				height: auto;
+				border-radius: 16px;
+				box-shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+			}
+
+			.menu-overlay {
+				position: absolute;
+				inset: 0;
+				font-family: "Radius", serif;
+				display: grid;
+				place-items: center;
+				pointer-events: none;
+			}
+
+			.menu-logos {
+				position: absolute;
+				top: 5%;
+				left: 50%;
+				transform: translateX(-50%);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+				pointer-events: none;
+			}
+
+			.menu-logo {
+				width: min(60%, 330px);
+				height: auto;
+			}
+
+			.menu-logo-mundial {
+				width: min(52.5%, 270px);
+				height: auto;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+		<main class="menu-layout">
+			<img
+				class="menu-image"
+				src="../assets/instagram/fondo-mundial.jpg"
+				alt="Menu La Victoria"
+			/>
+
+			<div class="menu-logos">
+				<img
+					class="menu-logo"
+					src="../assets/instagram/la-victoria.svg"
+					alt="La Victoria Berlin"
+				/>
+				<img
+					class="menu-logo-mundial"
+					src="../assets/instagram/logo-mundial.svg"
+					alt="Mundial"
+				/>
+			</div>
+
+
+		</main>
+	</body>
+</html>
