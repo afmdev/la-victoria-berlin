@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="100%" viewBox="0 0 1080 1902" version="1.1"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+  <defs>
+    <!-- One mate (gourd + bombilla + thermos), drawn in a ~190×310 local box -->
+    <g id="mate" fill="none" stroke="rgb(103,177,76)" stroke-width="5">
+
+      <!-- ── Thermos ── -->
+      <path d="M132,20 L166,20 Q172,20 172,26 L172,48 Q172,52 166,52 L132,52 Q126,52 126,48 L126,26 Q126,20 132,20 Z"/>
+      <path d="M126,52 L172,52 L176,70 L122,70 Z"/>
+      <path d="M122,70 L176,70 L176,268 Q176,285 159,285 L139,285 Q122,285 122,268 Z"/>
+      <path d="M140,96 L140,210" stroke-width="4"/>
+      <path d="M124,60 L174,60" stroke-width="4"/>
+
+      <!-- ── Yerba / foam (yellow) sitting in the rim ── -->
+      <path d="M20,178 C32,168 46,172 56,172 C68,172 84,168 94,178 C82,188 66,188 56,188 C44,188 30,188 20,178 Z"
+            fill="rgb(248,203,26)" stroke="none"/>
+
+      <!-- ── Gourd ── -->
+      <ellipse cx="56" cy="178" rx="52" ry="18"/>
+      <ellipse cx="56" cy="181" rx="41" ry="12" stroke-width="4"/>
+      <path d="M6,180 C2,236 24,286 56,286 C88,286 110,236 106,180"/>
+      <!-- belly bands -->
+      <path d="M16,214 C38,224 74,224 96,214" stroke-width="4"/>
+      <path d="M20,240 C40,249 72,249 92,240" stroke-width="4"/>
+      <!-- vertical hatch -->
+      <path d="M56,196 L56,284" stroke-width="4"/>
+      <path d="M34,206 L36,268" stroke-width="4"/>
+      <path d="M78,206 L76,268" stroke-width="4"/>
+      <!-- feet / base -->
+      <path d="M42,284 L33,307 L55,291 Z"/>
+      <path d="M70,284 L79,307 L57,291 Z"/>
+
+      <!-- ── Bombilla (straw) ── -->
+      <path d="M66,183 C96,150 122,104 148,70" stroke-width="7"/>
+      <ellipse cx="151" cy="66" rx="8" ry="6"/>
+    </g>
+  </defs>
+
+  <!-- Four corners: left upright, right mirrored horizontally -->
+  <use xlink:href="#mate" transform="translate(58,58)   scale(1.15,1.15)"/>
+  <use xlink:href="#mate" transform="translate(1022,58) scale(-1.15,1.15)"/>
+  <use xlink:href="#mate" transform="translate(58,1490)   scale(1.15,1.15)"/>
+  <use xlink:href="#mate" transform="translate(1022,1490) scale(-1.15,1.15)"/>
+</svg>
