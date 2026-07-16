@@ -1,4 +1,4 @@
-// Geteilter Footer für alle Seiten unter lang/de/ (index.html, menu.html, …).
+// Geteilter Footer für alle Seiten im jeweiligen Sprachordner (index.html, menu.html, …).
 // Einzige Quelle der Wahrheit: hier ändern → überall aktualisiert.
 // Wird in das Element <div id="site-footer"></div> injiziert.
 (function () {

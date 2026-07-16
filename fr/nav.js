@@ -1,4 +1,4 @@
-// Geteiltes Navbar-Verhalten für alle Seiten unter lang/de/ (index.html, menu.html, …).
+// Geteiltes Navbar-Verhalten für alle Seiten im jeweiligen Sprachordner (index.html, menu.html, …).
 // 1) Scroll-Zustand: schwarzer Hintergrund + gelbe Links ab >60px Scroll.
 // 2) Mobiles Hamburger-Menü: gleitet von oben herab / nach oben.
 
