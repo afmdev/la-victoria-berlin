@@ -37,9 +37,9 @@
     '  </ul>',
 
     '  <nav class="footer-legal" aria-label="Informazioni legali">',
-    '    <a href="../../impressum.html">Note legali</a>',
+    '    <a href="../impressum.html">Note legali</a>',
     '    <span aria-hidden="true">·</span>',
-    '    <a href="../../datenschutz.html">Privacy</a>',
+    '    <a href="../datenschutz.html">Privacy</a>',
     '  </nav>',
 
     '  <div class="footer-bottom">',
