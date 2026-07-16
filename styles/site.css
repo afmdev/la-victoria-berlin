@@ -777,6 +777,12 @@
       .c2-track { display: flex; gap: 16px; width: max-content; }
       .c2-track.c2-animate { animation: c2-marquee var(--c2-dur, 60s) linear infinite; }
       @keyframes c2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      /* a11y: Marquee pausiert, sobald ein Bedienelement der Sektion Tastatur-Fokus hat (Touch/Keyboard) */
+      .c2-outer:focus-within .c2-track.c2-animate { animation-play-state: paused; }
+      /* a11y: Bewegungsreduzierung respektieren (WCAG 2.2.2 / 2.3.3) */
+      @media (prefers-reduced-motion: reduce) {
+        .c2-track.c2-animate { animation: none; }
+      }
       /* Pause on hover nur auf echten Zeigergeräten – auf Touch bleibt :hover sonst „kleben“
          und der Marquee würde nach einem Tap stehenbleiben. */
       @media (hover: hover) {
@@ -910,13 +916,16 @@
         clip-path: inset(0 0 100% 0);
         opacity: 0;
         pointer-events: none;
+        visibility: hidden; /* a11y: aus dem Tab-Fokus nehmen, solange geschlossen */
         will-change: clip-path;
-        transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+        transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, visibility 0s linear 0.4s;
       }
       .mobile-menu.open {
         clip-path: inset(0 0 0 0);
         opacity: 1;
         pointer-events: auto;
+        visibility: visible;
+        transition: clip-path 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, visibility 0s linear 0s;
       }
       .mobile-menu-link {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
@@ -1036,6 +1045,20 @@
       /* ── Icon separator ────────────────────────────── */
       .sep-icon { height: 3rem; }
       @media (max-width: 768px) { .sep-icon { height: 2.1rem; } }
+
+      /* ── Sichtbarer Tastatur-Fokus ──────────────────── */
+      /* Doppelter Ring (schwarz + gelb) → sichtbar auf gelbem UND schwarzem Grund */
+      .nav-links a:focus-visible, .lang-dd summary:focus-visible, .nav-hamburger:focus-visible,
+      .nav-logo-link:focus-visible, .hero-cta:focus-visible, .hero-cta-mobile:focus-visible,
+      .c2-btn:focus-visible, .reviews-count:focus-visible {
+        outline: 2px solid var(--black); outline-offset: 2px;
+        box-shadow: 0 0 0 5px var(--yellow); border-radius: 3px;
+      }
+      /* Dunkler Grund (mobiles Menü, Sprach-Dropdown): gelber Innen-Ring, kein Clipping */
+      .mobile-menu-link:focus-visible, .lang-dd-mobile summary:focus-visible,
+      .lang-dd ul a:focus-visible, .lang-dd-mobile ul a:focus-visible {
+        outline: 2px solid var(--yellow); outline-offset: -3px;
+      }
 
       /* ── Skip Link ──────────────────────────────────── */
       .skip-link {
