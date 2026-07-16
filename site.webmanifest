@@ -1,0 +1,13 @@
+{
+  "name": "La Victoria Berlin",
+  "short_name": "La Victoria",
+  "description": "Peruanische Straßenküche in Berlin – Markthalle Pfefferberg, Prenzlauer Berg.",
+  "start_url": "/de/",
+  "display": "standalone",
+  "background_color": "#1d1d1b",
+  "theme_color": "#1d1d1b",
+  "icons": [
+    { "src": "/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
