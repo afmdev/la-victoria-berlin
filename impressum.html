@@ -8,10 +8,7 @@
   <meta name="robots" content="noindex, follow" />
   <link rel="canonical" href="https://de.lavictoriaberlin.com/impressum.html" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/site.css?v=13" />
+  <link rel="stylesheet" href="styles/site.css?v=14" />
 
   <style>
     .legal-logo { height: 40px; width: auto; display: block; }
@@ -55,10 +52,44 @@
 </head>
 <body>
 
-  <nav class="nav scrolled" aria-label="Navigation">
-    <a href="lang/de/" aria-label="La Victoria – Startseite">
-      <img class="legal-logo" src="assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" />
-    </a>
+  <nav class="nav scrolled" id="navbar" aria-label="Hauptnavigation">
+    <img class="nav-mobile-logo" id="mobileLogo" src="assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" aria-hidden="true">
+    <div class="nav-links">
+      <a href="lang/de/#menu">SPEISEKARTE</a>
+      <a href="lang/de/#story">UNSERE GESCHICHTE</a>
+      <a href="lang/de/#reviews2">BEWERTUNGEN</a>
+      <a href="lang/de/#location">ANFAHRT</a>
+    </div>
+    <details class="lang-dd">
+      <summary aria-label="Sprache wählen"><span class="flag flag--de" aria-hidden="true"></span><span class="code">DE</span></summary>
+      <ul>
+        <li><a href="lang/en/index.html" hreflang="en"><span class="flag flag--en" aria-hidden="true"></span> EN</a></li>
+        <li><a href="lang/es/index.html" hreflang="es"><span class="flag flag--es" aria-hidden="true"></span> ES</a></li>
+        <li><a href="lang/fr/index.html" hreflang="fr"><span class="flag flag--fr" aria-hidden="true"></span> FR</a></li>
+        <li><a href="lang/it/index.html" hreflang="it"><span class="flag flag--it" aria-hidden="true"></span> IT</a></li>
+      </ul>
+    </details>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation" aria-hidden="true">
+    <a href="lang/de/menu.html" class="mobile-menu-link">SPEISEKARTE</a>
+    <a href="lang/de/#story" class="mobile-menu-link">UNSERE GESCHICHTE</a>
+    <a href="lang/de/#reviews2" class="mobile-menu-link">BEWERTUNGEN</a>
+    <a href="lang/de/#location" class="mobile-menu-link">ANFAHRT</a>
+    <details class="lang-dd-mobile">
+      <summary aria-label="Sprache wählen"><span class="flag flag--de" aria-hidden="true"></span><span class="code">DE</span></summary>
+      <ul>
+        <li><a href="lang/en/index.html" hreflang="en"><span class="flag flag--en" aria-hidden="true"></span> EN</a></li>
+        <li><a href="lang/es/index.html" hreflang="es"><span class="flag flag--es" aria-hidden="true"></span> ES</a></li>
+        <li><a href="lang/fr/index.html" hreflang="fr"><span class="flag flag--fr" aria-hidden="true"></span> FR</a></li>
+        <li><a href="lang/it/index.html" hreflang="it"><span class="flag flag--it" aria-hidden="true"></span> IT</a></li>
+      </ul>
+    </details>
   </nav>
 
   <main class="legal">
@@ -126,6 +157,7 @@
   </main>
 
   <div id="site-footer"></div>
+  <script src="lang/de/nav.js?v=6"></script>
   <script src="footer.js?v=8"></script>
 </body>
 </html>

@@ -14,7 +14,8 @@
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git push *)",
-      "Bash(pkill -f 'http.server 8099')"
+      "Bash(pkill -f 'http.server 8099')",
+      "Bash(python3 *)"
     ]
   }
 }
