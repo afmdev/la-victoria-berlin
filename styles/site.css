@@ -10,6 +10,15 @@
         font-weight: normal;
         font-style: normal;
       }
+      /* Google Fonts self-hosted — no external requests (latin subset covers de/en/es/fr/it) */
+      @font-face { font-family: 'Bebas Neue'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/BebasNeue-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/BarlowCondensed-400.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/BarlowCondensed-500.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 600; font-display: swap; src: url('../assets/fonts/BarlowCondensed-600.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/BarlowCondensed-700.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Condensed'; font-style: normal; font-weight: 800; font-display: swap; src: url('../assets/fonts/BarlowCondensed-800.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow Condensed'; font-style: italic; font-weight: 700; font-display: swap; src: url('../assets/fonts/BarlowCondensed-700italic.woff2') format('woff2'); }
+      @font-face { font-family: 'Barlow'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/Barlow-400.woff2') format('woff2'); }
 
       /* ── Reset & Base ───────────────────────────────── */
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
