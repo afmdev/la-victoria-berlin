@@ -15,14 +15,23 @@
         .menu-section, #sides { display: block; }
       }
     </style>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="5b233333-c57a-427f-92f2-289790dc3366"></script>
+    <!-- Scoby Analytics — cookieless, hosted in Germany -->
+    <script>
+      (function () {
+        window.scoby = window.scoby || function () {
+          (window.scoby.q = window.scoby.q || []).push(arguments);
+        };
+        window.scoby('init', { autoLogging: true });
+      })();
+    </script>
+    <script async src="https://2xx3e.s3y.io"></script>
   </head>
   <body>
 
         <!-- NAVBAR (same as home, + Home link) -->
     <div id="navSentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none;"></div>
     <nav class="nav" id="navbar" aria-label="Navigation principale">
-      <img class="nav-mobile-logo" id="mobileLogo" src="../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="La Victoria" aria-hidden="true">
+      <a href="index.html" class="nav-logo-link" aria-label="Zur Startseite"><img class="nav-mobile-logo" id="mobileLogo" src="../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="" aria-hidden="true"></a>
       <div class="nav-links">
         <a href="index.html">ACCUEIL</a>
         <a href="#menu">CARTE</a>
