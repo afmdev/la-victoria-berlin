@@ -23,3 +23,6 @@ Desktop.ini
 # context-mode / tooling state (do not commit)
 data/state_store.db/
 *.db/
+
+# npm devDependencies for pre-commit minification hook (see .githooks/pre-commit)
+node_modules/

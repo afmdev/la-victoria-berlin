@@ -1,0 +1,57 @@
+#!/bin/bash
+# ─────────────────────────────────────────────────────────────────
+# Pre-commit hook: minifica CSS/JS staged y stagea los .min. variants.
+# Source files quedan editables; los .min.* se regeneran en cada commit
+# que toque su source. Ver CLAUDE.md sección "Minificación".
+# ─────────────────────────────────────────────────────────────────
+set -e
+
+repo=$(git rev-parse --show-toplevel)
+cd "$repo"
+
+CSSO="$repo/node_modules/.bin/csso"
+TERSER="$repo/node_modules/.bin/terser"
+
+if [ ! -x "$CSSO" ] || [ ! -x "$TERSER" ]; then
+  echo "[pre-commit] tools missing → run 'npm install' from repo root"
+  exit 1
+fi
+
+staged=$(git diff --cached --name-only --diff-filter=ACM)
+minified_any=0
+
+minify_and_stage() {
+  local src="$1"
+  local out="$2"
+  local tool="$3"
+  case "$tool" in
+    css) "$CSSO" --input "$src" --output "$out" --no-restructure ;;
+    js)  "$TERSER" "$src" --compress --mangle --output "$out" ;;
+  esac
+  git add "$out"
+  local sz_src sz_out
+  sz_src=$(wc -c < "$src")
+  sz_out=$(wc -c < "$out")
+  local pct=$(( 100 - (sz_out * 100 / sz_src) ))
+  echo "  ✓ $src ($sz_src B) → $out ($sz_out B, −${pct}%)"
+  minified_any=1
+}
+
+while IFS= read -r file; do
+  [ -z "$file" ] && continue
+  case "$file" in
+    styles/site.css)
+      minify_and_stage "$file" "styles/site.min.css" css
+      ;;
+    *.js)
+      # Skip already-minified files
+      case "$file" in *.min.js) continue ;; esac
+      out="${file%.js}.min.js"
+      minify_and_stage "$file" "$out" js
+      ;;
+  esac
+done <<< "$staged"
+
+if [ $minified_any -eq 0 ]; then
+  echo "[pre-commit] no minifiable sources staged"
+fi
