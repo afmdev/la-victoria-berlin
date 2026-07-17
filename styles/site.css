@@ -178,7 +178,7 @@
       .bottom-col-3 { grid-column: 5 / 6; grid-row: 2; }
       .bottom-divider-inner { grid-column: 2 / 3; grid-row: 2; }
       .bottom-divider-group { grid-column: 4 / 5; grid-row: 1 / 3; }
-      .sanguches-title--compact { font-size: clamp(2.375rem, 1.3rem + 1.7vw, 3rem); letter-spacing: 0.08em; } /* 38→48px (1024→1600) */
+      .salchipapa-title { font-size: clamp(1.75rem, 1rem + 1.2vw, 2.125rem); letter-spacing: 0.08em; } /* 28→34px (1024→1600) */
       .img-offset::before {
         content: '';position: absolute;bottom: 10px; left:0; width: 100%; height: 40%; background: var(--orange); z-index: 0;}
       .img-offset--sanguche::before { height: 30%;bottom: 50px; }
@@ -189,7 +189,7 @@
       .dish-img { overflow: hidden; }
       .dish-img img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.5s; }
       .dish-body { padding-top: 1rem; flex: 1; display: flex; flex-direction: column; }
-      .dish-body--sanguche { padding-top: 0; margin-top: -30px; align-items: center; text-align: center; }
+      .dish-body--sanguche { padding-top: 0; margin-top: 20px; align-items: center; text-align: center; }
       .dish-name-row { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.2rem; min-width: 0; overflow: hidden; }
       .dish-name {
         font-family: 'Radius', 'Bebas Neue', sans-serif;
@@ -630,7 +630,7 @@
         .grid-bottom { grid-template-columns: 1fr; row-gap: 2rem; }
         .grid-bottom > * { grid-column: auto !important; grid-row: auto !important; }
         .grid-bottom > .dish { padding: 0; }
-        .sanguches-title--compact { font-size: var(--fs-h3); letter-spacing: 0.15em; }
+        .salchipapa-title { font-size: var(--fs-h3); letter-spacing: 0.15em; }
         .grid-divider-col { display: none; }
         .sanguches-cariño { display: none; }
         .dish-body--sanguche { align-items: center; text-align: center; }
@@ -695,7 +695,7 @@
       .c2-outer {
         position: relative; padding: 2.5rem 0;
         border-top: 1px solid rgba(0,0,0,0.06);
-        min-height: 480px; /* ponytail: reserva altura para el marquee lazy — evita CLS cuando nav.js inyecta las tarjetas */
+        min-height: 300px; /* ponytail: reserva altura para el marquee lazy — evita CLS; calibrada para tarjetas text-only (~220px) */
       }
       .c2-fade-left, .c2-fade-right {
         position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
