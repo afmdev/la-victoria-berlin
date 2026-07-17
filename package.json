@@ -1,0 +1,10 @@
+{
+  "name": "la-victoria-berlin",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Static marketing site (see CLAUDE.md). Only build-time tooling is minification via pre-commit hook.",
+  "devDependencies": {
+    "csso-cli": "^4.0.2",
+    "terser": "^5.36.0"
+  }
+}
