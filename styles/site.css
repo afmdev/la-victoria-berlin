@@ -151,7 +151,7 @@
       .hero-cta:active { transform: scale(0.97); }
 
 
-            /* ── Lifestyle crossfade (1 imagen visible, rota cada 3s) ────── */
+            /* ── Lifestyle hard-cut (1 imagen cada 2s, sin fade) ────── */
       .lifestyle {
         align-self: stretch;
         margin: 1.5rem -1.5rem;                     /* rompe padding horizontal 1.5rem del .hero */
@@ -164,15 +164,16 @@
       .lifestyle picture {
         position: absolute; inset: 0;
         opacity: 0;
-        animation: lifestyle-fade 12s infinite;     /* 4 imgs × 3s cada una = 12s ciclo */
+        animation: lifestyle-cut 2s infinite;       /* 4 imgs × 0.5s = 2s ciclo */
+        animation-timing-function: steps(1);        /* corte duro, no interpolación */
       }
-      .lifestyle picture:nth-child(2) { animation-delay: 3s; }
-      .lifestyle picture:nth-child(3) { animation-delay: 6s; }
-      .lifestyle picture:nth-child(4) { animation-delay: 9s; }
+      .lifestyle picture:nth-child(2) { animation-delay: 0.5s; }
+      .lifestyle picture:nth-child(3) { animation-delay: 1s; }
+      .lifestyle picture:nth-child(4) { animation-delay: 1.5s; }
       .lifestyle img { width: 100%; height: 100%; object-fit: cover; display: block; }
-      @keyframes lifestyle-fade {
-        0%, 100% { opacity: 0; }
-        5%, 25%  { opacity: 1; }                    /* fade-in 0.6s, visible 2.4s, fade-out 0.6s */
+      @keyframes lifestyle-cut {
+        0%   { opacity: 1; }                        /* visible durante 0-25% (2s) */
+        25%  { opacity: 0; }                        /* oculta el resto (25-100%) */
       }
       @media (max-width: 768px) { .lifestyle { height: 300px; } }
       @media (prefers-reduced-motion: reduce) {
