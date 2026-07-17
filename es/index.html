@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" as="image" href="/assets/svg/logos/logo-menu-la-victoria-berlin.svg" fetchpriority="high" />
     <title>La Victoria – Comida Callejera Peruana | Ceviche, Anticuchos & Papa Rellena</title>
     <meta name="description" content="Auténtica comida callejera peruana en Berlín: Anticuchos, Ceviche & Papa Rellena en la Markthalle Pfefferberg, Prenzlauer Berg. Abierto Mar–Dom." />
     <meta name="keywords" content="restaurante peruano Berlín, Ceviche Berlín, Anticuchos Berlín, street food peruano, Markthalle Pfefferberg comida, restaurante Prenzlauer Berg, Papa Rellena Berlín, street food Berlín, cocina peruana Berlín" />
@@ -26,79 +27,123 @@
     <meta property="og:url" content="https://www.lavictoria.berlin/es/" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:site_name" content="La Victoria" />
-    <meta property="og:image" content="https://www.lavictoria.berlin/assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" />
+    <meta property="og:image" content="https://www.lavictoria.berlin/assets/images/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="774" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Comida callejera peruana en La Victoria Berlin" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="La Victoria – Comida Callejera Peruana" />
     <meta name="twitter:description" content="Anticuchos, Ceviche & Papa Rellena – directamente de las calles de Lima. Markthalle Pfefferberg, Prenzlauer Berg." />
-    <meta name="twitter:image" content="https://www.lavictoria.berlin/assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png" />
+    <meta name="twitter:image" content="https://www.lavictoria.berlin/assets/images/og-image.png" />
 
     <!-- JSON-LD (Restaurant) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "@id": "https://www.lavictoria.berlin/#restaurant",
-      "name": "La Victoria",
-      "description": "Auténtica comida callejera peruana en Berlín: Anticuchos, Ceviche & Papa Rellena en la Markthalle Pfefferberg, Prenzlauer Berg. Abierto Mar–Dom.",
-      "url": "https://www.lavictoria.berlin/es/",
-      "inLanguage": "es",
-      "image": [
-        "https://www.lavictoria.berlin/assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png",
-        "https://www.lavictoria.berlin/assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png",
-        "https://www.lavictoria.berlin/assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png",
-        "https://www.lavictoria.berlin/assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png",
-        "https://www.lavictoria.berlin/assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png",
-        "https://www.lavictoria.berlin/assets/images/salchipapa-la-victoria-berlin.png"
-      ],
-      "logo": "https://www.lavictoria.berlin/logo.png",
-      "email": "info@lavictoriaberlin.com",
-      "servesCuisine": "Peruvian",
-      "priceRange": "€€",
-      "acceptsReservations": false,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Schönhauser Allee 176",
-        "addressLocality": "Berlin",
-        "postalCode": "10119",
-        "addressRegion": "Berlin",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 52.5319727,
-        "longitude": 13.4117297
-      },
-      "hasMap": "https://www.google.com/maps/place/La+Victoria/@52.5319726,13.4068588,544m/data=!3m3!1e3!4b1!5s0x47a851fd56943887:0x172c611ac5888929!4m6!3m5!1s0x47a85185dd24ce8f:0x864b92ad030b917d!8m2!3d52.5319727!4d13.4117297!16s%2Fg%2F11msmy7d8b",
-      "openingHoursSpecification": [
+      "@graph": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
+          "@type": "WebSite",
+          "@id": "https://www.lavictoria.berlin/#website",
+          "url": "https://www.lavictoria.berlin/",
+          "name": "La Victoria",
+          "inLanguage": "es",
+          "publisher": {
+            "@id": "https://www.lavictoria.berlin/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.lavictoria.berlin/#organization",
+          "name": "La Victoria",
+          "url": "https://www.lavictoria.berlin/",
+          "email": "info@lavictoriaberlin.com",
+          "logo": "https://www.lavictoria.berlin/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/lavictoriaberlin/",
+            "https://www.facebook.com/lavictoriaberlin",
+            "https://www.youtube.com/@lavictoriaberlin",
+            "https://www.threads.net/@lavictoriaberlin",
+            "https://x.com/lavictoriaberlin"
+          ]
+        },
+        {
+          "@type": "Restaurant",
+          "@id": "https://www.lavictoria.berlin/#restaurant",
+          "name": "La Victoria",
+          "description": "Auténtica comida callejera peruana en Berlín: Anticuchos, Ceviche & Papa Rellena en la Markthalle Pfefferberg, Prenzlauer Berg. Abierto Mar–Dom.",
+          "url": "https://www.lavictoria.berlin/es/",
+          "inLanguage": "es",
+          "image": [
+            "https://www.lavictoria.berlin/assets/images/anticucho-beef-heart-roasted-potatoes-choclos-corn-la-victoria-berlin.png",
+            "https://www.lavictoria.berlin/assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png",
+            "https://www.lavictoria.berlin/assets/images/papa-rellena-meat-olives-deep-frieid-la-victoria-berlin.png",
+            "https://www.lavictoria.berlin/assets/images/pan-con-chicharron-sanguche-sandwich-la-victoria-belrin.png",
+            "https://www.lavictoria.berlin/assets/images/pollo-a-la-brasa-sanguche-hamburguesa-la-victoria-berlin.png",
+            "https://www.lavictoria.berlin/assets/images/salchipapa-la-victoria-berlin.png"
           ],
-          "opens": "12:00",
-          "closes": "22:00"
+          "logo": "https://www.lavictoria.berlin/logo.png",
+          "email": "info@lavictoriaberlin.com",
+          "servesCuisine": "Peruvian",
+          "priceRange": "€€",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": 86,
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "currenciesAccepted": "EUR",
+          "acceptsReservations": false,
+          "areaServed": {
+            "@type": "City",
+            "name": "Berlin"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schönhauser Allee 176",
+            "addressLocality": "Berlin",
+            "postalCode": "10119",
+            "addressRegion": "Berlin",
+            "addressCountry": "DE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 52.5319727,
+            "longitude": 13.4117297
+          },
+          "hasMap": "https://www.google.com/maps/place/La+Victoria/@52.5319726,13.4068588,544m/data=!3m3!1e3!4b1!5s0x47a851fd56943887:0x172c611ac5888929!4m6!3m5!1s0x47a85185dd24ce8f:0x864b92ad030b917d!8m2!3d52.5319727!4d13.4117297!16s%2Fg%2F11msmy7d8b",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "12:00",
+              "closes": "22:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/lavictoriaberlin/",
+            "https://www.facebook.com/lavictoriaberlin",
+            "https://www.youtube.com/@lavictoriaberlin",
+            "https://www.threads.net/@lavictoriaberlin",
+            "https://x.com/lavictoriaberlin"
+          ],
+          "hasMenu": "https://www.lavictoria.berlin/es/menu",
+          "parentOrganization": {
+            "@id": "https://www.lavictoria.berlin/#organization"
+          }
         }
-      ],
-      "sameAs": [
-        "https://www.instagram.com/lavictoriaberlin/",
-        "https://www.facebook.com/lavictoriaberlin",
-        "https://www.youtube.com/@lavictoriaberlin",
-        "https://www.threads.net/@lavictoriaberlin",
-        "https://x.com/lavictoriaberlin"
-      ],
-      "hasMenu": "https://www.lavictoria.berlin/es/menu"
+      ]
     }
     </script>
-    <link rel="stylesheet" href="../styles/site.css?v=15" />
+    <link rel="stylesheet" href="../styles/site.css?v=16" />
     <!-- Scoby Analytics — cookieless, hosted in Germany -->
     <script>
       (function () {
@@ -124,6 +169,7 @@
         <a href="#story">NUESTRA HISTORIA</a>
         <a href="#reviews2">RESEÑAS</a>
         <a href="#location">CÓMO LLEGAR</a>
+        <a href="https://www.bon-bon.de/gutschein/la-victoria/" target="_blank" rel="noopener">BONO REGALO</a>
       </div>
       <details class="lang-dd">
         <summary aria-label="Elegir idioma"><span class="flag flag--es" aria-hidden="true"></span><span class="code">ES</span></summary>
@@ -146,6 +192,7 @@
       <a href="#story" class="mobile-menu-link">NUESTRA HISTORIA</a>
       <a href="#reviews2" class="mobile-menu-link">RESEÑAS</a>
       <a href="#location" class="mobile-menu-link">CÓMO LLEGAR</a>
+      <a href="https://www.bon-bon.de/gutschein/la-victoria/" class="mobile-menu-link" target="_blank" rel="noopener">BONO REGALO</a>
       <details class="lang-dd-mobile">
         <summary aria-label="Elegir idioma"><span class="flag flag--es" aria-hidden="true"></span><span class="code">ES</span></summary>
         <ul>

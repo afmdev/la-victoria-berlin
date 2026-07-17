@@ -191,7 +191,7 @@
       .dish-name-row { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.2rem; min-width: 0; overflow: hidden; }
       .dish-name {
         font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: var(--fs-h3);
+        font-size: calc(var(--fs-h3) * 0.85); /* 3-Spalten (>1024px): kleiner, damit lange Titel nicht mitten im Wort brechen */
         color: var(--black); line-height: 1;
         min-width: 0; word-break: break-word;
       }
