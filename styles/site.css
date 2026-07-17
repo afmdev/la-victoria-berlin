@@ -193,10 +193,12 @@
       .dish-name-row { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.2rem; min-width: 0; overflow: hidden; }
       .dish-name {
         font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: clamp(1.05rem, 0.55rem + 1.1vw, 1.7rem);
+        font-size: calc(var(--fs-h3) * 0.85); /* 3-Spalten (>1024px): kleiner, damit lange Titel nicht mitten im Wort brechen */
         color: var(--black); line-height: 1;
-        min-width: 0; word-break: normal; text-wrap: balance;
+        min-width: 0; word-break: break-word;
       }
+      /* Pan con Chicharrón: título largo — clamp fluido solo para este plato para que "CHICHARRÓN" no parta la N */
+      #pan-con-chicharron .dish-name { font-size: clamp(1.05rem, 0.55rem + 1.1vw, 1.5rem); word-break: normal; text-wrap: balance; }
       .dish-subtitle {
         font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 700;
         font-size: var(--fs-subhead); color: var(--black); letter-spacing: 0.1em;
