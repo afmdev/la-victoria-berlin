@@ -131,6 +131,9 @@
       @media (max-width: 600px) {
         .hero-logo { max-height: clamp(70px, 18vh, 150px); }
       }
+      @media (min-width: 1025px) {
+        .hero-logo { margin-top: 40px; margin-bottom: 60px; }
+      }
 
       .hero-rule { width: 100%; border-top: 1px solid var(--black); margin: 0; }
       .hero-sub {
