@@ -17,7 +17,8 @@
       "Bash(pkill -f 'http.server 8099')",
       "Bash(python3 *)",
       "Bash(node *)",
-      "mcp__plugin_context-mode_context-mode__ctx_execute"
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "mcp__plugin_context-mode_context-mode__ctx_fetch_and_index"
     ]
   }
 }
