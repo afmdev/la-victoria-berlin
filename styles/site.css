@@ -473,78 +473,8 @@
       }
       .faq-acc-body strong { color: var(--orange); font-weight: 700; }
 
-      /* ── Reviews Section ────────────────────────────── */
-      .reviews-section {
-        background-color: #fff;
-        background-image: image-set(url('../assets/images/pattern-rose-extended.webp') type('image/webp'), url('../assets/images/pattern-rose-extended.png') type('image/png'));
-        background-repeat: no-repeat;
-        background-size: 120%;
-        background-position: center;
-        overflow: hidden;
-      }
-      .reviews-header {
-        padding: 3.5rem 1.5rem 2rem;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        display: flex; align-items: flex-end; justify-content: space-between;
-        background: rgba(255,255,255,0.92);
-      }
-      .reviews-header-left { display: flex; flex-direction: column; gap: 0.75rem; }
-      .reviews-title {
-        font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: var(--fs-display);
-        color: var(--black); letter-spacing: 0.02em; line-height: 1;
-      }
-      .reviews-rating-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
-      .reviews-stars { color: #FBBC04; font-size: 1.3rem; letter-spacing: 0.05em; white-space: nowrap; }
-      .reviews-score {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: 1.2rem; color: var(--black); white-space: nowrap;
-      }
-      .reviews-count {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
-        font-size: var(--fs-body-lg); color: rgba(0,0,0,0.45); letter-spacing: 0.05em;
-        white-space: nowrap;
-      }
-      .reviews-header-right {
-        font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 700;
-        font-size: 1.3rem; letter-spacing: 0.25em;
-        color: rgba(0,0,0,0.35); text-transform: uppercase; text-align: right;
-      }
 
 
-      /* Review card — Google style */
-      .review-card {
-        background: #fff;
-        width: 300px; flex-shrink: 0;
-        display: flex; flex-direction: column;
-        border: none;
-        border-radius: 4px;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.14), 0 2px 10px rgba(0,0,0,0.08);
-        transition: box-shadow 0.2s;
-      }
-      .review-card:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.18); }
-      .review-body {
-        padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.75rem;
-      }
-      .review-stars { color: #FBBC04; font-size: 0.95rem; letter-spacing: 0.04em; }
-      .review-text {
-        font-family: 'Barlow', sans-serif; font-weight: 400;
-        font-size: var(--fs-body); color: rgba(0,0,0,0.65); line-height: 1.6;
-        flex: 1; min-height: 4.5rem;
-        display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
-        line-clamp: 4;
-        overflow: hidden;
-      }
-      .review-footer {
-        margin-top: auto; padding: 0.75rem 1.4rem 1.1rem;
-        border-top: 1px solid rgba(0,0,0,0.06);
-        display: flex; align-items: center; gap: 0.65rem;
-      }
-      .review-avatar {
-        width: 40px; height: 40px; flex-shrink: 0;
-        object-fit: cover; border-radius: 50%;
-      }
-      .review-author-info { display: flex; flex-direction: column; gap: 0.15rem; min-width: 0; flex: 1; }
       .review-author-name, .c2-author-name {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
         font-size: 0.95rem; color: #1a1a1a; letter-spacing: 0.02em;
@@ -553,11 +483,6 @@
       .review-author-badge, .c2-author-badge {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
         font-size: 0.72rem; color: #4285F4; letter-spacing: 0.06em; text-transform: uppercase;
-      }
-      .review-date {
-        font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
-        font-size: 0.72rem; color: rgba(0,0,0,0.38); letter-spacing: 0.04em;
-        white-space: nowrap; flex-shrink: 0;
       }
 
       /* ── Location Section ───────────────────────────── */
@@ -714,11 +639,7 @@
         .faq-grid { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
         .faq-col:first-child { border-right: none; border-bottom: 1px solid rgba(255,204,0,0.15); padding-right: 0; padding-bottom: 1rem; }
         .faq-col:last-child { padding-left: 0; padding-top: 1rem; }
-        .reviews-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-        .reviews-rating-row { flex-wrap: wrap; }
-        .reviews-count { flex-basis: 100%; }
         .c2-subtitle { text-align: left; }
-        .reviews-rating-row { justify-content: flex-start; }
 
         .location-inner { grid-template-columns: 1fr; }
         .location-text-col { padding: 3rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,204,0,0.15); }
@@ -1053,7 +974,7 @@
       /* Doppelter Ring (schwarz + gelb) → sichtbar auf gelbem UND schwarzem Grund */
       .nav-links a:focus-visible, .lang-dd summary:focus-visible, .nav-hamburger:focus-visible,
       .nav-logo-link:focus-visible, .hero-cta:focus-visible, .hero-cta-mobile:focus-visible,
-      .c2-btn:focus-visible, .reviews-count:focus-visible {
+      .c2-btn:focus-visible {
         outline: 2px solid var(--black); outline-offset: 2px;
         box-shadow: 0 0 0 5px var(--yellow); border-radius: 3px;
       }
