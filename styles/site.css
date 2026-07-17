@@ -3,12 +3,14 @@
         src: url('../assets/fonts/Radius-BoldNarrow.otf') format('opentype');
         font-weight: bold;
         font-style: normal;
+        font-display: swap;
       }
       @font-face {
         font-family: 'Groches';
         src: url('../assets/fonts/GROCHES.otf') format('opentype');
         font-weight: normal;
         font-style: normal;
+        font-display: swap;
       }
       /* Google Fonts self-hosted — no external requests (latin subset covers de/en/es/fr/it) */
       @font-face { font-family: 'Bebas Neue'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/BebasNeue-400.woff2') format('woff2'); }
@@ -755,6 +757,7 @@
       .c2-outer {
         position: relative; padding: 2.5rem 0;
         border-top: 1px solid rgba(0,0,0,0.06);
+        min-height: 480px; /* ponytail: reserva altura para el marquee lazy — evita CLS cuando nav.js inyecta las tarjetas */
       }
       .c2-fade-left, .c2-fade-right {
         position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
