@@ -112,14 +112,14 @@
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
         position: relative; overflow: hidden;
-        padding: clamp(0.5rem, calc(var(--app-h, 100svh) * 0.02), 1.5rem) 1.5rem clamp(1rem, calc(var(--app-h, 100svh) * 0.04), 2.5rem);
+        padding: clamp(1.5rem, calc(var(--app-h, 100svh) * 0.04), 3rem) 1.5rem clamp(1.5rem, calc(var(--app-h, 100svh) * 0.05), 3rem);
         box-sizing: border-box;
       }
 
       .hero-wrapper {
         max-width: 1500px; width: 100%;
         display: flex; flex-direction: column; align-items: center;
-        gap: clamp(0.5rem, calc(var(--app-h, 100svh) * 0.018), 1rem);
+        gap: clamp(1.25rem, calc(var(--app-h, 100svh) * 0.03), 2.5rem);
       }
 
       /* Logo scales with available height so it never pushes content off-screen */
@@ -127,6 +127,9 @@
         width: auto; max-width: 100%;
         max-height: clamp(110px, calc(var(--app-h, 100svh) * 0.34), 420px);
         object-fit: contain;
+      }
+      @media (max-width: 600px) {
+        .hero-logo { max-height: clamp(70px, 18vh, 150px); }
       }
 
       .hero-rule { width: 100%; border-top: 1px solid var(--black); margin: 0; }
@@ -154,12 +157,10 @@
             /* ── Lifestyle hard-cut (1 imagen cada 2s, sin fade) ────── */
       .lifestyle {
         align-self: stretch;
-        margin: 1.5rem -1.5rem;                     /* rompe padding horizontal 1.5rem del .hero */
+        margin: 1.5rem 0;                           /* respeta el padding horizontal del .hero */
         height: 500px;
         position: relative;
         overflow: hidden;
-        border-top: 1px solid var(--black);
-        border-bottom: 1px solid var(--black);
       }
       .lifestyle picture {
         position: absolute; inset: 0;
