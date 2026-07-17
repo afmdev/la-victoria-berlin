@@ -36,6 +36,10 @@
     '    </li>',
     '  </ul>',
 
+    '  <p class="footer-about">',
+    '    La Victoria ist ein peruanisches Restaurant in Prenzlauer Berg, Berlin. In der Markthalle Pfefferberg servieren wir authentisches peruanisches Street Food – Ceviche, Anticuchos, Pan con Chicharrón, Pollo a la Brasa, Salchipapa und Papa Rellena – direkt aus Limas Straßenküche. Di–So geöffnet.',
+    '  </p>',
+
     '  <nav class="footer-legal" aria-label="Rechtliches">',
     '    <a href="impressum">Impressum</a>',
     '    <span aria-hidden="true">·</span>',
