@@ -712,7 +712,7 @@
         background-color: #fff;
         background-image: image-set(url('../assets/images/pattern-rose-extended.webp') type('image/webp'), url('../assets/images/pattern-rose-extended.png') type('image/png'));
         background-repeat: no-repeat;
-        background-size: 120%;
+        background-size: 200%;
         background-position: center;
         overflow: hidden;
       }
@@ -759,7 +759,11 @@
          Inhalt wird per JS verdoppelt → translateX(-50%) ergibt eine nahtlose Endlosschleife.
          Wenige Karten (≤14) halten die Spurbreite unter dem GPU-Texturlimit (~16384px). */
       .c2-track { display: flex; gap: 16px; width: max-content; }
-      .c2-track.c2-animate { animation: c2-marquee var(--c2-dur, 60s) linear infinite; }
+      .c2-track.c2-animate {
+        animation: c2-marquee var(--c2-dur, 60s) linear infinite;
+        will-change: transform;
+        transform: translate3d(0,0,0); /* ponytail: fuerza GPU compositing — iOS Safari no anima marquee sin esto */
+      }
       @keyframes c2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       /* a11y: Marquee pausiert, sobald ein Bedienelement der Sektion Tastatur-Fokus hat (Touch/Keyboard) */
       .c2-outer:focus-within .c2-track.c2-animate { animation-play-state: paused; }

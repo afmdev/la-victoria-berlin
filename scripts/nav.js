@@ -87,7 +87,7 @@
 
   // 4) Reviews-Marquee: erst bauen, wenn die Sektion in den Viewport scrollt (lazy),
   //    danach läuft eine reine CSS-Animation. Daten liegen inline (#c2-data) → kein fetch.
-  var section = document.getElementById('reviews2');
+  var section = document.getElementById('reviews');
   var track = document.getElementById('c2Track');
   var dataEl = document.getElementById('c2-data');
   if (section && track && dataEl && 'IntersectionObserver' in window) {
