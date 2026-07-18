@@ -24,7 +24,7 @@
 
       /* ── Reset & Base ───────────────────────────────── */
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + var(--frame)); }
+      html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); } /* solo nav; el --frame es decoración que la navegación por anclas no debe reservar */
       body { background: #1a1a1a; font-family: 'Barlow Condensed', sans-serif; }
       a { text-decoration: none; color: inherit; }
       img { display: block; width: 100%; object-fit: cover; }
