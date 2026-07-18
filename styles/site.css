@@ -62,7 +62,7 @@
       body {
         position: relative;
         box-sizing: border-box;
-        min-height: var(--app-h, 100svh);
+        min-height: 100svh;
         padding-top: var(--frame);
         padding-bottom: var(--frame);
         border-left: var(--frame) solid transparent;
@@ -108,24 +108,24 @@
 
       /* ── Hero ───────────────────────────────────────── */
       .hero {
-        min-height: calc(var(--app-h, 100svh) - var(--nav-h) - var(--frame)); background: var(--yellow);
+        min-height: calc(100svh - var(--nav-h) - var(--frame)); background: var(--yellow);
         display: flex; flex-direction: column; align-items: center;
         justify-content: center; text-align: center;
         position: relative; overflow: hidden;
-        padding: clamp(1.5rem, calc(var(--app-h, 100svh) * 0.04), 3rem) 1.5rem clamp(1.5rem, calc(var(--app-h, 100svh) * 0.05), 3rem);
+        padding: clamp(1.5rem, calc(100svh * 0.04), 3rem) 1.5rem clamp(1.5rem, calc(100svh * 0.05), 3rem);
         box-sizing: border-box;
       }
 
       .hero-wrapper {
         max-width: 1500px; width: 100%;
         display: flex; flex-direction: column; align-items: center;
-        gap: clamp(1.25rem, calc(var(--app-h, 100svh) * 0.03), 2.5rem);
+        gap: clamp(1.25rem, calc(100svh * 0.03), 2.5rem);
       }
 
       /* Logo scales with available height so it never pushes content off-screen */
       .hero-logo {
         width: auto; max-width: 100%;
-        max-height: clamp(110px, calc(var(--app-h, 100svh) * 0.34), 420px);
+        max-height: clamp(110px, calc(100svh * 0.34), 420px);
         object-fit: contain;
       }
       @media (max-width: 600px) {
@@ -147,10 +147,10 @@
       }
       .hero-tagline:empty { display: none; }
       .hero-cta {
-        margin-top: clamp(1rem, calc(var(--app-h, 100svh) * 0.025), 2.5rem); padding: clamp(0.7rem, calc(var(--app-h, 100svh) * 0.016), 1rem) clamp(1.6rem, 5vw, 2.5rem);
+        margin-top: clamp(1rem, calc(100svh * 0.025), 2.5rem); padding: clamp(0.7rem, calc(100svh * 0.016), 1rem) clamp(1.6rem, 5vw, 2.5rem);
         background: var(--black); color: var(--yellow);
         font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: clamp(1rem, 1.2vw + calc(var(--app-h, 100svh) * 0.004), 1.3rem); letter-spacing: 0.3em; border: none; cursor: pointer;
+        font-size: clamp(1rem, 1.2vw + calc(100svh * 0.004), 1.3rem); letter-spacing: 0.3em; border: none; cursor: pointer;
         transition: transform 0.15s; flex-shrink: 0;
       }
       .hero-cta:hover { transform: scale(1.04); }
@@ -324,7 +324,7 @@
       }
       .story-inner {
         display: grid; grid-template-columns: 1fr 1fr;
-        min-height: calc(var(--app-h, 100svh) * 0.8);
+        min-height: calc(100svh * 0.8);
       }
       .story-text-col {
         display: flex; flex-direction: column; justify-content: center;
@@ -540,7 +540,7 @@
       .location-section { background: var(--black); color: var(--yellow); }
       .location-inner {
         display: grid; grid-template-columns: 1fr 1fr;
-        min-height: calc(var(--app-h, 100svh) * 0.6);
+        min-height: calc(100svh * 0.6);
       }
       .location-text-col {
         padding: 5rem 4rem;
@@ -826,7 +826,7 @@
       }
       .lightbox.open { display: flex; }
       .lightbox img {
-        max-width: 90vw; max-height: calc(var(--app-h, 100svh) * 0.9); object-fit: contain;
+        max-width: 90vw; max-height: calc(100svh * 0.9); object-fit: contain;
         box-shadow: 0 0 60px rgba(0,0,0,0.8);
       }
       .lightbox-close {
