@@ -7,11 +7,5 @@
 /styles/*
   Cache-Control: public, max-age=31536000, immutable
 
-/*/nav.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/*/footer.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/footer.js
+/scripts/*
   Cache-Control: public, max-age=31536000, immutable
