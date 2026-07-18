@@ -1,0 +1,24 @@
+# La Victoria Berlin
+
+Peruvian street food restaurant at Markthalle Pfefferberg in Prenzlauer Berg, Berlin. Anticuchos, ceviche, papa rellena, sanguches (pan con chicharrón, pollo a la brasa), salchipapa, and traditional Peruvian drinks. Open Tuesday to Sunday.
+
+## Home pages
+
+- [Startseite (Deutsch)](https://www.lavictoria.berlin/de/)
+- [Home (English)](https://www.lavictoria.berlin/en/)
+- [Inicio (Español)](https://www.lavictoria.berlin/es/)
+- [Accueil (Français)](https://www.lavictoria.berlin/fr/)
+- [Home (Italiano)](https://www.lavictoria.berlin/it/)
+
+## Menu
+
+- [Speisekarte (Deutsch)](https://www.lavictoria.berlin/de/menu)
+- [Menu (English)](https://www.lavictoria.berlin/en/menu)
+- [Carta (Español)](https://www.lavictoria.berlin/es/menu)
+- [Carte (Français)](https://www.lavictoria.berlin/fr/menu)
+- [Menu (Italiano)](https://www.lavictoria.berlin/it/menu)
+
+## Legal
+
+- [Impressum](https://www.lavictoria.berlin/impressum)
+- [Datenschutz](https://www.lavictoria.berlin/datenschutz)
