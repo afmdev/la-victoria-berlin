@@ -39,9 +39,6 @@
     '  <p class="footer-about">',
     '    La Victoria is a Peruvian restaurant in Berlin. At Markthalle Pfefferberg we serve authentic Peruvian street food – Ceviche, Anticuchos, Pan con Chicharrón, Pollo a la Brasa, Salchipapa and Papa Rellena – straight from Lima\'s street food scene.',
     '  </p>',
-    '  <p class="footer-about">',
-    '    Open Tue–Sun.',
-    '  </p>',
 
     '  <nav class="footer-legal" aria-label="Legal">',
     '    <a href="../impressum">Legal Notice</a>',
