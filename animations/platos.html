@@ -47,7 +47,38 @@
 				height: 100%;
 				pointer-events: none;
 				z-index: 5;
+				animation: frame-breath 4s ease-in-out infinite;
+				transform-origin: center;
 			}
+
+			@keyframes frame-breath {
+				0%,100% { transform: scale(1); }
+				50%     { transform: scale(1.012); }
+			}
+
+			.corner-star {
+				position: absolute;
+				width: 78px;
+				height: auto;
+				z-index: 6;
+				pointer-events: none;
+			}
+			.corner-star.tl { top: 70px;    left: 70px; }
+			.corner-star.tr { top: 70px;    right: 70px; }
+			.corner-star.bl { bottom: 70px; left: 70px; }
+			.corner-star.br { bottom: 70px; right: 70px; }
+
+			@keyframes star-spin  { to { transform: rotate(360deg); } }
+			@keyframes star-spin-r { to { transform: rotate(-360deg); } }
+			@keyframes star-pop {
+				0%,100% { transform: scale(1) rotate(var(--r, 0deg)); }
+				50%     { transform: scale(1.25) rotate(var(--r, 0deg)); }
+			}
+
+			.corner-star.tl { animation: star-spin   3.6s linear infinite; }
+			.corner-star.tr { animation: star-spin-r 4.2s linear infinite; }
+			.corner-star.bl { animation: star-spin-r 5.0s linear infinite; }
+			.corner-star.br { animation: star-spin   3.0s linear infinite; }
 
 			.logo-victoria {
 				position: absolute;
@@ -81,12 +112,10 @@
 			}
 
 			.dish-photo {
-				width: 900px;
+				width: 960px;
 				height: 900px;
-				object-fit: cover;
-				border-radius: 32px;
-				box-shadow: 0 24px 60px rgba(0,0,0,.35);
-				background: var(--black);
+				object-fit: contain;
+				filter: drop-shadow(0 24px 40px rgba(0,0,0,.28));
 			}
 
 			.dish-name {
@@ -153,6 +182,11 @@
 			<div class="card">
 				<img class="corner-frame" src="../assets/instagram/corner.svg" alt="" aria-hidden="true"
 				     onerror="this.style.display='none'" />
+
+				<img class="corner-star tl" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
+				<img class="corner-star tr" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
+				<img class="corner-star bl" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
+				<img class="corner-star br" src="../assets/instagram/estrella-verde.svg" alt="" aria-hidden="true" />
 
 				<img class="logo-victoria" src="../assets/instagram/la-victoria.svg" alt="La Victoria Berlin" />
 
