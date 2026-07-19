@@ -10,7 +10,7 @@ const { spawnSync } = require('child_process');
 const path = require('path');
 const fs   = require('fs');
 
-const PROJECT  = path.resolve(__dirname);
+const PROJECT  = path.resolve(__dirname, '..', '..');
 const HTML     = path.join(PROJECT, 'animations', 'mundial.html');
 const FRAMES   = '/tmp/mundial-frames';
 const OUTPUT   = path.join(PROJECT, 'animations', 'mundial-export.mp4');
