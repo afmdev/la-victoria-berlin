@@ -13,7 +13,23 @@ Idempotent — safe to re-run.
 import re, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-CSS = (ROOT / "styles/site.css").read_text()
+
+
+def minify_css(css: str) -> str:
+    """Conservative minifier: strips comments + collapses whitespace, but keeps
+    single spaces around value operators (calc()'s `-`/`+` need them)."""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.DOTALL)  # comments
+    css = re.sub(r"\s+", " ", css)  # whitespace runs -> single space
+    css = re.sub(r"\s*([{}:;,>])\s*", r"\1", css)  # drop space around structural tokens
+    css = css.replace(";}", "}")  # trailing semicolons
+    return css.strip()
+
+
+# self-check: calc spaces survive, structural whitespace goes
+assert minify_css("a { color: red; }") == "a{color:red}"
+assert "calc(100svh - var(--nav-h))" in minify_css(".x{h:calc(100svh - var(--nav-h))}")
+
+CSS = minify_css((ROOT / "styles/site.css").read_text())
 
 FILES = [
     "index.html", "impressum.html", "datenschutz.html",
