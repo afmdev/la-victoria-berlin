@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 // ─────────────────────────────────────────────────────────────
-// Exports animations/mundial.html → animations/mundial-export.mp4
+// Exports animations/platos.html → animations/platos.mp4
 // Requires: Playwright (global), FFmpeg
-// Usage:    node capture-mundial.js
+// Usage:    node capture-platos.js
 // ─────────────────────────────────────────────────────────────
 
 const { chromium } = require('/opt/homebrew/lib/node_modules/playwright');
@@ -11,12 +11,12 @@ const path = require('path');
 const fs   = require('fs');
 
 const PROJECT  = path.resolve(__dirname, '..', '..');
-const HTML     = path.join(PROJECT, 'animations', 'mundial.html');
-const FRAMES   = '/tmp/mundial-frames';
-const OUTPUT   = path.join(PROJECT, 'animations', 'mundial-export.mp4');
+const HTML     = path.join(PROJECT, 'animations', 'platos.html');
+const FRAMES   = '/tmp/platos-frames';
+const OUTPUT   = path.join(PROJECT, 'animations', 'platos.mp4');
 
 const FPS      = 30;
-const DURATION = 15;                  // seconds
+const DURATION = 18;                  // seconds (6 dishes × 3s)
 const N_FRAMES = FPS * DURATION;      // 450
 const W = 1080, H = 1920;
 
