@@ -767,10 +767,7 @@
       @keyframes c2-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
       /* a11y: Marquee pausiert, sobald ein Bedienelement der Sektion Tastatur-Fokus hat (Touch/Keyboard) */
       .c2-outer:focus-within .c2-track.c2-animate { animation-play-state: paused; }
-      /* a11y: Bewegungsreduzierung respektieren (WCAG 2.2.2 / 2.3.3) */
-      @media (prefers-reduced-motion: reduce) {
-        .c2-track.c2-animate { animation: none; }
-      }
+      /* Marquee läuft bewusst auch bei prefers-reduced-motion (sanftes Dauer-Scrolling) */
       /* Pause on hover nur auf echten Zeigergeräten – auf Touch bleibt :hover sonst „kleben“
          und der Marquee würde nach einem Tap stehenbleiben. */
       @media (hover: hover) {
