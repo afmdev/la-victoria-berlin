@@ -180,10 +180,7 @@
         25%  { opacity: 0; }                        /* oculta el resto (25-100%) */
       }
       @media (max-width: 768px) { .lifestyle { height: 300px; } }
-      @media (prefers-reduced-motion: reduce) {
-        .lifestyle picture { animation: none; opacity: 0; }
-        .lifestyle picture:first-child { opacity: 1; }
-      }
+      /* Slideshow läuft bewusst auch bei prefers-reduced-motion (Nutzerwunsch) */
 
 /* ── Menu Section ───────────────────────────────── */
       .menu-section { background: var(--yellow); }
