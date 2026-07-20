@@ -413,119 +413,6 @@
         opacity: 0.75; line-height: 1.65;
       }
 
-      /* ── FAQ Section ───────────────────────────────── */
-      .faq-section { background: var(--black-soft); }
-      .faq-header {
-        padding: 3.5rem 1.5rem 0;
-        border-bottom: 1px solid rgba(255,204,0,0.2);
-        display: flex; align-items: flex-end; justify-content: space-between;
-        padding-bottom: 1.5rem;
-      }
-      .faq-header-title {
-        font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: var(--fs-display);
-        color: var(--yellow); line-height: 0.93; letter-spacing: 0.01em;
-      }
-      .faq-header-sub {
-        font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 700;
-        font-size: var(--fs-subhead); letter-spacing: 0.25em;
-        color: rgba(255,204,0,0.5); text-transform: uppercase; text-align: right;
-      }
-      .faq-grid {
-        display: grid; grid-template-columns: 1fr 1fr;
-        padding: 3rem 1.5rem; gap: 0;
-      }
-      .faq-col { display: flex; flex-direction: column; }
-      .faq-col:first-child { border-right: 1px solid rgba(255,204,0,0.15); padding-right: 3rem; }
-      .faq-col:last-child { padding-left: 3rem; }
-      .faq-item {
-        padding: 1.75rem 0;
-        border-bottom: 1px solid rgba(255,204,0,0.1);
-      }
-      .faq-item:last-child { border-bottom: none; }
-      .faq-q {
-        font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: 1.05rem; letter-spacing: 0.2em;
-        color: var(--yellow); margin-bottom: 0.6rem;
-        text-transform: uppercase;
-      }
-      .faq-a {
-        font-family: 'Barlow', sans-serif; font-weight: 400;
-        font-size: var(--fs-body); color: rgba(255,255,255,0.65); line-height: 1.75;
-      }
-      .faq-a strong { color: var(--orange); font-weight: 700; }
-
-      /* Sauces block inside FAQ */
-      .sauces-block {
-        margin-top: 0.75rem;
-        display: flex; flex-direction: column; gap: 0.6rem;
-      }
-      .sauce-item {
-        display: grid; grid-template-columns: auto 1fr;
-        gap: 0.75rem; align-items: baseline;
-      }
-      .sauce-name {
-        font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: 1.3rem; letter-spacing: 0.2em;
-        color: var(--green); text-transform: uppercase; white-space: nowrap;
-      }
-      .sauce-desc {
-        font-family: 'Barlow', sans-serif; font-weight: 400;
-        font-size: var(--fs-body-lg); color: rgba(255,255,255,0.6); line-height: 1.55;
-      }
-
-      /* ── FAQ Accordion ─────────────────────────────── */
-      .faq-acc-section { background: var(--black-soft); }
-      .faq-acc-header {
-        padding: 4rem 1.5rem 2rem;
-        border-bottom: 2px solid rgba(255,204,0,0.2);
-        display: flex; align-items: flex-end; justify-content: space-between;
-      }
-      .faq-acc-title {
-        font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: var(--fs-display);
-        color: var(--yellow); line-height: 0.88; letter-spacing: 0.01em;
-      }
-      .faq-acc-sub {
-        font-family: 'Groches', 'Barlow Condensed', sans-serif;
-        font-size: 0.8rem; letter-spacing: 0.25em;
-        color: rgba(255,204,0,0.5); text-transform: uppercase; text-align: right;
-      }
-      .faq-acc-list { width: 100%; }
-      .faq-acc-item { border-bottom: 1px solid rgba(255,204,0,0.12); }
-      .faq-acc-item:first-of-type { border-top: 1px solid rgba(255,204,0,0.12); margin-top: 0.5rem; }
-      .faq-acc-summary {
-        display: flex; align-items: center; gap: 1.5rem;
-        padding: 1.5rem; cursor: pointer; list-style: none; user-select: none;
-        transition: opacity 0.15s;
-      }
-      .faq-acc-summary::-webkit-details-marker { display: none; }
-      .faq-acc-summary:hover { opacity: 0.6; }
-      .faq-acc-num {
-        font-family: 'Radius', 'Bebas Neue', sans-serif;
-        font-size: clamp(1rem, 2vw, 1.6rem);
-        color: rgba(255,204,0,0.2); min-width: 3.5rem; flex-shrink: 0; line-height: 1;
-      }
-      .faq-acc-q {
-        font-family: 'Groches', 'Barlow Condensed', sans-serif; font-weight: 800;
-        font-size: clamp(0.95rem, 2vw, 1.25rem); letter-spacing: 0.15em;
-        color: var(--yellow); text-transform: uppercase; flex: 1;
-      }
-      .faq-acc-icon {
-        font-size: 1.8rem; font-weight: 300; font-family: 'Barlow', sans-serif;
-        color: var(--yellow); flex-shrink: 0; line-height: 1;
-        transition: transform 0.25s ease;
-      }
-      details[open] > .faq-acc-summary .faq-acc-icon { transform: rotate(45deg); }
-      .faq-acc-body { padding: 0 1.5rem 2rem calc(1.5rem + 3.5rem + 1.5rem); }
-      .faq-acc-body p {
-        font-family: 'Barlow', sans-serif; font-size: var(--fs-body);
-        line-height: 1.75; color: rgba(255,255,255,0.65);
-      }
-      .faq-acc-body strong { color: var(--orange); font-weight: 700; }
-
-
-
       .review-author-name, .c2-author-name {
         font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
         font-size: 0.95rem; color: #1a1a1a; letter-spacing: 0.02em;
@@ -688,14 +575,6 @@
         .about-card { border-right: none; }
         .about-card:last-child { border-bottom: none; }
 
-        .faq-acc-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-        .faq-acc-sub { text-align: left; }
-        .faq-acc-body { padding-left: 1.5rem; }
-        .faq-acc-num { min-width: 2.5rem; }
-
-        .faq-grid { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
-        .faq-col:first-child { border-right: none; border-bottom: 1px solid rgba(255,204,0,0.15); padding-right: 0; padding-bottom: 1rem; }
-        .faq-col:last-child { padding-left: 0; padding-top: 1rem; }
         .c2-subtitle { text-align: left; }
 
         .location-inner { grid-template-columns: 1fr; }
