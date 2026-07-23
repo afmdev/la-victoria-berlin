@@ -218,7 +218,17 @@
       .dish { display: flex; flex-direction: column; }
       .dish.sanguche { margin-top:-80px; }
       .dish-img { overflow: hidden; }
-      .dish-img img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.5s; }
+      .dish-img img { width: 100%; height: 100%; object-fit: contain; object-position: center; transition: transform 0.5s; position: relative; z-index: 1; }
+      /* Skeleton: Shimmer deckungsgleich mit dem contain-Foto (keine Letterbox-Ränder); das opake Foto verdeckt es beim Laden.
+         ponytail: läuft danach verdeckt weiter (occluded, ~gratis) — bei Bedarf per JS load-Klasse stoppen */
+      .dish-img::before {
+        content: ''; position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+        aspect-ratio: 1200 / 775; z-index: 0;
+        background: linear-gradient(100deg, #e6d7a4 30%, #f3e9c2 50%, #e6d7a4 70%) 0 0 / 200% 100%;
+        animation: dish-skeleton 1.6s linear infinite;
+      }
+      @keyframes dish-skeleton { to { background-position: -200% 0; } }
+      @media (prefers-reduced-motion: reduce) { .dish-img::before { animation: none; } }
       .dish-body { padding-top: 1rem; flex: 1; display: flex; flex-direction: column; }
       .dish-body--sanguche { padding-top: 0; margin-top: 20px; align-items: center; text-align: center; }
       .dish-name-row { display: flex; align-items: center; justify-content: center; gap: 0.4rem; margin-bottom: 0.2rem; min-width: 0; overflow: hidden; }
