@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <title>Ceviche in Berlin – peruanisches Original bei La Victoria</title>
+    <meta name="description" content="Ceviche in Berlin, wie in Lima: frischer Fisch, Limette, Rocoto, Süßkartoffel und Choclo. Geschichte, Zutaten und das Rezept-Geheimnis von La Victoria in der Markthalle Pfefferberg." />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Ceviche in Berlin – peruanisches Original bei La Victoria" />
+    <meta property="og:description" content="Perus Nationalgericht, direkt aus Lima nach Berlin. Ceviche mit Limette, Rocoto, Süßkartoffel und Choclo – bei La Victoria in der Markthalle Pfefferberg." />
+    <meta property="og:url" content="https://www.lavictoria.berlin/de/gerichte/ceviche" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="La Victoria" />
+    <meta property="og:image" content="https://www.lavictoria.berlin/assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="775" />
+    <meta property="og:image:alt" content="Ceviche – frischer peruanischer Fisch mit Limette und Rocoto-Chilli bei La Victoria Berlin" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="https://www.lavictoria.berlin/de/gerichte/ceviche" />
+    <link rel="alternate" hreflang="de" href="https://www.lavictoria.berlin/de/gerichte/ceviche" />
+    <link rel="alternate" hreflang="x-default" href="https://www.lavictoria.berlin/de/gerichte/ceviche" />
+
+    <!-- ponytail: for the mockup we reference site.css externally to avoid duplicating ~30 KB of CSS
+         by hand. Before shipping the dish page, run `python3 scripts/tools/inline-css.py` to inline
+         it, then remove this <link>. -->
+    <link rel="stylesheet" href="../../styles/site.css" />
+
+    <style>
+      /* Page-local styles for the dish detail page.
+         Only overrides / additions; everything else reuses site.css tokens & classes. */
+
+      /* ── Hero ─────────────────────────────────────────────────────────── */
+      .dish-hero {
+        background: var(--yellow);
+        padding: 3.5rem 1.5rem 4rem;
+      }
+      .dish-hero-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      .breadcrumb {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 0.78rem;
+        color: var(--black);
+        opacity: 0.55;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+      }
+      .breadcrumb a { text-decoration: none; color: inherit; border-bottom: 1px solid transparent; transition: border-color .2s; }
+      .breadcrumb a:hover { border-bottom-color: var(--black); }
+      .breadcrumb .sep { margin: 0 .55em; opacity: .5; }
+
+      .dish-hero-label {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--orange);
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+      }
+      .dish-hero-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: clamp(2.6rem, 1.6rem + 4vw, 5.2rem);
+        color: var(--black);
+        line-height: 0.93;
+        letter-spacing: 0.01em;
+        margin-bottom: 1.4rem;
+      }
+      .dish-hero-title .accent { color: var(--orange); }
+      .dish-hero-lead {
+        font-family: 'Barlow', sans-serif;
+        font-size: var(--fs-body-lg);
+        color: var(--black);
+        opacity: 0.82;
+        line-height: 1.55;
+        margin-bottom: 1.5rem;
+        max-width: 44ch;
+      }
+      .dish-hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 1.75rem;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--black);
+        opacity: 0.7;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      .dish-hero-meta span::before {
+        content: '';
+        display: inline-block;
+        width: 6px; height: 6px;
+        background: var(--orange);
+        margin-right: .55em;
+        vertical-align: 2px;
+      }
+      .dish-hero-img {
+        position: relative;
+      }
+      .dish-hero-img::before {
+        content: '';
+        position: absolute;
+        bottom: -12px; left: -12px; right: 32px;
+        height: 55%;
+        background: var(--orange);
+        z-index: 0;
+      }
+      .dish-hero-img picture,
+      .dish-hero-img img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* ── Historia (reuse .story-section vibe) ───────────────────────────── */
+      .dish-story {
+        background: var(--black);
+        color: var(--yellow);
+      }
+      .dish-story-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+      .dish-story-label {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: 0.28em;
+        color: var(--green);
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+      }
+      .dish-story-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: var(--fs-display);
+        color: var(--yellow);
+        line-height: 0.92;
+        letter-spacing: 0.01em;
+        margin-bottom: 0;
+      }
+      .dish-story-body p {
+        font-family: 'Barlow', sans-serif;
+        font-size: var(--fs-body-lg);
+        color: rgba(255,255,255,0.78);
+        line-height: 1.7;
+        margin-bottom: 1.15rem;
+      }
+      .dish-story-body p strong {
+        color: var(--yellow);
+        font-weight: 700;
+      }
+      .dish-story-facts {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem 2rem;
+        border-top: 1px solid rgba(255,204,0,0.2);
+        padding-top: 1.5rem;
+      }
+      .dish-story-fact-num {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: 2.4rem;
+        color: var(--yellow);
+        line-height: 1;
+      }
+      .dish-story-fact-lbl {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.6);
+        margin-top: 0.35rem;
+      }
+
+      /* ── Zutaten + Secreto (yellow bg, 3 cards) ─────────────────────────── */
+      .dish-ingredients { background: var(--yellow); }
+      .dish-ingredients-header {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem 1.5rem;
+        border-bottom: 1px solid var(--black);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      .dish-ingredients-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: var(--fs-display);
+        color: var(--black);
+        line-height: 0.93;
+        letter-spacing: 0.01em;
+      }
+      .dish-ingredients-sub {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: var(--fs-subhead);
+        letter-spacing: 0.25em;
+        color: var(--black);
+        opacity: 0.6;
+        text-transform: uppercase;
+        text-align: right;
+      }
+      .dish-ingredients-grid {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .ing-card {
+        padding: 2.5rem 2rem;
+        border-right: 1px solid var(--black);
+        border-top: 1px solid var(--black);
+      }
+      .ing-card:last-child { border-right: none; }
+      .ing-card-num {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 5rem;
+        color: var(--black);
+        opacity: 0.09;
+        line-height: 1;
+        margin-bottom: -1.2rem;
+      }
+      .ing-card-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: var(--fs-h2);
+        color: var(--black);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      .ing-card-sub {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .ing-card:nth-child(1) .ing-card-sub { color: var(--green); }
+      .ing-card:nth-child(2) .ing-card-sub { color: var(--purple); }
+      .ing-card:nth-child(3) .ing-card-sub { color: var(--orange); }
+      .ing-card-text {
+        font-family: 'Barlow', sans-serif;
+        font-size: var(--fs-body);
+        color: var(--black);
+        opacity: 0.78;
+        line-height: 1.65;
+        margin-bottom: 0.9rem;
+      }
+      .ing-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .ing-list li {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: var(--black);
+        letter-spacing: 0.03em;
+      }
+      .ing-list li::before {
+        content: '·';
+        margin-right: 0.5em;
+        color: var(--orange);
+        font-weight: 900;
+      }
+
+      .allergens-callout {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 1.5rem 1.5rem 3rem;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-size: 0.9rem;
+        color: var(--black);
+        opacity: 0.65;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .allergens-callout strong {
+        font-weight: 800;
+        letter-spacing: 0.2em;
+        margin-right: 0.5rem;
+      }
+
+      /* ── Maridaje (orange strip, like .sides-bar) ───────────────────────── */
+      .dish-pairing {
+        background: var(--orange);
+      }
+      .dish-pairing-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        display: grid;
+        grid-template-columns: 0.7fr 2fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+      .dish-pairing-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: calc(var(--fs-h2) * 0.9);
+        color: var(--black);
+        line-height: 0.95;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+      .dish-pairing-title small {
+        display: block;
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.28em;
+        color: var(--black);
+        opacity: 0.55;
+        margin-top: 0.6rem;
+      }
+      .dish-pairing-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .pair-item h3 {
+        font-family: 'Barlow Condensed', sans-serif;
+        font-style: italic;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: var(--black);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .pair-item p {
+        font-family: 'Barlow', sans-serif;
+        font-size: 0.95rem;
+        color: var(--black);
+        opacity: 0.75;
+        line-height: 1.5;
+      }
+
+      /* ── FAQ (yellow, native <details>) ─────────────────────────────────── */
+      .dish-faq { background: var(--yellow); }
+      .dish-faq-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem;
+      }
+      .dish-faq-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: var(--fs-h2);
+        color: var(--black);
+        line-height: 1;
+        letter-spacing: 0.01em;
+        margin-bottom: 0.35rem;
+      }
+      .dish-faq-sub {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        letter-spacing: 0.28em;
+        color: var(--black);
+        opacity: 0.55;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+      }
+      .faq-item {
+        border-top: 1px solid var(--black);
+        padding: 1.4rem 0;
+      }
+      .faq-item:last-child { border-bottom: 1px solid var(--black); }
+      .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: clamp(1.2rem, 0.9rem + 0.9vw, 1.7rem);
+        color: var(--black);
+        line-height: 1.15;
+      }
+      .faq-item summary::-webkit-details-marker { display: none; }
+      .faq-item summary::after {
+        content: '+';
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        color: var(--orange);
+        line-height: 1;
+        transition: transform 0.2s;
+      }
+      .faq-item[open] summary::after { content: '−'; transform: rotate(0); }
+      .faq-answer {
+        margin-top: 0.9rem;
+        font-family: 'Barlow', sans-serif;
+        font-size: var(--fs-body-lg);
+        color: var(--black);
+        opacity: 0.78;
+        line-height: 1.65;
+      }
+
+      /* ── CTA (black bg like location-section) ───────────────────────────── */
+      .dish-cta { background: var(--black); color: var(--yellow); }
+      .dish-cta-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem 6rem;
+        text-align: center;
+      }
+      .dish-cta-label {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        letter-spacing: 0.28em;
+        color: var(--green);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .dish-cta-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: var(--fs-display);
+        color: var(--yellow);
+        line-height: 0.93;
+        letter-spacing: 0.01em;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+      }
+      .dish-cta-lead {
+        font-family: 'Barlow', sans-serif;
+        font-size: var(--fs-body-lg);
+        color: rgba(255,255,255,0.7);
+        max-width: 52ch;
+        margin: 0 auto 2.5rem;
+        line-height: 1.55;
+      }
+      .dish-cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .dish-cta-btn-primary,
+      .dish-cta-btn-secondary {
+        display: inline-block;
+        padding: 1rem 2.25rem;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 800;
+        font-size: 0.95rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: transform 0.15s, background 0.2s, color 0.2s;
+      }
+      .dish-cta-btn-primary {
+        background: var(--yellow);
+        color: var(--black);
+      }
+      .dish-cta-btn-primary:hover { transform: scale(1.03); }
+      .dish-cta-btn-secondary {
+        background: transparent;
+        color: var(--yellow);
+        border: 1px solid var(--yellow);
+      }
+      .dish-cta-btn-secondary:hover {
+        background: var(--yellow);
+        color: var(--black);
+      }
+
+      /* ── Responsive ─────────────────────────────────────────────────────── */
+      @media (max-width: 900px) {
+        .dish-hero-inner,
+        .dish-story-inner,
+        .dish-ingredients-grid,
+        .dish-pairing-inner,
+        .dish-pairing-list { grid-template-columns: 1fr; }
+        .dish-ingredients-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; text-align: left; }
+        .dish-ingredients-sub { text-align: left; }
+        .ing-card { border-right: none; }
+        .dish-story-inner { padding: 3rem 1.5rem; gap: 2rem; }
+        .dish-pairing-inner { gap: 1.5rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .dish-cta-btn-primary,
+        .dish-cta-btn-secondary { transition: none; }
+        .faq-item summary::after { transition: none; }
+      }
+
+      /* ── Zutaten-Marquee (nutzt @keyframes c2-marquee aus site.css) ──────
+         Hintergrund MUSS gelb bleiben: die Cutouts wurden von gelbem Grund
+         freigestellt, ihr halbtransparenter Randsaum ist gelb getönt (Limette
+         100 %, Cilantro 98 %, Chifles 95 % der Randpixel). Auf Schwarz wird
+         daraus ein leuchtender Halo, auf --yellow verschwindet er. */
+      .zut-band { background: var(--yellow); padding-bottom: 3rem; }
+      .zut-band-head {
+        max-width: 1280px; margin: 0 auto;
+        padding: 3.25rem 1.5rem 1.5rem;
+        display: flex; align-items: baseline; justify-content: space-between;
+        gap: 1.25rem; flex-wrap: wrap;
+      }
+      .zut-band-title {
+        font-family: 'Radius', 'Bebas Neue', sans-serif;
+        font-size: var(--fs-h2); color: var(--black);
+        line-height: 0.95; letter-spacing: 0.01em;
+      }
+      .zut-band-note {
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 0.78rem;
+        letter-spacing: 0.25em; text-transform: uppercase;
+        color: rgba(29,29,27,0.55);
+      }
+      .zut-mq {
+        overflow: hidden;
+        border-top: 1px solid var(--black);
+        padding: 1.5rem 0;
+      }
+      .zut-mq:last-of-type { border-bottom: 1px solid var(--black); }
+      .zut-mq-track {
+        display: flex; align-items: flex-end; gap: 3rem;
+        width: max-content;
+        animation: c2-marquee 42s linear infinite;
+      }
+      .zut-mq--rev .zut-mq-track { animation-direction: reverse; animation-duration: 52s; }
+      .zut-mq-item {
+        margin: 0; width: 250px;
+        display: flex; flex-direction: column; align-items: center; text-align: center;
+      }
+      .zut-mq-item img {
+        /* feste Box + contain, sonst gewinnt das globale `img { width: 100% }` aus site.css */
+        width: 100%; height: 208px; object-fit: contain; display: block;
+        filter: drop-shadow(0 12px 16px rgba(29,29,27,0.28));
+        transition: transform .3s cubic-bezier(.2,.7,.3,1);
+      }
+      .zut-mq-item figcaption { margin-top: 0.9rem; }
+      .zut-mq-es {
+        display: block;
+        font-family: 'Groches', 'Barlow Condensed', sans-serif;
+        font-weight: 700; font-size: 0.92rem;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: var(--black);
+      }
+      .zut-mq-de {
+        display: block;
+        font-family: 'Barlow Condensed', sans-serif;
+        font-weight: 600; font-size: 1.05rem;
+        color: rgba(29,29,27,0.6); margin-top: 0.15rem;
+      }
+      @media (hover: hover) {
+        .zut-mq:hover .zut-mq-track { animation-play-state: paused; }
+        .zut-mq-item:hover img { transform: translateY(-10px) scale(1.1); }
+      }
+      @media (max-width: 780px) {
+        .zut-mq-track { gap: 2rem; }
+        .zut-mq-item { width: 168px; }
+        .zut-mq-item img { height: 140px; }
+        .zut-mq-es { font-size: 0.82rem; }
+        .zut-mq-de { font-size: 0.95rem; }
+      }
+    </style>
+
+    <!-- Scoby Analytics — cookieless, hosted in Germany -->
+    <script>
+      (function () {
+        window.scoby = window.scoby || function () {
+          (window.scoby.q = window.scoby.q || []).push(arguments);
+        };
+        window.scoby('init', { autoLogging: true });
+      })();
+    </script>
+    <script>addEventListener("load",function(){(window.requestIdleCallback||setTimeout)(function(){var s=document.createElement("script");s.async=true;s.src="https://2xx3e.s3y.io";document.head.appendChild(s);});});</script>
+
+    <!-- JSON-LD: Breadcrumb -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://www.lavictoria.berlin/de/" },
+        { "@type": "ListItem", "position": 2, "name": "Speisekarte", "item": "https://www.lavictoria.berlin/de/menu" },
+        { "@type": "ListItem", "position": 3, "name": "Ceviche", "item": "https://www.lavictoria.berlin/de/gerichte/ceviche" }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ist Ceviche scharf?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ceviche ist traditionell leicht scharf, nicht brennend. Die Schärfe kommt vom peruanischen Rocoto- oder Ají-limo-Chili. Bei La Victoria Berlin servieren wir zwei Versionen: mild (ohne Rocoto) und original scharf – frag einfach unser Team beim Bestellen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist Ceviche glutenfrei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die klassischen Ceviche-Zutaten – Fisch, Limette, Zwiebeln, Chili, Süßkartoffel und Choclo – sind von Natur aus glutenfrei. In unserer Küche in der Markthalle Pfefferberg arbeiten wir aber auch mit glutenhaltigen Produkten, daher können wir Kreuzkontamination nicht zu 100% ausschließen. Sprich unser Team an – wir informieren dich transparent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie isst man Ceviche traditionell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Peru wird Ceviche kalt und frisch zubereitet gegessen – niemals aufgewärmt. Traditionell serviert man ihn mit Süßkartoffel (Camote), Maiskolben (Choclo) und geröstetem Mais (Cancha) als Begleitung. Der bei uns übrig bleibende Limettensud, die 'Leche de Tigre', wird oft am Ende pur getrunken."
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body>
+    <a href="#inhalt" class="skip-link">Zum Inhalt springen</a>
+
+    <!-- ══ NAVBAR (identical to menu.html, paths adjusted for /de/gerichte/) ══ -->
+    <div id="navSentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:60px;pointer-events:none;"></div>
+    <nav class="nav" id="navbar" aria-label="Hauptnavigation">
+      <a href="../" class="nav-logo-link" aria-label="Zur Startseite"><img class="nav-mobile-logo" id="mobileLogo" src="../../assets/svg/logos/la-victoria-berlin-peruvian-street-food-black-header-white-1.svg" alt="" aria-hidden="true" width="1920" height="1080"></a>
+      <div class="nav-links">
+        <a href="../">STARTSEITE</a>
+        <a href="../menu">SPEISEKARTE</a>
+        <a href="../#story">UNSERE GESCHICHTE</a>
+        <a href="../#reviews">BEWERTUNGEN</a>
+        <a href="../#location">ANFAHRT</a>
+        <a href="https://www.bon-bon.de/gutschein/la-victoria/" target="_blank" rel="noopener">GUTSCHEIN</a>
+      </div>
+      <details class="lang-dd">
+        <summary aria-label="Sprache wählen"><span class="flag flag--de" aria-hidden="true"></span><span class="code">DE</span></summary>
+        <ul>
+          <!-- ponytail: point at each language's menu until dish pages exist in other locales -->
+          <li><a href="../../en/menu" hreflang="en"><span class="flag flag--en" aria-hidden="true"></span> EN</a></li>
+          <li><a href="../../es/menu" hreflang="es"><span class="flag flag--es" aria-hidden="true"></span> ES</a></li>
+          <li><a href="../../fr/menu" hreflang="fr"><span class="flag flag--fr" aria-hidden="true"></span> FR</a></li>
+          <li><a href="../../it/menu" hreflang="it"><span class="flag flag--it" aria-hidden="true"></span> IT</a></li>
+        </ul>
+      </details>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation" aria-hidden="true">
+      <a href="../" class="mobile-menu-link">STARTSEITE</a>
+      <a href="../menu" class="mobile-menu-link">SPEISEKARTE</a>
+      <a href="../#story" class="mobile-menu-link">UNSERE GESCHICHTE</a>
+      <a href="../#reviews" class="mobile-menu-link">BEWERTUNGEN</a>
+      <a href="../#location" class="mobile-menu-link">ANFAHRT</a>
+      <a href="https://www.bon-bon.de/gutschein/la-victoria/" class="mobile-menu-link" target="_blank" rel="noopener">GUTSCHEIN</a>
+      <details class="lang-dd-mobile">
+        <summary aria-label="Sprache wählen"><span class="flag flag--de" aria-hidden="true"></span><span class="code">DE</span></summary>
+        <ul>
+          <li><a href="../../en/menu" hreflang="en"><span class="flag flag--en" aria-hidden="true"></span> EN</a></li>
+          <li><a href="../../es/menu" hreflang="es"><span class="flag flag--es" aria-hidden="true"></span> ES</a></li>
+          <li><a href="../../fr/menu" hreflang="fr"><span class="flag flag--fr" aria-hidden="true"></span> FR</a></li>
+          <li><a href="../../it/menu" hreflang="it"><span class="flag flag--it" aria-hidden="true"></span> IT</a></li>
+        </ul>
+      </details>
+    </nav>
+
+    <main id="inhalt">
+
+      <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+      <section class="dish-hero" aria-labelledby="dish-title">
+        <div class="dish-hero-inner">
+          <div class="dish-hero-copy">
+            <nav class="breadcrumb" aria-label="Brotkrumen">
+              <a href="../">Startseite</a><span class="sep">/</span>
+              <a href="../menu">Speisekarte</a><span class="sep">/</span>
+              <span aria-current="page">Ceviche</span>
+            </nav>
+
+            <p class="dish-hero-label">Patrimonio Cultural del Perú</p>
+
+            <h1 id="dish-title" class="dish-hero-title">
+              Ceviche <span class="accent">in Berlin</span> —<br>
+              Perus Nationalgericht, direkt aus Lima.
+            </h1>
+
+            <p class="dish-hero-lead">
+              Feiner Fischwürfel, in wenigen Minuten in frisch gepresster Limette
+              gegart, dazu rote Zwiebeln, Rocoto-Chili, Koriander und die pure
+              Kälte des Meeres. Serviert mit süßer <strong>Camote</strong>, dickem
+              <strong>Choclo</strong> und geröstetem <strong>Cancha</strong>-Mais.
+              Kein Kochen, kein Rauch — nur Säure, Frische und Feuer.
+            </p>
+
+            <div class="dish-hero-meta" aria-label="Details">
+              <span>Serviert kalt</span>
+              <span>Leicht scharf · mild verfügbar</span>
+              <span>Enthält Fisch (4)</span>
+            </div>
+          </div>
+
+          <div class="dish-hero-img">
+            <picture>
+              <source srcset="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.webp" type="image/webp">
+              <img src="../../assets/images/fresh-ceviche-fish-carrot-rocoto-onion-la-victoria-berlin.png" alt="Ceviche von La Victoria Berlin — frischer Fisch mit Limette, Rocoto und roten Zwiebeln" width="1200" height="775">
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ HISTORIA ══════════════════════════════════════════════════════ -->
+      <section class="dish-story" aria-labelledby="story-title">
+        <div class="dish-story-inner">
+          <div class="dish-story-text">
+            <p class="dish-story-label">Geschichte &amp; Bedeutung</p>
+            <h2 id="story-title" class="dish-story-title">
+              Vom Inka-Reich zur Weltküche.
+            </h2>
+          </div>
+          <div class="dish-story-body">
+            <p>
+              Ceviche ist nicht einfach nur ein Gericht — er ist <strong>Perus Nationalgericht</strong>
+              und Teil des kulturellen Erbes des Landes. Die Wurzeln liegen an der peruanischen
+              Pazifikküste, wo schon <strong>vor über 2.000 Jahren</strong> die Moche-Kultur
+              rohen Fisch mit dem sauren Saft der Tumbo-Frucht mariniert hat, lange bevor die
+              Spanier die Limette mitbrachten.
+            </p>
+            <p>
+              Die moderne Version — der <strong>schnell marinierte, glasige Cut</strong>, den
+              wir heute kennen — entstand in Lima erst im 20. Jahrhundert, als japanische
+              Einwanderer die <strong>Nikkei-Küche</strong> mitprägten. Statt stundenlanger
+              Marinade nur wenige Minuten, Fisch fast roh, das Aroma erhalten. So essen sie
+              es heute in Lima. Und so servieren wir es in Berlin.
+            </p>
+            <p>
+              2004 wurde Ceviche in Peru zum <strong>Kulturerbe der Nation</strong> erklärt.
+              Am <strong>28. Juni</strong> feiert das Land seinen offiziellen "Día Nacional
+              del Cebiche". Und seit <strong>Dezember 2023</strong> gehören die Ceviche-Traditionen
+              zum <strong>immateriellen Kulturerbe der UNESCO</strong>.
+            </p>
+
+            <div class="dish-story-facts">
+              <div>
+                <div class="dish-story-fact-num">2.000+</div>
+                <div class="dish-story-fact-lbl">Jahre Tradition</div>
+              </div>
+              <div>
+                <div class="dish-story-fact-num">28. Juni</div>
+                <div class="dish-story-fact-lbl">Día Nacional del Cebiche</div>
+              </div>
+              <div>
+                <div class="dish-story-fact-num">2004</div>
+                <div class="dish-story-fact-lbl">Kulturerbe Perus</div>
+              </div>
+              <div>
+                <div class="dish-story-fact-num">2023</div>
+                <div class="dish-story-fact-lbl">UNESCO-Kulturerbe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ ZUTATEN + SECRETO ═════════════════════════════════════════════ -->
+      <section class="dish-ingredients" aria-labelledby="ingredients-title">
+        <div class="dish-ingredients-header">
+          <h2 id="ingredients-title" class="dish-ingredients-title">
+            Zutaten &amp; das Geheimnis von La Victoria.
+          </h2>
+          <p class="dish-ingredients-sub">
+            Was in einem echten Ceviche steckt<br>— und wie wir ihn in Berlin machen.
+          </p>
+        </div>
+
+        <!-- ══ V3: ZUTATEN-MARQUEE ═══════════════════════════════════════ -->
+        <section class="zut-band" aria-label="Die Zutaten im Ceviche">
+          <div class="zut-band-head">
+            <h3 class="zut-band-title">Zehn Zutaten im Dauerlauf.</h3>
+            <p class="zut-band-note">Aus Peru &amp; vom Berliner Großmarkt</p>
+          </div>
+          <div class="zut-mq">
+            <div class="zut-mq-track">
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-fisch-la-victoria-berlin.webp" alt="Frische Wolfsbarsch-Würfel für Ceviche" width="600" height="587" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pescado</span><span class="zut-mq-de">Wolfsbarsch</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-limette-la-victoria-berlin.webp" alt="Limettenscheiben für die Leche de Tigre" width="397" height="640" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Limón</span><span class="zut-mq-de">Limette</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-zwiebel-la-victoria-berlin.webp" alt="In feine Streifen geschnittene rote Zwiebel" width="640" height="610" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cebolla roja</span><span class="zut-mq-de">Rote Zwiebel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-koriander-la-victoria-berlin.webp" alt="Frischer Koriander" width="640" height="552" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cilantro</span><span class="zut-mq-de">Koriander</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-camote-la-victoria-berlin.webp" alt="Gekochte Süßkartoffelscheiben (Camote)" width="640" height="388" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Camote</span><span class="zut-mq-de">Süßkartoffel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-cancha-la-victoria-berlin.webp" alt="Gerösteter Andenmais (Cancha serrana)" width="640" height="632" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cancha serrana</span><span class="zut-mq-de">Röstmais</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-garnelen-la-victoria-berlin.webp" alt="Gekochte Garnelen für Ceviche mixto" width="640" height="620" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Langostinos</span><span class="zut-mq-de">Garnelen</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-pulpo-la-victoria-berlin.webp" alt="In Stücke geschnittener Oktopus" width="640" height="446" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pulpo</span><span class="zut-mq-de">Oktopus</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-chifles-la-victoria-berlin.webp" alt="Frittierte Kochbananen-Chips (Chifles)" width="640" height="426" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Chifles</span><span class="zut-mq-de">Kochbanane</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-salat-la-victoria-berlin.webp" alt="Salatblatt als Bett für den Ceviche" width="640" height="612" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Lechuga</span><span class="zut-mq-de">Salatblatt</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-fisch-la-victoria-berlin.webp" alt="" width="600" height="587" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pescado</span><span class="zut-mq-de">Wolfsbarsch</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-limette-la-victoria-berlin.webp" alt="" width="397" height="640" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Limón</span><span class="zut-mq-de">Limette</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-zwiebel-la-victoria-berlin.webp" alt="" width="640" height="610" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cebolla roja</span><span class="zut-mq-de">Rote Zwiebel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-koriander-la-victoria-berlin.webp" alt="" width="640" height="552" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cilantro</span><span class="zut-mq-de">Koriander</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-camote-la-victoria-berlin.webp" alt="" width="640" height="388" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Camote</span><span class="zut-mq-de">Süßkartoffel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-cancha-la-victoria-berlin.webp" alt="" width="640" height="632" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cancha serrana</span><span class="zut-mq-de">Röstmais</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-garnelen-la-victoria-berlin.webp" alt="" width="640" height="620" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Langostinos</span><span class="zut-mq-de">Garnelen</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-pulpo-la-victoria-berlin.webp" alt="" width="640" height="446" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pulpo</span><span class="zut-mq-de">Oktopus</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-chifles-la-victoria-berlin.webp" alt="" width="640" height="426" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Chifles</span><span class="zut-mq-de">Kochbanane</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-salat-la-victoria-berlin.webp" alt="" width="640" height="612" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Lechuga</span><span class="zut-mq-de">Salatblatt</span></figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="zut-mq zut-mq--rev">
+            <div class="zut-mq-track">
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-salat-la-victoria-berlin.webp" alt="Salatblatt als Bett für den Ceviche" width="640" height="612" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Lechuga</span><span class="zut-mq-de">Salatblatt</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-chifles-la-victoria-berlin.webp" alt="Frittierte Kochbananen-Chips (Chifles)" width="640" height="426" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Chifles</span><span class="zut-mq-de">Kochbanane</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-pulpo-la-victoria-berlin.webp" alt="In Stücke geschnittener Oktopus" width="640" height="446" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pulpo</span><span class="zut-mq-de">Oktopus</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-garnelen-la-victoria-berlin.webp" alt="Gekochte Garnelen für Ceviche mixto" width="640" height="620" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Langostinos</span><span class="zut-mq-de">Garnelen</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-cancha-la-victoria-berlin.webp" alt="Gerösteter Andenmais (Cancha serrana)" width="640" height="632" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cancha serrana</span><span class="zut-mq-de">Röstmais</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-camote-la-victoria-berlin.webp" alt="Gekochte Süßkartoffelscheiben (Camote)" width="640" height="388" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Camote</span><span class="zut-mq-de">Süßkartoffel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-koriander-la-victoria-berlin.webp" alt="Frischer Koriander" width="640" height="552" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cilantro</span><span class="zut-mq-de">Koriander</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-zwiebel-la-victoria-berlin.webp" alt="In feine Streifen geschnittene rote Zwiebel" width="640" height="610" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cebolla roja</span><span class="zut-mq-de">Rote Zwiebel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-limette-la-victoria-berlin.webp" alt="Limettenscheiben für die Leche de Tigre" width="397" height="640" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Limón</span><span class="zut-mq-de">Limette</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item">
+                <img src="../../assets/images/zutaten/ceviche-zutat-fisch-la-victoria-berlin.webp" alt="Frische Wolfsbarsch-Würfel für Ceviche" width="600" height="587" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pescado</span><span class="zut-mq-de">Wolfsbarsch</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-salat-la-victoria-berlin.webp" alt="" width="640" height="612" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Lechuga</span><span class="zut-mq-de">Salatblatt</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-chifles-la-victoria-berlin.webp" alt="" width="640" height="426" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Chifles</span><span class="zut-mq-de">Kochbanane</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-pulpo-la-victoria-berlin.webp" alt="" width="640" height="446" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pulpo</span><span class="zut-mq-de">Oktopus</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-garnelen-la-victoria-berlin.webp" alt="" width="640" height="620" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Langostinos</span><span class="zut-mq-de">Garnelen</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-cancha-la-victoria-berlin.webp" alt="" width="640" height="632" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cancha serrana</span><span class="zut-mq-de">Röstmais</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-camote-la-victoria-berlin.webp" alt="" width="640" height="388" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Camote</span><span class="zut-mq-de">Süßkartoffel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-koriander-la-victoria-berlin.webp" alt="" width="640" height="552" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cilantro</span><span class="zut-mq-de">Koriander</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-zwiebel-la-victoria-berlin.webp" alt="" width="640" height="610" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Cebolla roja</span><span class="zut-mq-de">Rote Zwiebel</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-limette-la-victoria-berlin.webp" alt="" width="397" height="640" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Limón</span><span class="zut-mq-de">Limette</span></figcaption>
+              </figure>
+              <figure class="zut-mq-item" aria-hidden="true">
+                <img src="../../assets/images/zutaten/ceviche-zutat-fisch-la-victoria-berlin.webp" alt="" width="600" height="587" loading="lazy" decoding="async">
+                <figcaption><span class="zut-mq-es">Pescado</span><span class="zut-mq-de">Wolfsbarsch</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <div class="dish-ingredients-grid">
+          <!-- FAKE: ingredients specific to LV kitchen (fish source, exact chili) are placeholders. -->
+          <article class="ing-card">
+            <div class="ing-card-num">01</div>
+            <h3 class="ing-card-title">Aus dem Meer</h3>
+            <p class="ing-card-sub">Der Fisch</p>
+            <p class="ing-card-text">
+              Traditionell nutzt man in Peru <em>Corvina</em> — die gibt es in Berlin nicht.
+              Wir arbeiten mit tagesfrischem <strong>Wolfsbarsch</strong> oder <strong>Dorade</strong>
+              vom Berliner Großmarkt, in gleichmäßige Würfel geschnitten. Sushi-Qualität, sonst nichts.
+            </p>
+          </article>
+
+          <article class="ing-card">
+            <div class="ing-card-num">02</div>
+            <h3 class="ing-card-title">Die Säure</h3>
+            <p class="ing-card-sub">Leche de Tigre</p>
+            <p class="ing-card-text">
+              Herzstück jedes Ceviche: frisch gepresste Limette, gebrochen mit Fischsud,
+              Sellerie, Knoblauch, Koriander-Stielen und <strong>Ají amarillo</strong>-Paste
+              aus Peru. Zwei bis drei Minuten Marinade — mehr nicht.
+            </p>
+            <ul class="ing-list">
+              <li>Frische Limette</li>
+              <li>Ají amarillo</li>
+              <li>Koriander &amp; Sellerie</li>
+              <li>Rote Zwiebel</li>
+            </ul>
+          </article>
+
+          <article class="ing-card">
+            <div class="ing-card-num">03</div>
+            <h3 class="ing-card-title">Das Feuer</h3>
+            <p class="ing-card-sub">Und die Beilagen</p>
+            <p class="ing-card-text">
+              Wer will, kriegt echten <strong>Rocoto-Chili</strong> aus Peru dazu — nicht ersetzt,
+              nicht abgemildert. Auf dem Teller: süßer <strong>Camote</strong>,
+              großkorniger <strong>Choclo</strong> und knuspriger <strong>Cancha serrana</strong>.
+              Das komplette peruanische Bild — mitten in Prenzlauer Berg.
+            </p>
+          </article>
+        </div>
+
+        <p class="allergens-callout">
+          <strong>Allergene:</strong> (1) Gluten · (4) Fisch · (7) Milch
+        </p>
+      </section>
+
+      <!-- ══ MARIDAJE ══════════════════════════════════════════════════════ -->
+      <section class="dish-pairing" aria-labelledby="pairing-title">
+        <div class="dish-pairing-inner">
+          <div>
+            <h2 id="pairing-title" class="dish-pairing-title">
+              Dazu passt
+              <small>Peruanisch trinken</small>
+            </h2>
+          </div>
+          <!-- FAKE: exact bar offering not confirmed yet — pairing suggestions are the classics. -->
+          <div class="dish-pairing-list">
+            <div class="pair-item">
+              <h3>Pisco Sour</h3>
+              <p>Perus Nationalcocktail. Pisco, frische Limette, Eiweiß, ein Tropfen Angostura. Cremig und mit Biss.</p>
+            </div>
+            <div class="pair-item">
+              <h3>Chicha Morada</h3>
+              <p>Alkoholfrei, aus violettem Mais, Ananas, Zimt und Nelke. Süß-fruchtig, tief-lila, jahrhundertealt.</p>
+            </div>
+            <div class="pair-item">
+              <h3>Cusqueña</h3>
+              <p>Peruanisches Lagerbier aus den Anden. Klar, trocken, hebt die Säure des Ceviche perfekt.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ FAQ ═══════════════════════════════════════════════════════════ -->
+      <section class="dish-faq" aria-labelledby="faq-title">
+        <div class="dish-faq-inner">
+          <h2 id="faq-title" class="dish-faq-title">Häufige Fragen</h2>
+          <p class="dish-faq-sub">Alles, was du vor dem Bestellen wissen willst</p>
+
+          <details class="faq-item">
+            <summary>Ist Ceviche scharf?</summary>
+            <div class="faq-answer">
+              Traditionell leicht scharf, nicht brennend. Die Schärfe kommt vom
+              peruanischen <strong>Rocoto</strong> oder <strong>Ají limo</strong>.
+              Wir servieren zwei Versionen: <strong>mild</strong> (ohne Rocoto) oder
+              <strong>original scharf</strong> — frag einfach unser Team beim Bestellen.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Ist Ceviche glutenfrei?</summary>
+            <div class="faq-answer">
+              Die klassischen Zutaten — Fisch, Limette, Zwiebeln, Chili, Süßkartoffel und
+              Choclo — sind <strong>von Natur aus glutenfrei</strong>. In unserer Küche
+              arbeiten wir aber auch mit glutenhaltigen Produkten (Sanguches, Salchipapa),
+              daher können wir Kreuzkontamination nicht zu 100 % ausschließen. Sprich uns
+              an — wir informieren dich transparent.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Wie isst man Ceviche traditionell?</summary>
+            <div class="faq-answer">
+              Immer <strong>kalt und frisch zubereitet</strong> — niemals aufgewärmt.
+              Süßkartoffel (Camote), Maiskolben (Choclo) und geröstete Mais-Nibs (Cancha)
+              gehören dazu. Und den bei uns übrig bleibenden Limettensud — die
+              <strong>"Leche de Tigre"</strong> — trinken die Peruaner am Ende pur.
+              Angeblich das beste Katermittel Südamerikas.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ══ CTA ═══════════════════════════════════════════════════════════ -->
+      <section class="dish-cta" aria-labelledby="cta-title">
+        <div class="dish-cta-inner">
+          <p class="dish-cta-label">Heute probieren</p>
+          <h2 id="cta-title" class="dish-cta-title">Ceviche wie in Lima.<br>Zehn Minuten von dir entfernt.</h2>
+          <p class="dish-cta-lead">
+            Wir sind jeden Tag in der Markthalle Pfefferberg, Prenzlauer Berg.
+            Kein Tisch, keine Reservierung — komm vorbei, bestell an der Theke,
+            iss auf der Bank oder nimm's mit.
+          </p>
+          <div class="dish-cta-buttons">
+            <a class="dish-cta-btn-primary" href="https://maps.app.goo.gl/?q=La+Victoria+Berlin+Markthalle+Pfefferberg" target="_blank" rel="noopener">
+              In der Markthalle probieren →
+            </a>
+            <a class="dish-cta-btn-secondary" href="../menu">
+              Ganze Karte ansehen
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <div id="site-footer"></div>
+    <script src="../../scripts/nav.js?v=9"></script>
+    <script src="../../scripts/footer.de.js?v=12"></script>
+  </body>
+</html>
