@@ -636,7 +636,8 @@
       .c2-viewport { overflow: hidden; }
       /* Reviews-Marquee: reine CSS-Animation (Compositor/GPU), kein JS-rAF.
          Inhalt wird per JS verdoppelt → translateX(-50%) ergibt eine nahtlose Endlosschleife.
-         Wenige Karten (≤14) halten die Spurbreite unter dem GPU-Texturlimit (~16384px). */
+         Spurbreite = N×2×336px − 16px (Karte 320 + gap 16), muss unter dem
+         GPU-Texturlimit (~16384px) bleiben → max. 24 Karten (24 → 16112px, 25 → 16784px). */
       .c2-track { display: flex; gap: 16px; width: max-content; }
       .c2-track.c2-animate {
         animation: c2-marquee var(--c2-dur, 60s) linear infinite;
