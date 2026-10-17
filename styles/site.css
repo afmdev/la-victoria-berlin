@@ -502,7 +502,7 @@
       .site-footer {
         background: var(--black, #111);
         color: #e7e7e7;
-        padding-top: 2.5rem;
+        padding-top: 0.5rem;
       }
       .footer-about {
         max-width: 1080px; margin: 0 auto; padding: 0 1.5rem 1rem;
@@ -536,7 +536,7 @@
 
       /* Webdesign-Credit unter den Rechtstexten */
       .footer-credit {
-        display: flex; flex-direction: column; width: fit-content; margin: 0.5rem auto 0;
+        display: flex; flex-direction: column; width: fit-content; margin: 1.6rem auto 0;
         align-items: center; gap: 0.2rem;
         font-family: 'Barlow', sans-serif; font-size: 0.65rem;
         letter-spacing: 0.1em; text-transform: lowercase; text-decoration: none;
