@@ -24,3 +24,9 @@ Desktop.ini
 data/state_store.db/
 *.db/
 
+
+# Local tooling / editor config (not part of the site)
+.claude/
+.codegraph/
+.github/
+.vscode/
