@@ -1,1 +1,3 @@
 https://lavictoria.berlin/*  https://www.lavictoria.berlin/:splat  301
+/ai-catalog.json  /.well-known/ai-catalog.json  200
+/.well-known/ard.json  /.well-known/ai-catalog.json  200

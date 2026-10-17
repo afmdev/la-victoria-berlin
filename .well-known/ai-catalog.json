@@ -1,0 +1,24 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "La Victoria Berlin",
+    "identifier": "www.lavictoria.berlin",
+    "documentationUrl": "https://www.lavictoria.berlin/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:lavictoria.berlin:knowledge:llms-txt",
+      "displayName": "La Victoria Berlin — restaurant facts, menu and opening hours",
+      "type": "text/markdown",
+      "url": "https://www.lavictoria.berlin/llms.txt",
+      "description": "Machine-readable summary of La Victoria, a Peruvian street food restaurant at Markthalle Pfefferberg in Berlin Prenzlauer Berg: address, opening hours, dishes, allergen policy and links to every language version of the site.",
+      "representativeQueries": [
+        "Peruvian restaurant in Berlin Prenzlauer Berg",
+        "Where can I eat ceviche in Berlin?",
+        "La Victoria Berlin opening hours",
+        "Markthalle Pfefferberg street food menu"
+      ],
+      "tags": ["restaurant", "peruvian", "berlin", "street-food", "local-business"]
+    }
+  ]
+}
