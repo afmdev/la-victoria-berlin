@@ -46,6 +46,11 @@
     '    <a href="../datenschutz">Datenschutz</a>',
     '  </nav>',
 
+    '  <a class="footer-credit" href="https://www.alejandrofm.com" target="_blank" rel="noopener">',
+    '    <img src="/assets/svg/logos/webdesign-berlin-alejandrofm.svg" width="42" height="19" loading="lazy" decoding="async" alt="">',
+    '    <span>webdesign berlin</span>',
+    '  </a>',
+
     '  <div class="footer-bottom">',
     '    <p class="copyright">© <span id="year"></span> La Victoria · Berlin</p>',
     '  </div>',
